@@ -27,7 +27,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#" target="blank">Home</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#"">Home</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Product</a>
                             <div class="dropdown-menu">
@@ -38,23 +38,26 @@
                               <a class="dropdown-item" href="#contact">Contact</a>
                             </div>
                           </li> 
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.instagram.com/timesjember/" target="blank">Instagram</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.youtube.com/channel/UCgj4fXpMKECuDIOTcx-CvLg" target="blank">Youtube</a></li>
+                          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Portfolio</a></li>
+                          
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.instagram.com/timesjember/" target="blank"><i class="fab fa-instagram"></i></a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.youtube.com/channel/UCgj4fXpMKECuDIOTcx-CvLg" target="blank"><i class="fab fa-youtube"></i></a></li>
                     </ul>
                 </div>
             </div>
         </nav>
         <!-- Masthead-->
-        <header class="masthead">
+        @yield('home')
+        {{-- <header class="masthead">
             <div class="container">
                 <div class="masthead-subheading">Welcome to Times Biro Jember!</div>
                 <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
                 <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
             </div>
-        </header>
+        </header> --}}
         <!-- About-->
-        {{-- @yield('about') --}}
-        <section class="page-section" id="about">
+        
+        {{-- <section class="page-section" id="about">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">About Our Company</h2>
@@ -128,8 +131,8 @@
                                 Indonesia melalui penguatan ketahanan
                                 informasi bagi Indonesia.</p></div>
                         </div>
-                    </li>
-                    {{-- <li class="timeline-inverted">
+                    </li> --}}
+                    {{-- NO <li class="timeline-inverted">
                         <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="" /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -139,7 +142,7 @@
                             <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
                         </div>
                     </li> --}}
-                    <li class="timeline-inverted">
+                    {{-- <li class="timeline-inverted">
                         <div class="timeline-image">
                             <h4>
                                 Be Part
@@ -152,10 +155,10 @@
                     </li>
                 </ul>
             </div>
-        </section>
-        <!-- Services-->
-        {{-- @yield('service') --}}
-        <section class="page-section" id="services">
+        </section> --}}
+        <!-- Our Product -->
+        {{-- @yield('ourproduct') --}}
+        {{-- <section class="page-section" id="services">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Our Product</h2>
@@ -187,8 +190,8 @@
                         <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                     </div>
                 </div>
-            </div>
-        </section>
+            </div> --}}
+        {{-- </section> --}}
         <!-- Portfolio Grid-->
         @yield('portfolio')
         {{-- <section class="page-section bg-light" id="portfolio">
@@ -288,7 +291,7 @@
         
         <!-- Team-->
         {{-- @yield('team') --}}
-        <section class="page-section bg-light" id="team">
+        {{-- <section class="page-section bg-light" id="team">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
@@ -330,7 +333,7 @@
                     <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- Clients-->
         {{-- <div class="py-5">
             <div class="container">
@@ -352,7 +355,7 @@
         </div> --}}
         <!-- Contact-->
         {{-- @yield('contact') --}}
-        <section class="page-section" id="contact">
+        {{-- <section class="page-section" id="contact">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Contact Us</h2>
@@ -387,7 +390,7 @@
                     </div>
                 </form>
             </div>
-        </section>
+        </section> --}}
         <!-- Footer-->
         <footer class="footer py-4">
             <div class="container">
