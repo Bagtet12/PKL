@@ -20,26 +20,27 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="" /></a>
+                <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="assets/img/logo.png" alt="" /></a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ml-1"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#"">Home</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Product</a>
+                            <a style="color: white" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profile</a>
                             <div class="dropdown-menu">
                               <a class="dropdown-item" href="#about">About</a>
-                              <a class="dropdown-item" href="#services">Service</a>
+                              <a class="dropdown-item" href="#services">Our Product</a>
                               <a class="dropdown-item" href="#portfolio">Portfolio</a>
                               <a class="dropdown-item" href="#team">Team</a>
                               <a class="dropdown-item" href="#contact">Contact</a>
+                              <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Home</a>
                             </div>
                           </li> 
-                          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Portfolio</a></li>
-                          
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Our Product</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.instagram.com/timesjember/" target="blank"><i class="fab fa-instagram"></i></a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.youtube.com/channel/UCgj4fXpMKECuDIOTcx-CvLg" target="blank"><i class="fab fa-youtube"></i></a></li>
                     </ul>
@@ -395,15 +396,15 @@
         <footer class="footer py-4">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-left">Copyright by Times Biro Jember</div>
+                    <div class="col-lg-4 text-lg-left">Copyright by <a href="" style="color: red">Times Biro Jember</a> </div>
                     <div class="col-lg-4 my-3 my-lg-0">
                         <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/timesjember/" target="blank"><i class="fab fa-instagram"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="https://www.youtube.com/channel/UCgj4fXpMKECuDIOTcx-CvLg" target="blank"><i class="fab fa-youtube"></i></a>
                         {{-- <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a> --}}
                     </div>
                     <div class="col-lg-4 text-lg-right">
-                        <a class="mr-3" href="#!">Privacy Policy</a>
-                        <a href="#!">Terms of Use</a>
+                        <a class="mr-3" href="#!" style="color: orange">Privacy Policy</a>
+                        <a href="#!" style="color: orange" >Terms of Use</a>
                     </div>
                 </div>
             </div>

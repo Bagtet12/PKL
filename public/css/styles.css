@@ -159,12 +159,12 @@ sup {
 }
 
 a {
-  color: #fed136;
+  color: #dc3545;
   text-decoration: none;
   background-color: transparent;
 }
 a:hover {
-  color: #e6b301;
+  color: #dc3545;
   text-decoration: underline;
 }
 
@@ -2439,12 +2439,12 @@ fieldset:disabled a.btn {
 .btn-primary {
   color: #fff;
   background-color: #fed136;
-  border-color: #fed136;
+  /* border-color: #fed136; */
 }
 .btn-primary:hover {
   color: #fff;
   background-color: #fec810;
-  border-color: #fec503;
+  /* border-color: #fec503; */
 }
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
@@ -2954,6 +2954,7 @@ input[type=button].btn-block {
 .dropdown,
 .dropleft {
   position: relative;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .dropdown-toggle {
@@ -3155,7 +3156,7 @@ input[type=button].btn-block {
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
   text-decoration: none;
-  background-color: #fed136;
+  background-color: #dc3545;
 }
 .dropdown-item.disabled, .dropdown-item:disabled {
   color: #6c757d;
@@ -3913,6 +3914,12 @@ input[type=button].btn-block {
   background-color: #fff;
   border-color: #dee2e6 #dee2e6 #fff;
 }
+.nav-item:hover{
+  border-color: #dc3545;
+  outline: none;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
 .nav-tabs .dropdown-menu {
   margin-top: -1px;
   border-top-left-radius: 0;
@@ -3925,7 +3932,7 @@ input[type=button].btn-block {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #fed136;
+  background-color: #fe3636;
 }
 
 .nav-fill > .nav-link,
@@ -10076,7 +10083,7 @@ img::-moz-selection {
   letter-spacing: 0.0625em;
 }
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
-  color: #fed136;
+  color: hsl(0, 60%, 54%);
 }
 
 @media (min-width: 992px) {
@@ -10255,7 +10262,7 @@ header.masthead .masthead-heading {
   width: 2px;
   margin-left: -1.5px;
   content: "";
-  background-color: #e9ecef;
+  background-color: #dc3545;
 }
 .timeline > li {
   position: relative;
@@ -10299,7 +10306,7 @@ header.masthead .masthead-heading {
   color: white;
   border: 7px solid #e9ecef;
   border-radius: 100%;
-  background-color: #fed136;
+  background-color: hsl(0, 64%, 50%);
 }
 .timeline > li .timeline-image h4 {
   font-size: 10px;
