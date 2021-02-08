@@ -396,15 +396,16 @@
         <footer class="footer py-4">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-left">Copyright by <a href="" style="color: red">Times Biro Jember</a> </div>
+                    <div class="col-lg-4 text-lg-left">Copyright by Times Biro Jember</div>
                     <div class="col-lg-4 my-3 my-lg-0">
                         <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/timesjember/" target="blank"><i class="fab fa-instagram"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="https://www.youtube.com/channel/UCgj4fXpMKECuDIOTcx-CvLg" target="blank"><i class="fab fa-youtube"></i></a>
                         {{-- <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a> --}}
                     </div>
                     <div class="col-lg-4 text-lg-right">
-                        <a class="mr-3" href="#!" style="color: orange">Privacy Policy</a>
-                        <a href="#!" style="color: orange" >Terms of Use</a>
+                        <a class="mr-3" href="#!">Privacy Policy</a>
+                        <a class="mr-3" href="#!">Terms of Use</a>
+                        <a href="{{url('homeadmin')}}">Masuk</a>
                     </div>
                 </div>
             </div>

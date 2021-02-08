@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('page/home');
 });
+Route::get('/homeadmin', 'HomeController@indexadmin')->name('indexadmin');
+Route::get('/aboutedit', 'HomeController@aboutedit')->name('aboutedit');
+Route::get('/productedit', 'HomeController@productedit')->name('productedit');
+Route::get('/teamedit', 'HomeController@teamedit')->name('teamedit');
+Route::get('/producttambah', 'HomeController@producttambah')->name('producttambah');
+Route::get('/teamtambah', 'HomeController@teamtambah')->name('teamtambah');

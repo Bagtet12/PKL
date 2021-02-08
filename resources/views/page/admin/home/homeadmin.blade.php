@@ -3,8 +3,8 @@
     <header class="masthead">
             <div class="container">
                 <div class="masthead-subheading" >Selamat datang di</div>
-                <div class="masthead-heading " >TIMES Jember Official Website</div>
-                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger bg-danger "href="#services">Tell Me More</a>
+                <div class="masthead-heading " >Halaman ADMIN Website</div>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger bg-danger "href="{{url('/')}}">Back to Guest</a>
             </div>
         </header>
          <!-- About-->
@@ -85,15 +85,15 @@
                         </div>
                     </li>
                     <li class="timeline-inverted">
+                        <a href="{{url('/aboutedit')}}">
                         <div class="timeline-image">
                             <h4>
-                                Be Part
-                                <br />
-                                Of Our
-                                <br />
-                                Story!
+                                <i class="fa fa-edit"></i>
+                                <br>
+                                EDIT 
                             </h4>
                         </div>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -112,6 +112,9 @@
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
                             <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
                         </span>
+                        <br>
+                            <a class="btn btn-dark btn-social mx-2" href="{{url('/productedit')}}"><i class="fa fa-edit"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fa fa-trash"></i></a>   
                         <h4 class="my-3" style="color: black">Publikasi</h4></a>
                         <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                     </div>
@@ -121,6 +124,9 @@
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
                             <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
                         </span>
+                        <br>
+                            <a class="btn btn-dark btn-social mx-2" href="{{url('/productedit')}}"><i class="fa fa-edit"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fa fa-trash"></i></a>
                         <h4 class="my-3" style="color: black">Web Development</h4></a>
                         <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                     </div>
@@ -130,6 +136,9 @@
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
                             <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
                         </span>
+                        <br>
+                            <a class="btn btn-dark btn-social mx-2" href="{{url('/productedit')}}"><i class="fa fa-edit"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fa fa-trash"></i></a>
                         <h4 class="my-3" style="color: black">PR Consultant</h4></a>
                         <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                     </div>
@@ -139,6 +148,9 @@
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
                             <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
                         </span>
+                        <br>
+                            <a class="btn btn-dark btn-social mx-2" href="{{url('/productedit')}}"><i class="fa fa-edit"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fa fa-trash"></i></a>
                         <h4 class="my-3" style="color: black">Influencers
                             Activation
                             Management</h4></a>
@@ -150,6 +162,9 @@
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
                             <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
                         </span>
+                        <br>
+                            <a class="btn btn-dark btn-social mx-2" href="{{url('/productedit')}}"><i class="fa fa-edit"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fa fa-trash"></i></a>
                         <h4 class="my-3" style="color: black">CREATIVE
                             VIDEO AND
                             BROADCASTING </h4></a>
@@ -161,6 +176,9 @@
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
                             <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
                         </span>
+                        <br>
+                            <a class="btn btn-dark btn-social mx-2" href="{{url('/productedit')}}"><i class="fa fa-edit"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fa fa-trash"></i></a>
                         <h4 class="my-3" style="color: black">CONTENT
                             MANAGEMENT
                             SYSTEM </h4></a>
@@ -172,9 +190,20 @@
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
                             <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
                         </span>
+                        <br>
+                            <a class="btn btn-dark btn-social mx-2" href="{{url('/productedit')}}"><i class="fa fa-edit"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fa fa-trash"></i></a>
                         <h4 class="my-3" style="color: black">EVENT
                             MANAGEMENT </h4></a>
                         <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="{{url('/producttambah')}}">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
+                        </span><br> <br>
+                        <h4 class="my-3" style="color: black">Tambah PRODUCT </h4></a>
                     </div>
                 </div>
             </div>
@@ -193,9 +222,8 @@
                             <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="" />
                             <h4>Kay Garland</h4>
                             <p class="text-muted">Lead Designer</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="{{url('/teamedit')}}"><i class="fa fa-edit"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fa fa-trash"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -203,9 +231,8 @@
                             <img class="mx-auto rounded-circle" src="assets/img/team/2.jpg" alt="" />
                             <h4>Larry Parker</h4>
                             <p class="text-muted">Lead Marketer</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="{{url('/teamedit')}}"><i class="fa fa-edit"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fa fa-trash"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -213,9 +240,8 @@
                             <img class="mx-auto rounded-circle" src="assets/img/team/3.jpg" alt="" />
                             <h4>Diana Petersen</h4>
                             <p class="text-muted">Lead Developer</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="{{url('/teamedit')}}"><i class="fa fa-edit"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fa fa-trash"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-7">
@@ -223,9 +249,8 @@
                             <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="" />
                             <h4>Kay Garland</h4>
                             <p class="text-muted">Lead Designer</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="{{url('/teamedit')}}"><i class="fa fa-edit"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fa fa-trash"></i></a>
                         </div> 
                     </div>
                     <div class="col-lg-0">
@@ -233,54 +258,26 @@
                                 <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="" />
                                 <h4>Kay Garland</h4>
                                 <p class="text-muted">Lead Designer</p>
-                                <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-dark btn-social mx-2" href="{{url('/teamedit')}}"><i class="fa fa-edit"></i></a>
+                                <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fa fa-trash"></i></a>
                             </div> 
                         </div>
                     </div>
+                    <div class="col-lg-0">
+                        <div class="team-member">
+                            <a href="{{url('/teamtambah')}}">
+                                <span class="fa-stack fa-4x">
+                                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                    <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
+                                </span>
+                                <h4 class="my-3" style="color: black"> Tambah Team </h4></a>
+                        </div> 
+                    </div>
+                </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Quotes</p></div>
                 </div>
             </div>
-        </section> --}}
-        <!-- Contact-->
-        
-        <section class="page-section" id="contact">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-                <form id="contactForm" name="sentMessage" novalidate="novalidate">
-                    <div class="row align-items-stretch mb-5">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name." />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" id="email" type="email" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address." />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="form-group mb-md-0">
-                                <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" required="required" data-validation-required-message="Please enter your phone number." />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group form-group-textarea mb-md-0">
-                                <textarea class="form-control" id="message" placeholder="Your Message *" required="required" data-validation-required-message="Please enter a message."></textarea>
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <div id="success"></div>
-                        <button class="btn btn-primary btn-xl text-uppercase bg-danger" id="sendMessageButton" type="submit">Send Message</button>
-                    </div>
-                </form>
-            </div>
-        </section>
+        </section> 
 @endsection

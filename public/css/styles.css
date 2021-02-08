@@ -159,12 +159,12 @@ sup {
 }
 
 a {
-  color: #dc3545;
+  color: #fed136;
   text-decoration: none;
   background-color: transparent;
 }
 a:hover {
-  color: #dc3545;
+  color: #e6b301;
   text-decoration: underline;
 }
 
@@ -3156,7 +3156,7 @@ input[type=button].btn-block {
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
   text-decoration: none;
-  background-color: #dc3545;
+  background-color: #fed136;
 }
 .dropdown-item.disabled, .dropdown-item:disabled {
   color: #6c757d;
@@ -10262,7 +10262,7 @@ header.masthead .masthead-heading {
   width: 2px;
   margin-left: -1.5px;
   content: "";
-  background-color: #dc3545;
+  background-color: #e9ecef;
 }
 .timeline > li {
   position: relative;
