@@ -40,7 +40,7 @@
                             </div>
                           </li> 
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Our Product</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url("portfolio")}}">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.instagram.com/timesjember/" target="blank"><i class="fab fa-instagram"></i></a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.youtube.com/channel/UCgj4fXpMKECuDIOTcx-CvLg" target="blank"><i class="fab fa-youtube"></i></a></li>
                     </ul>
