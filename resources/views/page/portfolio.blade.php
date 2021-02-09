@@ -1,25 +1,10 @@
+
 @extends('template.template')
 @section('portfolio')
-    {{-- <header class="mastport">
-      <h4>PORTOFOLIO</h4>
-      <h1>TIMES INDONESIA - BIRO JEMBER</h1>
-        </header> --}}
 
-        <!-- Container for the image gallery -->
-
-
-        <!-- Team-->
-
-        <div class="jumbotron">
-            <h1>TIMES Jember</h1>
-            <p>Provide Bussiness need throughout this era of technology. We're working on various things like Web Development, Influencer Management, PR Consultant, and many more</p>
-        </div>
-
-        <section class="page-section bg-light" id="team">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">EVENT GALLERY</h2>
-                    <h3 class="section-subheading text-muted">___________________________________</h3>
+                    <h2 class="section-headingport text-uppercase">EVENT GALLERY</h2>
                 </div>
 
                 <!-- Slideshow container -->
@@ -87,19 +72,12 @@
                 <div class="container">
                   <p class="textport">
                     Menyongsong kebangkitan era informasi online, kami TIMES Indonesia Network (TIN) sebagai media online berjejaring terbesar se-Indonesia, hadir menjawab kebutuhan zaman. Kami hadir dengan semangat kuat dan mengusung misi BUILDING - INSPIRING - POSITIVE THINKING.
-
-
                   </p>
-
                 </div>
-
-
 
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Our Affiliation</h2>
-                    <h3 class="section-subheading text-muted">___________________________________</h3>
+                    <h2 class="section-headingporto text-uppercase">EVENT KAMI</h2>
                 </div>
-
 
                 <div class="row">
                     <div class="col-lg-4">
@@ -158,11 +136,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Quotes</p></div>
-                </div>
             </div>
-        </section> --}}
 
 
-@endsection
+
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Contact form JS-->
+        <script src="assets/mail/jqBootstrapValidation.js"></script>
+        <script src="assets/mail/contact_me.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
