@@ -30,6 +30,10 @@ class HomeController extends Controller
     {   
         return view('page/admin/home/teamtambah');
     }
+    public function portfolio()
+    {
+        return view('page/portfolio');
+    }
     
 }
 
