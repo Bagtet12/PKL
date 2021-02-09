@@ -20,3 +20,4 @@ Route::get('/productedit', 'HomeController@productedit')->name('productedit');
 Route::get('/teamedit', 'HomeController@teamedit')->name('teamedit');
 Route::get('/producttambah', 'HomeController@producttambah')->name('producttambah');
 Route::get('/teamtambah', 'HomeController@teamtambah')->name('teamtambah');
+Route::get('/portfolio', 'HomeController@portfolio')->name('portfolio');

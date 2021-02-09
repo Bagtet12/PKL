@@ -275,9 +275,9 @@
                     </div>
                 </div>
                 </div>
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Quotes</p></div>
-                </div>
+                </div> --}}
             </div>
         </section> 
 @endsection

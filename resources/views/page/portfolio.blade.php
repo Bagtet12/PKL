@@ -1,9 +1,9 @@
 @extends('template.template')
 @section('portfolio')
-    <header class="mastport">
+    {{-- <header class="mastport">
       <h4>PORTOFOLIO</h4>
       <h1>TIMES INDONESIA - BIRO JEMBER</h1>
-        </header>
+        </header> --}}
 
         <!-- Container for the image gallery -->
 

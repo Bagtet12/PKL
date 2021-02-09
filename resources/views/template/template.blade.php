@@ -36,11 +36,11 @@
                               <a class="dropdown-item" href="#team">Team</a>
                               <a class="dropdown-item" href="#contact">Contact</a>
                               <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Home</a>
+                                <a class="dropdown-item" href="{{url('/')}}">Home</a>
                             </div>
                           </li> 
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Our Product</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url('portfolio')}}">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.instagram.com/timesjember/" target="blank"><i class="fab fa-instagram"></i></a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.youtube.com/channel/UCgj4fXpMKECuDIOTcx-CvLg" target="blank"><i class="fab fa-youtube"></i></a></li>
                     </ul>
