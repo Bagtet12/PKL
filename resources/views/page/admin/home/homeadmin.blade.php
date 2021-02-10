@@ -20,23 +20,20 @@
                         <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/header.jpg" alt="" /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>TIMES Jember</h4>
+                                <h4>{{$abouts->judul}}</h4>
                                 <h4 class="subheading"></h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Menyongsong kebangkitan era informasi online,
-                                kami TIMES IndonesiaNetwork (TIN) sebagai media online
-                                berjejaring terbesar se-Indonesia, hadir menjawabkebutuhan zaman.
-                                Kami hadir dengan semangat kuat dan mengusung misi
-                                BUILDING - INSPIRING - POSITIVE THINKING.
+                            <div class="timeline-body">
+                            <p class="text-muted">{{$abouts->deskripsi}}
                                 
                             </p>
-                            <p class="text-muted">
+                            {{-- <p class="text-muted">
                                 <br>
                                 TIMES Indonesia Network (TIN) hadir tidak hanya dengan konsep informasi global namun
                                 juga dengan informasi regional dan lokal. Oleh karenanya, dengan tetap
                                 menyajikan informasi global melalui TIN, konsep berita regional dan lokal kamihadirkan
                                 melalui portal independen regional TIMES lain di seluruh provinsi
-                                menuju era Ketahanan Informasi Nasional</p>
+                                menuju era Ketahanan Informasi Nasional</p> --}}
                             </div>
                         </div>
                     </li>
@@ -50,22 +47,11 @@
                             <div class="timeline-body"><p class="text-muted"><strong style="color: black"> VISI
                             </strong>                                 
                             <br>
-                                Menjadi Media Online Mainstream Berjejaring No. 1 di Indonesia
+                                {{$abouts->visi}}
                                 <br>
                                 <strong style="color: black">MISI</strong>
-                                <br>
-                                1. Menggerakkan belanegara bidang informasi lewat media online.
-                                <br>
-                                2. Menciptakan ketahanan informasi di Indonesia.
-                                <br>
-                                3. Membangun dan menegakkan jurnalisme positive
-                                (building, inspiring, and positive thinking).
-                                <br>
-                                4. Membangun Media Online Mainstream pertama di seluruh daerah se-nusantara.
-                                <br>
-                                5. Menciptakan enterpreneurship media yang tangguh dan berwibawa.
-                                <br>
-                                6. Membangun jejaring informasi yang sehat dan positive.</p></div>
+                                <br>    
+                                {{$abouts->misi}}</p></div>
                         </div>
                     </li>
                     <li>
@@ -76,12 +62,7 @@
                                 <h4 class="subheading"></h4>
                             </div>
                             <div class="timeline-body"><p class="text-muted" style="font-style: italic">“Perubahan teknologi informasi dan
-                                komunikasi itu terjadi detik per detik.
-                                Dan, perubahan cepat tersebut menciptakan
-                                perubahan pola pikir masyarakat. Di sinilah
-                                Times Indonesia Network mengubah
-                                Indonesia melalui penguatan ketahanan
-                                informasi bagi Indonesia.</p></div>
+                            {{$abouts->quotes}}</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">

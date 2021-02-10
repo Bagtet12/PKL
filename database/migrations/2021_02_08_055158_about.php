@@ -18,8 +18,8 @@ class About extends Migration
             $table->string('judul');
             $table->text('deskripsi');
             $table->string('visi');
-            $table->string('misi');
-            $table->string('quotes');
+            $table->text('misi');
+            $table->text('quotes');
             $table->timestamps();
         });
     }

@@ -11,17 +11,20 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('page/home');
-// });
-Route::get('/', 'HomeUserController@home')->name('home');
-Route::post('/producttambah', 'HomeController@create')->name('postproduct');
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', function () {
+    return view('page/home');
+});
+
+// Auth::routes();
 Route::get('/homeadmin', 'HomeController@indexadmin')->name('indexadmin');
 Route::get('/aboutedit', 'HomeController@aboutedit')->name('aboutedit');
+Route::post('aboutupdate', 'HomeController@aboutupdate')->name('aboutupdate');
 Route::get('/productedit', 'HomeController@productedit')->name('productedit');
 Route::get('/teamedit', 'HomeController@teamedit')->name('teamedit');
 Route::get('/producttambah', 'HomeController@producttambah')->name('producttambah');
 Route::get('/teamtambah', 'HomeController@teamtambah')->name('teamtambah');
-Route::post('/teampost', 'HomeController@create_team')->name('postteam');
 Route::get('/portfolio', 'HomeController@portfolio')->name('portfolio');
-Route::get('/ourproduct', 'ourproduct_controller@index')->name('ourproduct');
+Route::get('/ourproduct', 'HomeController@ourproduct')->name('ourproduct');
