@@ -20,7 +20,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="assets/img/logo.png" alt="" /></a>
+                <a class="navbar-brand js-scroll-trigger" href="{{url('/')}}"><img src="assets/img/logo.png" alt="" /></a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ml-1"></i>
@@ -32,14 +32,14 @@
                             <div class="dropdown-menu">
                               <a class="dropdown-item" href="#about">About</a>
                               <a class="dropdown-item" href="#services">Our Product</a>
-                              <a class="dropdown-item" href="#portfolio">Portfolio</a>
+                              <a class="dropdown-item" href="{{route('portfolio')}}">Portfolio</a>
                               <a class="dropdown-item" href="#team">Team</a>
                               <a class="dropdown-item" href="#contact">Contact</a>
                               <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{url('/')}}">Home</a>
                             </div>
                           </li> 
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Our Product</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('ourproduct')}}">Our Product</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url('portfolio')}}">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.instagram.com/timesjember/" target="blank"><i class="fab fa-instagram"></i></a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.youtube.com/channel/UCgj4fXpMKECuDIOTcx-CvLg" target="blank"><i class="fab fa-youtube"></i></a></li>

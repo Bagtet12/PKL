@@ -34,6 +34,9 @@ class HomeController extends Controller
 
         return view('page/portfolio');
     }
+    public function ourproduct(){
+        return view ('page/ourproduct');
+    }
     
 }
 
