@@ -406,7 +406,6 @@
                     <div class="col-lg-4 text-lg-right">
                         <a class="mr-3" href="#!">Privacy Policy</a>
                         <a class="mr-3" href="#!">Terms of Use</a>
-                        <a href="{{url('homeadmin')}}">Masuk</a>
                     </div>
                 </div>
             </div>

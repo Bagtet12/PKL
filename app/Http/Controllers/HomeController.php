@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    
     public function indexadmin()
     {   
         return view('page/admin/home/homeadmin');
@@ -26,6 +27,10 @@ class HomeController extends Controller
     {   
         return view('page/admin/home/producttambah');
     }
+    // public function create(Request $request){
+    //     \App\Product::create($request->all());
+
+    // }
     public function teamtambah()
     {   
         return view('page/admin/home/teamtambah');
@@ -34,9 +39,7 @@ class HomeController extends Controller
 
         return view('page/portfolio');
     }
-    public function ourproduct(){
-        return view ('page/ourproduct');
-    }
+    
     
 }
 
