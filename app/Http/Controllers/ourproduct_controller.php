@@ -13,7 +13,9 @@ class ourproduct_controller extends Controller
      */
     public function index()
     {
-        //
+        $our_product = \App\Product::all();
+        
+        return view('page/ourproduct',['our_product' => $our_product]);
     }
 
     /**
