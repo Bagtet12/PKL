@@ -22,5 +22,6 @@ Route::get('/productedit', 'HomeController@productedit')->name('productedit');
 Route::get('/teamedit', 'HomeController@teamedit')->name('teamedit');
 Route::get('/producttambah', 'HomeController@producttambah')->name('producttambah');
 Route::get('/teamtambah', 'HomeController@teamtambah')->name('teamtambah');
+Route::post('/teampost', 'HomeController@create_team')->name('postteam');
 Route::get('/portfolio', 'HomeController@portfolio')->name('portfolio');
 Route::get('/ourproduct', 'ourproduct_controller@index')->name('ourproduct');

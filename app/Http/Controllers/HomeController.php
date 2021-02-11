@@ -27,13 +27,17 @@ class HomeController extends Controller
     {   
         return view('page/admin/home/producttambah');
     }
-    // public function create(Request $request){
-    //     \App\Product::create($request->all());
-
-    // }
+    public function create(Request $request){
+        \App\Product::create($request->all());
+        return redirect('/homeadmin')->with('data berhasil ditambah');
+    }
     public function teamtambah()
     {   
         return view('page/admin/home/teamtambah');
+    }
+    public function create_team(Request $request){
+        \App\Team::create($request->all());
+        return redirect('/homeadmin')->with('data berhasil ditambah');
     }
     public function portfolio(){
 

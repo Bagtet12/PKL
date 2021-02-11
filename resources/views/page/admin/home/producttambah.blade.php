@@ -32,7 +32,7 @@
                                             <label for="nama" class="col-md-2 col-form-label text-md-right">Nama Product</label>
 
                                             <div class="col-md-6">
-                                                <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="" required autocomplete="" autofocus>
+                                                <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama_product" value="" required autocomplete="" autofocus>
 
                                                 @error('nama')
                                                     <span class="invalid-feedback" role="alert">

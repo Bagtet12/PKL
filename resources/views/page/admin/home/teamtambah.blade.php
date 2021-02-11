@@ -11,8 +11,8 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4><i class="fa fa-edit"></i> Tambah Team</h4><hr>
-                                    <form method="POST" action="">
-                                        @csrf
+                                    <form method="POST" action="{{route('postteam')}}">
+                                        {{csrf_field()}}
 
                                         <div class="form-group row">
                                             <label for="gambar" class="col-md-2 col-form-label text-md-right">Gambar </label>
