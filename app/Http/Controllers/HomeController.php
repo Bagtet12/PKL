@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\about;
+use App\Product;
+use App\Team;
 // use about;
 use Illuminate\Pagination;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+// use Team;
 
 class HomeController extends Controller
 {
@@ -17,8 +20,12 @@ class HomeController extends Controller
     public function indexadmin()
     {   
         $abouts=about::where('id','1')->first();
+        $our_product = \App\Product::all();
+        $team = \App\Team::all();
 
-        return view('page/admin/home/homeadmin', compact('abouts'));
+        return view('page/admin/home/homeadmin', compact('abouts'),
+        // compact('our_product'),
+        compact('team'));
     }
     public function aboutedit()
     {   
@@ -41,21 +48,41 @@ class HomeController extends Controller
         
     }
 
-    public function productedit()
+    public function productedit($id)
     {   
-        return view('page/admin/home/productedit');
+        $products=Product::where('id',$id)->first();
+        return view('page/admin/home/productedit',compact('products'));
     }
-    public function teamedit()
+    public function saveedit(Request $request,$id)
     {   
-        return view('page/admin/home/teamedit');
+        $products=Product::where('id',$id)->first();
+        $products->gambar =$request->gambar;
+        $products->nama_product =$request->nama;
+        $products->deskripsi =$request->deskripsi;
+        $products->update();
+        return redirect('/homeadmin#services')->with('data berhasil ditambah');
+    }
+    public function create(Request $request){
+        \App\Product::create($request->all());
+           return redirect('/homeadmin#services')->with('data berhasil ditambah');
+    }
+    public function teamedit($id)
+    {   
+        $team=Team::where('id',$id)->first();
+        return view('page/admin/home/teamedit',compact('team'));
+    }
+    public function teamsave(Request $request,$id)
+    {   
+        $team=Team::where('id',$id)->first();
+        $team->gambar =$request->gambar;
+        $team->nama =$request->nama;
+        $team->role =$request->role;
+        $team->update();
+        return redirect('/homeadmin#team')->with('data berhasil ditambah');
     }
     public function producttambah()
     {   
         return view('page/admin/home/producttambah');
-    }
-    public function create(Request $request){
-        \App\Product::create($request->all());
-        return redirect('/homeadmin')->with('data berhasil ditambah');
     }
     public function teamtambah()
     {   
@@ -63,8 +90,8 @@ class HomeController extends Controller
     }
     public function create_team(Request $request){
         \App\Team::create($request->all());
-        return redirect('/homeadmin')->with('data berhasil ditambah');
-    }   
+        return redirect('/homeadmin#team')->with('data berhasil ditambah');
+    }
     public function portfolio(){
 
         return view('page/portfolio');
