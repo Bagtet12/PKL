@@ -24,16 +24,7 @@
                                 <h4 class="subheading"></h4>
                             </div>
                             <div class="timeline-body">
-                            <p class="text-muted">{{$abouts->deskripsi}}
-                                
-                            </p>
-                            {{-- <p class="text-muted">
-                                <br>
-                                TIMES Indonesia Network (TIN) hadir tidak hanya dengan konsep informasi global namun
-                                juga dengan informasi regional dan lokal. Oleh karenanya, dengan tetap
-                                menyajikan informasi global melalui TIN, konsep berita regional dan lokal kamihadirkan
-                                melalui portal independen regional TIMES lain di seluruh provinsi
-                                menuju era Ketahanan Informasi Nasional</p> --}}
+                                <p class="text-muted">{{$abouts->deskripsi}}</p>
                             </div>
                         </div>
                     </li>
@@ -80,6 +71,7 @@
             </div>
         </section>
         <!-- Our Product -->
+        
         <section class="page-section" id="services">
             <div class="container">
                 <div class="text-center">
@@ -87,99 +79,19 @@
                     <h3 class="section-subheading text-muted"></h3>
                 </div>
                 <div class="row text-center">
+                    {{-- @foreach ($our_product as $product)
                     <div class="col-md-4">
                         <a href="">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                        </span>
+                            <div class="timeline-image"><img class="rounded-circle img-fluid2" src="{{$product->gambar}}" alt="" /></div>
+                        <h4 class="my-3" style="color: black">{{$product->nama_product}}</h4></a>
+                        <p class="text-muted">{{$product->deskripsi}}</p>
                         <br>
-                            <a class="btn btn-dark btn-social mx-2" href="{{url('/productedit')}}"><i class="fa fa-edit"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="{{url('/productedit')}}/{{$product->id}}"><i class="fa fa-edit"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fa fa-trash"></i></a>   
-                        <h4 class="my-3" style="color: black">Publikasi</h4></a>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                     </div>
-                    <div class="col-md-4">
-                        <a href="">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <br>
-                            <a class="btn btn-dark btn-social mx-2" href="{{url('/productedit')}}"><i class="fa fa-edit"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fa fa-trash"></i></a>
-                        <h4 class="my-3" style="color: black">Web Development</h4></a>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <br>
-                            <a class="btn btn-dark btn-social mx-2" href="{{url('/productedit')}}"><i class="fa fa-edit"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fa fa-trash"></i></a>
-                        <h4 class="my-3" style="color: black">PR Consultant</h4></a>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <br>
-                            <a class="btn btn-dark btn-social mx-2" href="{{url('/productedit')}}"><i class="fa fa-edit"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fa fa-trash"></i></a>
-                        <h4 class="my-3" style="color: black">Influencers
-                            Activation
-                            Management</h4></a>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <br>
-                            <a class="btn btn-dark btn-social mx-2" href="{{url('/productedit')}}"><i class="fa fa-edit"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fa fa-trash"></i></a>
-                        <h4 class="my-3" style="color: black">CREATIVE
-                            VIDEO AND
-                            BROADCASTING </h4></a>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <br>
-                            <a class="btn btn-dark btn-social mx-2" href="{{url('/productedit')}}"><i class="fa fa-edit"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fa fa-trash"></i></a>
-                        <h4 class="my-3" style="color: black">CONTENT
-                            MANAGEMENT
-                            SYSTEM </h4></a>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <br>
-                            <a class="btn btn-dark btn-social mx-2" href="{{url('/productedit')}}"><i class="fa fa-edit"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fa fa-trash"></i></a>
-                        <h4 class="my-3" style="color: black">EVENT
-                            MANAGEMENT </h4></a>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="{{url('/producttambah')}}">
+                    @endforeach --}}
+                    <div class="col-md-4 mt-4">
+                        <a href="{{route('postproduct')}}">
                         <span class="fa-stack fa-4x">
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
                             <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
@@ -198,53 +110,19 @@
                     <h3 class="section-subheading text-muted">TIMES Indonesia Biro Jember</h3>
                 </div>
                 <div class="row">
+                    @foreach($team as $team)
                     <div class="col-lg-4">
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="" />
-                            <h4>Kay Garland</h4>
-                            <p class="text-muted">Lead Designer</p>
-                            <a class="btn btn-dark btn-social mx-2" href="{{url('/teamedit')}}"><i class="fa fa-edit"></i></a>
+                            <h4>{{$team->nama}}</h4>
+                            <p class="text-muted">{{$team->role}}</p>
+                            <a class="btn btn-dark btn-social mx-2" href="{{url('/teamedit')}}/{{$team->id}}"><i class="fa fa-edit"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fa fa-trash"></i></a>
                         </div>
                     </div>
+                    @endforeach
+                    
                     <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/2.jpg" alt="" />
-                            <h4>Larry Parker</h4>
-                            <p class="text-muted">Lead Marketer</p>
-                            <a class="btn btn-dark btn-social mx-2" href="{{url('/teamedit')}}"><i class="fa fa-edit"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fa fa-trash"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/3.jpg" alt="" />
-                            <h4>Diana Petersen</h4>
-                            <p class="text-muted">Lead Developer</p>
-                            <a class="btn btn-dark btn-social mx-2" href="{{url('/teamedit')}}"><i class="fa fa-edit"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fa fa-trash"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-7">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="" />
-                            <h4>Kay Garland</h4>
-                            <p class="text-muted">Lead Designer</p>
-                            <a class="btn btn-dark btn-social mx-2" href="{{url('/teamedit')}}"><i class="fa fa-edit"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fa fa-trash"></i></a>
-                        </div> 
-                    </div>
-                    <div class="col-lg-0">
-                            <div class="team-member">
-                                <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="" />
-                                <h4>Kay Garland</h4>
-                                <p class="text-muted">Lead Designer</p>
-                                <a class="btn btn-dark btn-social mx-2" href="{{url('/teamedit')}}"><i class="fa fa-edit"></i></a>
-                                <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fa fa-trash"></i></a>
-                            </div> 
-                        </div>
-                    </div>
-                    <div class="col-lg-0">
                         <div class="team-member">
                             <a href="{{url('/teamtambah')}}">
                                 <span class="fa-stack fa-4x">
@@ -255,10 +133,6 @@
                         </div> 
                     </div>
                 </div>
-                </div>
-                {{-- <div class="row">
-                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Quotes</p></div>
-                </div> --}}
             </div>
         </section> 
 @endsection

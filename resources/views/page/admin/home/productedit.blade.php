@@ -11,14 +11,14 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4><i class="fa fa-edit"></i> Edit Product</h4><hr>
-                                    <form method="POST" action="">
-                                        @csrf
+                                    <form method="POST" action="{{url('saveedit')}}/{{$products->id}}">
+                                        {{csrf_field()}}
 
                                         <div class="form-group row">
                                             <label for="gambar" class="col-md-2 col-form-label text-md-right">Gambar Product</label>
 
                                             <div class="col-md-6">
-                                                <input id="gambar" type="file" class="form-control @error('gambar') is-invalid @enderror" name="gambar" value="" required autocomplete="" autofocus>
+                                                <input id="gambar" type="file" class="form-control @error('gambar') is-invalid @enderror" name="gambar" value="{{$products->gambar}}" required autocomplete="" autofocus>
 
                                                 @error('gambar')
                                                     <span class="invalid-feedback" role="alert">
@@ -32,7 +32,7 @@
                                             <label for="nama" class="col-md-2 col-form-label text-md-right">Nama Product</label>
 
                                             <div class="col-md-6">
-                                                <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="" required autocomplete="" autofocus>
+                                                <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{$products->nama_product}}" required autocomplete="" autofocus>
 
                                                 @error('nama')
                                                     <span class="invalid-feedback" role="alert">
@@ -45,7 +45,7 @@
                                             <label for="deskripsi" class="col-md-2 col-form-label text-md-right">Deskripsi Product</label>
 
                                             <div class="col-md-6">
-                                                <textarea  class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi" value="" required ="" autofocus id="" cols="30" rows="7"></textarea>
+                                                <textarea  class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi" value="" required ="" autofocus id="" cols="30" rows="7">{{$products->deskripsi}}</textarea>
                                                 @error('deskripsi')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>

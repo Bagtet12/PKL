@@ -11,14 +11,14 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4><i class="fa fa-edit"></i> Edit Team</h4><hr>
-                                    <form method="POST" action="">
-                                        @csrf
+                                    <form method="POST" action="{{url('teamsave')}}/{{$team->id}}">
+                                        {{csrf_field()}}
 
                                         <div class="form-group row">
                                             <label for="gambar" class="col-md-2 col-form-label text-md-right">Gambar </label>
 
                                             <div class="col-md-6">
-                                                <input id="gambar" type="file" class="form-control @error('gambar') is-invalid @enderror" name="gambar" value="" required autocomplete="" autofocus>
+                                                <input id="gambar" type="file" class="form-control @error('gambar') is-invalid @enderror" name="gambar" value="{{$team->gambar}}" required autocomplete="" autofocus>
 
                                                 @error('gambar')
                                                     <span class="invalid-feedback" role="alert">
@@ -32,7 +32,7 @@
                                             <label for="nama" class="col-md-2 col-form-label text-md-right">Nama Team</label>
 
                                             <div class="col-md-6">
-                                                <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="" required autocomplete="" autofocus>
+                                                <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{$team->nama}}" required autocomplete="" autofocus>
 
                                                 @error('nama')
                                                     <span class="invalid-feedback" role="alert">
@@ -45,7 +45,7 @@
                                             <label for="role" class="col-md-2 col-form-label text-md-right">Role / Jabatan</label>
 
                                             <div class="col-md-6">
-                                                <input id="role" type="text" class="form-control @error('role') is-invalid @enderror" name="role" value="" required autocomplete="" autofocus>
+                                                <input id="role" type="text" class="form-control @error('role') is-invalid @enderror" name="role" value="{{$team->role}}" required autocomplete="" autofocus>
 
                                                 @error('role')
                                                     <span class="invalid-feedback" role="alert">
