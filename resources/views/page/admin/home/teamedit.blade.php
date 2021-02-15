@@ -11,14 +11,14 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4><i class="fa fa-edit"></i> Edit Team</h4><hr>
-                                    <form method="POST" action="{{url('teamsave')}}/{{$team->id}}">
+                                    <form method="POST" action="{{url('teamsave')}}/{{$team->id}}" enctype="multipart/form-data">
                                         {{csrf_field()}}
 
                                         <div class="form-group row">
                                             <label for="gambar" class="col-md-2 col-form-label text-md-right">Gambar </label>
 
                                             <div class="col-md-6">
-                                                <input id="gambar" type="file" class="form-control @error('gambar') is-invalid @enderror" name="gambar" value="{{$team->gambar}}" required autocomplete="" autofocus>
+                                                <input id="gambar" type="file" class="form-control @error('gambar') is-invalid @enderror" name="gambar" value="{{ url('gambar/'.$team->gambar) }}" required autocomplete="" autofocus>
 
                                                 @error('gambar')
                                                     <span class="invalid-feedback" role="alert">

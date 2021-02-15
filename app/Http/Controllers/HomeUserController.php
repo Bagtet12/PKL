@@ -12,10 +12,12 @@ class HomeUserController extends Controller
         $abouts = \App\about::first();
         return view ('page/home',compact('our_product','team','abouts'));
     }
-    public function product_page(){
-        $ourproduct_page = \App\Product::all();
-        return view ('page/ourproduct_page',compact('ourproduct_page'));
+    public function ourproduct_page(){
+        $event = \App\Event::all();
+        $influencer =\App\Influencer::all();
+        return view ('page/ourproduct_page',compact('event','influencer'));
     }
+    
     public function portfolio(){
 
         return view('page/portfolio');

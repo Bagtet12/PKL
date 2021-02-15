@@ -113,7 +113,7 @@
                     @foreach($team as $team)
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="" />
+                            <img class="mx-auto rounded-circle" src="{{ url('gambar/'.$team->gambar) }}" alt="" />
                             <h4>{{$team->nama}}</h4>
                             <p class="text-muted">{{$team->role}}</p>
                             <a class="btn btn-dark btn-social mx-2" href="{{url('/teamedit')}}/{{$team->id}}"><i class="fa fa-edit"></i></a>
