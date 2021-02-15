@@ -103,13 +103,7 @@ class HomeadminController extends Controller
         return redirect('/homeadmin#team')->with('data berhasil dihapus');
 
     }
-    public function portfolio(){
-
-        return view('page/portfolio');
-    }
-    public function ourproduct(){
-        return view ('page/ourproduct');
-    }
+    
     
 }
 

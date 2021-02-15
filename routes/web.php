@@ -36,7 +36,10 @@ Route::post('/teamsave/{id}', 'HomeadminController@teamsave')->name('teamsave');
 Route::get('/teamdelete/{id}', 'HomeadminController@teamdelete')->name('teamdelete');
 
 
-Route::get('/portfolio', 'HomeadminController@portfolio')->name('portfolio');
+Route::get('/portfolio', 'HomeUserController@portfolio')->name('portfolio');
 Route::get('/ourproduct', 'HomeadminController@ourproduct')->name('ourproduct');
+
+Route::get('/ourproduct_page', 'HomeUserController@product_page')->name('page_product');
+Route::post('/ourproduct_page_post', 'HomeUserController@product_page')->name('post_page_product');
 Auth::routes();
 // Route::get('/homeadmin', 'HomeadminController@indexadmin')->name('indexadmin');

@@ -82,7 +82,7 @@
                     @foreach ($our_product as $product)
                     <div class="col-md-4">
                         <a href="">
-                            <div class="timeline-image"><img class="rounded-circle img-fluid2" src="{{$product->gambar}}" alt="" /></div>
+                            <div class="timeline-image"><img class="rounded-circle img-fluid2" src="/gambar/{{$product->gambar}}" alt="" /></div>
                         <h4 class="my-3" style="color: black">{{$product->nama_product}}</h4></a>
                         <p class="text-muted">{{$product->deskripsi}}</p>
                         <br>
