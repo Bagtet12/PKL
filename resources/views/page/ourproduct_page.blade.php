@@ -1,4 +1,8 @@
 @extends ('template.template')
+@section('profil')
+<li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url('/')}}">Home</a></li>
+                        
+@endsection
 @section ('home')
 
   <header class="masthead">
@@ -16,6 +20,8 @@
             <p style="margin-top:40px">Menyongsong kebangkitan era informasi online, kami TIMES Indonesia Network (TIN) sebagai media online berjejaring terbesar se-Indonesia, hadir menjawabkebutuhan zaman. Kami hadir dengan semangat kuat dan mengusung misi BUILDING - INSPIRING - POSITIVE THINKING. TIMES Indonesia Network (TIN) hadir tidak hanya dengan konsep informasi global namun juga dengan informasi regional dan lokal. Oleh karenanya, dengan tetap menyajikan informasi global melalui TIN, konsep berita regional dan lokal</p>
             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+            
+            @endforeach
         </div>
       </div>
       <div class="container">
@@ -29,7 +35,6 @@
 
                   </div>
               </li> -->
-              @endforeach
         </ul>
       </div>
 

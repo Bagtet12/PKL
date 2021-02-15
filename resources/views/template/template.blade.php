@@ -28,7 +28,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item dropdown">
+                        @yield('profil')
+                        {{-- <li class="nav-item dropdown">
                             <a style="color: white" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profile</a>
                             <div class="dropdown-menu">
                               <a class="dropdown-item" href="#about">About</a>
@@ -39,7 +40,7 @@
                               <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{url('/')}}">Home</a>
                             </div>
-                          </li>
+                          </li> --}}
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('page_product')}}">Our Product</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url('portfolio')}}">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.instagram.com/timesjember/" target="blank"><i class="fab fa-instagram"></i></a></li>
