@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class about extends Seeder
 {
@@ -33,7 +34,7 @@ class about extends Seeder
             4. Membangun Media Online Mainstream pertama di seluruh daerah se-nusantara.
             5. Menciptakan enterpreneurship media yang tangguh dan berwibawa.
             6. Membangun jejaring informasi yang sehat dan positive.',
-            'quotes'=>'komunikasi itu terjadi detik per detik.
+            'quotes'=>'Perubahan teknologi informasi dan komunikasi itu terjadi detik per detik.
             Dan, perubahan cepat tersebut menciptakan
             perubahan pola pikir masyarakat. Di sinilah
             Times Indonesia Network mengubah

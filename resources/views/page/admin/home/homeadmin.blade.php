@@ -52,8 +52,8 @@
                                 <h4>Quotes</h4>
                                 <h4 class="subheading"></h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted" style="font-style: italic">“Perubahan teknologi informasi dan
-                            {{$abouts->quotes}}</p></div>
+                            <div class="timeline-body"><p class="text-muted" style="font-style: italic">" 
+                            {{$abouts->quotes}} "</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
@@ -79,7 +79,7 @@
                     <h3 class="section-subheading text-muted"></h3>
                 </div>
                 <div class="row text-center">
-                    {{-- @foreach ($our_product as $product)
+                    @foreach ($our_product as $product)
                     <div class="col-md-4">
                         <a href="">
                             <div class="timeline-image"><img class="rounded-circle img-fluid2" src="{{$product->gambar}}" alt="" /></div>
@@ -87,9 +87,9 @@
                         <p class="text-muted">{{$product->deskripsi}}</p>
                         <br>
                             <a class="btn btn-dark btn-social mx-2" href="{{url('/productedit')}}/{{$product->id}}"><i class="fa fa-edit"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fa fa-trash"></i></a>   
+                            <a class="btn btn-dark btn-social mx-2" href="{{url('/productdelete')}}/{{$product->id}}"><i class="fa fa-trash"></i></a>   
                     </div>
-                    @endforeach --}}
+                    @endforeach
                     <div class="col-md-4 mt-4">
                         <a href="{{route('postproduct')}}">
                         <span class="fa-stack fa-4x">
@@ -117,7 +117,7 @@
                             <h4>{{$team->nama}}</h4>
                             <p class="text-muted">{{$team->role}}</p>
                             <a class="btn btn-dark btn-social mx-2" href="{{url('/teamedit')}}/{{$team->id}}"><i class="fa fa-edit"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fa fa-trash"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="{{url('/teamdelete')}}/{{$team->id}}"><i class="fa fa-trash"></i></a>
                         </div>
                     </div>
                     @endforeach
