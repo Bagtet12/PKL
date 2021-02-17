@@ -11,14 +11,19 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4><i class="fa fa-edit"></i> Edit Product</h4><hr>
-                                    <form method="POST" action="{{url('saveedit')}}/{{$products->id}}">
+                                    <form method="POST" action="{{url('saveedit')}}/{{$products->id}}"enctype="multipart/form-data">
                                         {{csrf_field()}}
-
+                                        <div class="form-group row">
+                                            <label for="gambar" class="col-md-2 col-form-label text-md-right">Gambar </label>
+                                            <div class="col-md-6">
+                                                <img class=""  width="500" src="{{ url('gambar/'.$products->gambar) }}" alt="belum ada gambar" />
+                                            </div>
+                                        </div>
                                         <div class="form-group row">
                                             <label for="gambar" class="col-md-2 col-form-label text-md-right">Gambar Product</label>
 
                                             <div class="col-md-6">
-                                                <input id="gambar" type="file" class="form-control @error('gambar') is-invalid @enderror" name="gambar" value="{{$products->gambar}}" required autocomplete="" autofocus>
+                                                <input id="gambar" type="file" class="form-control @error('gambar') is-invalid @enderror" name="gambar" value="{{$products->gambar}}"  autocomplete="" autofocus>
 
                                                 @error('gambar')
                                                     <span class="invalid-feedback" role="alert">
@@ -32,7 +37,7 @@
                                             <label for="nama" class="col-md-2 col-form-label text-md-right">Nama Product</label>
 
                                             <div class="col-md-6">
-                                                <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{$products->nama_product}}" required autocomplete="" autofocus>
+                                                <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama_product" value="{{$products->nama_product}}" required autocomplete="" autofocus>
 
                                                 @error('nama')
                                                     <span class="invalid-feedback" role="alert">

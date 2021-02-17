@@ -11,7 +11,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4><i class="fa fa-edit"></i> Tambah Product</h4><hr>
-                                    <form method="POST" action="{{route('postproduct')}}">
+                                    <form method="POST" action="{{route('postproduct')}}" enctype="multipart/form-data">
                                         {{csrf_field()}}
 
                                         <div class="form-group row">
