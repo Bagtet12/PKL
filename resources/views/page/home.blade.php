@@ -96,7 +96,7 @@
                     @foreach ($our_product as $product)
                     <div class="col-md-4">
                         <a href="">
-                            <div class="timeline-image"><img class="rounded-circle img-fluid2" src="{{ url('gambar/'.$team->gambar) }}" alt="" /></div>
+                            <div class="timeline-image"><img class="rounded-circle img-fluid2" src="{{ url('gambar/'.$product->gambar) }}" alt="" /></div>
                         <h4 class="my-3" style="color: black">{{$product->nama_product}}</h4></a>
                         <p class="text-muted">{{$product->deskripsi}}</p>
                     </div>
@@ -118,7 +118,7 @@
                     @foreach($team as $team)
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="" />
+                            <img class="mx-auto rounded-circle" src="{{ url('gambar/'.$team->gambar) }}" alt="" />
                             <h4>{{$team->nama}}</h4>
                             <p class="text-muted">{{$team->role}}</p>
                         </div>

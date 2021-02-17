@@ -9,6 +9,9 @@ use App\Team;
 use Illuminate\Pagination;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use PhpParser\Node\Stmt\If_;
+use Product as GlobalProduct;
+
 // use Team;
 
 class HomeadminController extends Controller
@@ -54,11 +57,24 @@ class HomeadminController extends Controller
     }
     public function saveedit(Request $request,$id)
     {   
-        $products=Product::where('id',$id)->first();
-        $products->gambar =$request->gambar;
-        $products->nama_product =$request->nama;
-        $products->deskripsi =$request->deskripsi;
-        $products->update();
+        $products=Product::findorfail($id);
+        if ($request->gambar==null){
+            $awal=$products->gambar;
+        }else{
+            
+            $file = $request->file('gambar');
+            $awal=time()."_"."$request->nama"."_".$file->getClientOriginalName();
+            $tujuan='gambar';
+            $file->move($tujuan,$awal);
+            
+        }
+
+        $up=[
+            'gambar'=>$awal,
+            'nama_product'=> $request['nama_product'],
+            'deskripsi'=> $request['deskripsi'],
+        ];
+        $products->update($up);
         return redirect('/homeadmin#services')->with('data berhasil ditambah');
     }
     public function productdelete($id){
@@ -69,17 +85,8 @@ class HomeadminController extends Controller
     }
     public function create(Request $request){
         // \App\Product::create($request->all());
-        // $product = new \App\Product;
-        // $product->nama_product = $request->input('nama_product');
-        // $product->deskripsi = $request->input('deskripsi');
-        // $product->gambar = $request->input('gambar');
-        // $product->save();
-        // return redirect('/homeadmin#services')->with('data berhasil ditambah');
-
-                // \App\Team::create($request->all());
-        // return redirect('/homeadmin#team')->with('data berhasil ditambah');
         $this->validate($request, [
-			'gambar' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
+			'gambar' => 'required|file|mimes:jpeg,png,jpg|max:2048',
             'nama_product' => 'required',
 			'deskripsi' => 'required',
 		]);
@@ -87,7 +94,7 @@ class HomeadminController extends Controller
 		// menyimpan data file yang diupload ke variabel $file
 		$file = $request->file('gambar');
  
-		$nama_file = time()."_".$file->getClientOriginalName();
+		$nama_file = time()."_"."$request->nama"."_".$file->getClientOriginalName();
  
       	        // isi dengan nama folder tempat kemana file diupload
 		$tujuan_upload = 'gambar';
@@ -95,27 +102,38 @@ class HomeadminController extends Controller
  
 		Product::create([
 			'gambar' => $nama_file,
-            'nama_product' => $request->nama_,
-			'deskripsi' => $request->role,
+            'nama_product' => $request->nama_product,
+			'deskripsi' => $request->deskripsi,
 		]);
  
 		
         return redirect('/homeadmin#services')->with('data berhasil ditambah');
-
-
     }
     public function teamedit($id)
     {   
-        $team=Team::where('id',$id)->first();
+        $team=Team::findorfail($id);
         return view('page/admin/home/teamedit',compact('team'));
     }
     public function teamsave(Request $request,$id)
     {   
-        $team=Team::where('id',$id)->first();
-        $team->gambar =$request->gambar;
-        $team->nama =$request->nama;
-        $team->role =$request->role;
-        $team->update();
+        $team=Team::findorfail($id);
+        if ($request->gambar==null){
+            $awal=$team->gambar;
+        }else{
+            
+            $file = $request->file('gambar');
+            $awal=time()."_"."$request->nama"."_".$file->getClientOriginalName();
+            $tujuan='gambar';
+            $file->move($tujuan,$awal);
+            
+        }
+
+        $up=[
+            'gambar'=>$awal,
+            'nama'=> $request['nama'],
+            'role'=> $request['role'],
+        ];
+        $team->update($up);
         return redirect('/homeadmin#team')->with('data berhasil ditambah');
     }
     public function producttambah()
@@ -138,7 +156,7 @@ class HomeadminController extends Controller
 		// menyimpan data file yang diupload ke variabel $file
 		$file = $request->file('gambar');
  
-		$nama_file = time()."_".$file->getClientOriginalName();
+		$nama_file = time()."_"."$request->nama"."_".$file->getClientOriginalName();
  
       	        // isi dengan nama folder tempat kemana file diupload
 		$tujuan_upload = 'gambar';
