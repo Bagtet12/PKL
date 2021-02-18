@@ -31,10 +31,17 @@ Route::get('/producttambah', 'HomeadminController@producttambah')->name('product
 Route::get('/productdelete/{id}', 'HomeadminController@productdelete')->name('productdelete');
 
 Route::get('/ourproduct_page_admin', 'ourproduct_page_admin_controller@c_ourproduct_page_admin')->name('ourproduct_page_admin');
+Route::post('/eventtambah', 'ourproduct_page_admin_controller@create_event')->name('eventtambah');
 Route::get('/eventmanagementtambah', 'ourproduct_page_admin_controller@eventmanagement_tambah')->name('eventmanagementtambah');
 Route::get('/eventmanagementedit/{id}', 'ourproduct_page_admin_controller@eventmanagement_edit')->name('eventmanagementedit');
-Route::post('/eventsave/{id}', 'ourproduct_page_admin_controller@eventsave')->name('eventsave');
+Route::post('/eventsave/{id}', 'ourproduct_page_admin_controller@saveevent')->name('eventsave');
 Route::get('/eventdelete/{id}', 'ourproduct_page_admin_controller@eventdelete')->name('eventdelete');
+
+Route::post('/influencer_tambah', 'ourproduct_page_admin_controller@create_influencer')->name('influencer_tambah');
+Route::get('/influencertambah', 'ourproduct_page_admin_controller@influencertambah')->name('influencertambah');
+Route::get('/influenceredit/{id}', 'ourproduct_page_admin_controller@influencer_edit')->name('influenceredit');
+Route::post('/influencersave/{id}', 'ourproduct_page_admin_controller@saveinfluencer')->name('influencersave');
+Route::get('/influencerdelete/{id}', 'ourproduct_page_admin_controller@influencerdelete')->name('influencerdelete');
 
 Route::get('/teamtambah', 'HomeadminController@teamtambah')->name('teamtambah');
 Route::post('/teampost', 'HomeadminController@create_team')->name('postteam');

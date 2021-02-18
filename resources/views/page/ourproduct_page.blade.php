@@ -13,10 +13,10 @@
 
       <div class="container" style="margin-top:50px; margin-bottom:30px">
         <div class="text-center">
-          @foreach ($event as $event)
           <h1 class="section-heading text-uppercase">Event Management</h1>
+          @foreach ($event as $event)
+            <img src="{{ url('gambar/'.$event->gambar) }}" alt="web dev" style="width:75%; margin-top:30px">
             <h6 class="section-subheading text-muted">{{$event->judul}}</h6>
-            <img src="/gambar/{{$event->gambar}}" alt="web dev" style="width:75%; margin-top:30px">
             <p style="margin-top:40px">{{$event->deskripsi}}</p>
             <a class="btn btn-dark btn-social mx-2" href="{{$event->link_website}}"><i class="fas fa-globe-europe"></i></a>
             @endforeach

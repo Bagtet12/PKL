@@ -8,22 +8,17 @@
                         </div>
                         
                         <div class="col-md-12 mt-2">
-                            
                             <div class="card">
                                 <div class="card-body">
-                                    <h4><i class="fa fa-edit"></i> Edit Event</h4><hr>
-                                    <form method="POST" action="{{url('eventsave')}}/{{$event->id}}" enctype="multipart/form-data">
+                                    <h4><i class="fa fa-edit"></i> Tambah Influencer</h4><hr>
+                                    <form method="POST" action="{{route('influencer_tambah')}}" enctype="multipart/form-data">
                                         {{csrf_field()}}
+
                                         <div class="form-group row">
-                                            <label for="gambar" class="col-md-2 col-form-label text-md-right">Gambar </label>
+                                            <label for="gambar" class="col-md-2 col-form-label text-md-right">Gambar Influencer</label>
+
                                             <div class="col-md-6">
-                                                <img class=""  width="500" src="{{ url('gambar/'.$event->gambar) }}" alt="belum ada gambar" />
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="gambar" class="col-md-2 col-form-label text-md-right">Gambar Baru</label>
-                                            <div class="col-md-6">
-                                                <input id="gambar" type="file" class="form-control" name="gambar" value="{{ url('gambar/'.$event->gambar) }}"  autocomplete="" autofocus>
+                                                <input id="gambar" type="file" class="form-control @error('gambar') is-invalid @enderror" name="gambar" value="" required autocomplete="" autofocus>
 
                                                 @error('gambar')
                                                     <span class="invalid-feedback" role="alert">
@@ -34,10 +29,10 @@
                                         </div>
                                         
                                         <div class="form-group row">
-                                            <label for="nama" class="col-md-2 col-form-label text-md-right">Nama Event</label>
+                                            <label for="nama" class="col-md-2 col-form-label text-md-right">Nama Influencer</label>
 
                                             <div class="col-md-6">
-                                                <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="judul" value="{{$event->judul}}" required autocomplete="" autofocus>
+                                                <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="judul" value="" required autocomplete="" autofocus>
 
                                                 @error('nama')
                                                     <span class="invalid-feedback" role="alert">
@@ -47,12 +42,11 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="role" class="col-md-2 col-form-label text-md-right">Deskripsi</label>
+                                            <label for="deskripsi" class="col-md-2 col-form-label text-md-right">Deskripsi Influencer</label>
 
                                             <div class="col-md-6">
-                                                <input id="role" type="text" class="form-control @error('role') is-invalid @enderror" name="deskripsi" value="{{$event->deskripsi}}" required autocomplete="" autofocus>
-
-                                                @error('role')
+                                                <textarea  class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi" value="" required ="" autofocus id="" cols="30" rows="7"></textarea>
+                                                @error('deskripsi')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
                                                     </span>
@@ -60,10 +54,10 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="nama" class="col-md-2 col-form-label text-md-right">Link Website Event</label>
+                                            <label for="nama" class="col-md-2 col-form-label text-md-right">Link Instagram</label>
 
                                             <div class="col-md-6">
-                                                <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="link_website" value="{{$event->link_website}}" required autocomplete="" autofocus>
+                                                <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="link_instagram" value="" required autocomplete="" autofocus>
 
                                                 @error('nama')
                                                     <span class="invalid-feedback" role="alert">
@@ -76,7 +70,7 @@
                                         <div class="form-group row mb-0">
                                             <div class="col-md-6 offset-md-2">
                                                 <button type="submit" class="btn btn-primary">
-                                                    <i class="fa fa-save"></i> Save
+                                                    <i class="fa fa-save"></i> Tambah
                                                 </button>
                                             </div>
                                         </div>
