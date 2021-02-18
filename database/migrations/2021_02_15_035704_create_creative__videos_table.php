@@ -15,7 +15,7 @@ class CreateCreativeVideosTable extends Migration
     {
         Schema::create('creative__videos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->blob('gambar');
+            $table->string('gambar');
             $table->string('judul');
             $table->text('deskripsi');
             $table->timestamps();

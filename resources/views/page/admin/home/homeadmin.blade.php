@@ -1,4 +1,13 @@
-@extends('template.template')
+@extends('template.templateadmin')
+@section('profil')
+    <li class="nav-item dropdown">
+                            <a style="color: white" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profile</a>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="#about">About</a>
+                              <a class="dropdown-item" href="#services">Our Product</a>
+                              <a class="dropdown-item" href="#team">Team</a>
+                          </li>
+@endsection
 @section('home')
     <header class="masthead">
             <div class="container">

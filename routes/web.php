@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', 'HomeUserController@home')->name('home');
+
 Route::get('/homeadmin', 'HomeadminController@indexadmin')->name('indexadmin');
 Route::get('/aboutedit', 'HomeadminController@aboutedit')->name('aboutedit');
 Route::post('aboutupdate', 'HomeadminController@aboutupdate')->name('aboutupdate');
@@ -29,6 +30,12 @@ Route::post('/saveedit/{id}', 'HomeadminController@saveedit')->name('saveproduct
 Route::get('/producttambah', 'HomeadminController@producttambah')->name('producttambah');
 Route::get('/productdelete/{id}', 'HomeadminController@productdelete')->name('productdelete');
 
+Route::get('/ourproduct_page_admin', 'ourproduct_page_admin_controller@c_ourproduct_page_admin')->name('ourproduct_page_admin');
+Route::get('/eventmanagementtambah', 'ourproduct_page_admin_controller@eventmanagement_tambah')->name('eventmanagementtambah');
+Route::get('/eventmanagementedit/{id}', 'ourproduct_page_admin_controller@eventmanagement_edit')->name('eventmanagementedit');
+Route::post('/eventsave/{id}', 'ourproduct_page_admin_controller@eventsave')->name('eventsave');
+Route::get('/eventdelete/{id}', 'ourproduct_page_admin_controller@eventdelete')->name('eventdelete');
+
 Route::get('/teamtambah', 'HomeadminController@teamtambah')->name('teamtambah');
 Route::post('/teampost', 'HomeadminController@create_team')->name('postteam');
 Route::get('/teamedit/{id}', 'HomeadminController@teamedit')->name('teamedit');
@@ -38,6 +45,7 @@ Route::get('/teamdelete/{id}', 'HomeadminController@teamdelete')->name('teamdele
 
 Route::get('/portfolio', 'HomeUserController@portfolio')->name('portfolio');
 Route::get('/ourproduct', 'HomeadminController@ourproduct')->name('ourproduct');
+
 
 Route::get('/ourproduct_page', 'HomeUserController@ourproduct_page')->name('page_product');
 Route::post('/ourproduct_page_post', 'HomeUserController@ourproduct_page')->name('post_page_product');

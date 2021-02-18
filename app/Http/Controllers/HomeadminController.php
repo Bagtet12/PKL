@@ -69,17 +69,40 @@ class HomeadminController extends Controller
     }
     public function create(Request $request){
         // \App\Product::create($request->all());
-        $product = new \App\Product;
-        $product->nama_product = $request->input('nama_product');
-        $product->deskripsi = $request->input('deskripsi');
-        $product->gambar = $request->input('gambar');
-        if($request->hasFile('gambar')){
-            $path = $request->file('gambar')->move('gambar/',$request->file('gambar')->getClientOriginalName());
-            $product->gambar = $request->file('gambar')->getClientOriginalName();
-             $product->save();
-        }
-        $product->save();
-           return redirect('/homeadmin#services')->with('data berhasil ditambah');
+        // $product = new \App\Product;
+        // $product->nama_product = $request->input('nama_product');
+        // $product->deskripsi = $request->input('deskripsi');
+        // $product->gambar = $request->input('gambar');
+        // $product->save();
+        // return redirect('/homeadmin#services')->with('data berhasil ditambah');
+
+                // \App\Team::create($request->all());
+        // return redirect('/homeadmin#team')->with('data berhasil ditambah');
+        $this->validate($request, [
+			'gambar' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
+            'nama_product' => 'required',
+			'deskripsi' => 'required',
+		]);
+ 
+		// menyimpan data file yang diupload ke variabel $file
+		$file = $request->file('gambar');
+ 
+		$nama_file = time()."_".$file->getClientOriginalName();
+ 
+      	        // isi dengan nama folder tempat kemana file diupload
+		$tujuan_upload = 'gambar';
+		$file->move($tujuan_upload,$nama_file);
+ 
+		Product::create([
+			'gambar' => $nama_file,
+            'nama_product' => $request->nama_,
+			'deskripsi' => $request->role,
+		]);
+ 
+		
+        return redirect('/homeadmin#services')->with('data berhasil ditambah');
+
+
     }
     public function teamedit($id)
     {   

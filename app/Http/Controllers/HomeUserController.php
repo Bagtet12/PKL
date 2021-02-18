@@ -15,7 +15,8 @@ class HomeUserController extends Controller
     public function ourproduct_page(){
         $event = \App\Event::all();
         $influencer =\App\Influencer::all();
-        return view ('page/ourproduct_page',compact('event','influencer'));
+        $creative = \App\Creative_Video::all();
+        return view ('page/ourproduct_page',compact('event','influencer','creative'));
     }
     
     public function portfolio(){
