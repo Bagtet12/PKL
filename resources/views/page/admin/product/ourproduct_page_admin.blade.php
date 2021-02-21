@@ -57,6 +57,7 @@
         <div class="text-center">
             <h1 class="section-heading text-uppercase">Creative Video & Broadcasting</h1>
             <h6 class="section-subheading text-muted"></h6>
+            <a class="btn btn-dark btn-social mx-2" href="{{route('creativetambah')}}"><i class="fa fa-plus  "></i></a>
             <!-- <img src="assets/img/beauty-fest.jpg" alt="web dev" style="width:75%; margin-top:30px">
             <p style="margin-top:40px">Menyongsong kebangkitan era informasi online, kami TIMES Indonesia Network (TIN) sebagai media online berjejaring terbesar se-Indonesia, hadir menjawabkebutuhan zaman. Kami hadir dengan semangat kuat dan mengusung misi BUILDING - INSPIRING - POSITIVE THINKING. TIMES Indonesia Network (TIN) hadir tidak hanya dengan konsep informasi global namun juga dengan informasi regional dan lokal. Oleh karenanya, dengan tetap menyajikan informasi global melalui TIN, konsep berita regional dan lokal</p> -->
             <div class="container">
@@ -66,12 +67,14 @@
 
                 <div class="mySlides">
                   <div class="numbertext">1 / 3</div>
-                  <img src="img/rs1.jpg" style="width:100%">
+                  <img class="w-50 h-100"  src="{{ url('gambar/'.$creative->gambar) }}" style="width:100%">
                   <div class="text">{{$creative->judul}}</div>
+                  <p style="margin-top:40px">{{$creative->deskripsi}}</p>
                 </div>
-                <a class="btn btn-dark btn-social mx-2" href=""><i class="fa fa-plus  "></i></a>
-              <a class="btn btn-dark btn-social mx-2" href=""><i class="fa fa-edit"></i></a>
-              <a class="btn btn-dark btn-social mx-2" href=""><i class="fa fa-trash"></i></a>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              <a class="btn btn-dark btn-social mx-2" href="{{url('/creativeedit')}}/{{$creative->id}}"><i class="fa fa-edit"></i></a>
+              <a class="btn btn-dark btn-social mx-2" href="{{url('/creativedelete')}}/{{$creative->id}}"><i class="fa fa-trash"></i></a>
 
                 {{-- <div class="mySlides">
                   <div class="numbertext">2 / 3</div>
@@ -84,10 +87,7 @@
                   <img src="img/rs3.jpg" style="width:100%">
                   <div class="text">Web Deelopment</div>
                 </div> --}}
-
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
+                
                 </div>
                 <br>
 
@@ -126,7 +126,7 @@
                 }
                 </script>
 
-            <p style="margin-top:40px">{{$creative->deskripsi}}</p>
+            
         </div>
         </div>
       </div>
@@ -140,6 +140,7 @@
         </div>
         @endforeach
       </div>
+      <br>
       <div class="container">
         <ul class="timeline">
           <li>

@@ -18,6 +18,7 @@ class CreateCreativeVideosTable extends Migration
             $table->string('gambar');
             $table->string('judul');
             $table->text('deskripsi');
+            $table->string('link_video');
             $table->timestamps();
         });
     }

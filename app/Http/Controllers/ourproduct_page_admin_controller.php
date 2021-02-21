@@ -163,4 +163,70 @@ class ourproduct_page_admin_controller extends Controller
             return redirect('/ourproduct_page_admin')->with('data berhasil ditambah');
         }
 
+        public function creativetambah()
+        {   
+            return view('page/admin/product/creativetambah');
+        }
+        public function creative_edit($id)
+        {   
+            $creative=Creative_Video::where('id',$id)->first();
+            return view('page/admin/product/creativeedit',compact('creative'));
+        }
+        public function creativedelete($id){
+            $creative=Creative_Video::find($id);
+            $creative->delete();
+            return redirect('/ourproduct_page_admin')->with('data berhasil dihapus');
+        }
+        public function create_creative(Request $request){
+            $this->validate($request, [
+                'gambar' => 'required|file|mimes:jpeg,png,jpg|max:2048',
+                'judul' => 'required',
+                'deskripsi' => 'required',
+                'link_video' =>'required',
+            ]);
+     
+            // menyimpan data file yang diupload ke variabel $file
+            $file = $request->file('gambar');
+     
+            $nama_file = time()."_"."$request->nama"."_".$file->getClientOriginalName();
+     
+                      // isi dengan nama folder tempat kemana file diupload
+            $tujuan_upload = 'gambar';
+            $file->move($tujuan_upload,$nama_file);
+     
+            Creative_Video::create([
+                'gambar' => $nama_file,
+                'judul' => $request->judul,
+                'deskripsi' => $request->deskripsi,
+                'link_video'=>$request->link_video,
+            ]);
+     
+            
+            return redirect('/ourproduct_page_admin')->with('data berhasil ditambah');
+        }
+        public function savecreative(Request $request,$id)
+        {   
+            
+            $creative=Creative_Video::findorfail($id);
+        if ($request->gambar==null){
+            $awal=$creative->gambar;
+        }else{
+            
+            $file = $request->file('gambar');
+            $awal=time()."_"."$request->nama"."_".$file->getClientOriginalName();
+            $tujuan='gambar';
+            $file->move($tujuan,$awal);
+            
+        }
+
+        $up=[
+            'gambar'=>$awal,
+            'judul'=> $request['judul'],
+            'deskripsi'=> $request['deskripsi'],
+            'link_video'=>$request['link_video'],
+        ];
+        $creative->update($up);
+            return redirect('/ourproduct_page_admin')->with('data berhasil ditambah');
+        }
+
 }

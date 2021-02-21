@@ -43,6 +43,12 @@ Route::get('/influenceredit/{id}', 'ourproduct_page_admin_controller@influencer_
 Route::post('/influencersave/{id}', 'ourproduct_page_admin_controller@saveinfluencer')->name('influencersave');
 Route::get('/influencerdelete/{id}', 'ourproduct_page_admin_controller@influencerdelete')->name('influencerdelete');
 
+Route::post('/creative_tambah', 'ourproduct_page_admin_controller@create_creative')->name('creative_tambah');
+Route::get('/creativetambah', 'ourproduct_page_admin_controller@creativetambah')->name('creativetambah');
+Route::get('/creativeedit/{id}', 'ourproduct_page_admin_controller@creative_edit')->name('creativeedit');
+Route::post('/creativesave/{id}', 'ourproduct_page_admin_controller@savecreative')->name('creativersave');
+Route::get('/creativedelete/{id}', 'ourproduct_page_admin_controller@creativedelete')->name('creativedelete');
+
 Route::get('/teamtambah', 'HomeadminController@teamtambah')->name('teamtambah');
 Route::post('/teampost', 'HomeadminController@create_team')->name('postteam');
 Route::get('/teamedit/{id}', 'HomeadminController@teamedit')->name('teamedit');
