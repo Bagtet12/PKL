@@ -22,6 +22,8 @@ Route::get('/', 'HomeUserController@home')->name('home');
 
 Route::get('/akun', 'HomeadminController@akun')->name('akun');
 Route::post('/akunupdate', 'HomeadminController@akunupdate')->name('akunupdate');
+Route::post('/createakun', 'HomeadminController@createakun')->name('createakun');
+Route::get('/deleteakun/{id}', 'HomeadminController@deleteakun')->name('deleteakun');
 
 Route::get('/homeadmin', 'HomeadminController@indexadmin')->name('indexadmin');
 Route::get('/aboutedit', 'HomeadminController@aboutedit')->name('aboutedit');

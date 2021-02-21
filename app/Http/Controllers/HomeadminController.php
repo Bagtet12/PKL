@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Crypt;
 
 // use Team;
 use Illuminate\Support\Facades\Auth as FacadesAuth;
+use user as GlobalUser;
 
 class HomeadminController extends Controller
 {
@@ -39,13 +40,14 @@ class HomeadminController extends Controller
 
         return view('page/admin/akun/akunprofil', compact('user','users'));
     }
-    protected function createakun(array $data)
+    public function createakun(Request $request)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+        User::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
         ]);
+        return redirect('/akun');
     }
     public function akunupdate(Request $request)
     {
@@ -63,6 +65,17 @@ class HomeadminController extends Controller
     	
     	$user->update();
     	return redirect('/akun');
+    }
+    public function deleteakun($id){
+        $user=User::find($id);
+        $user->delete();
+    	return redirect('/akun');
+    }
+    public function editakun($id)
+    {   
+        $user=User::find('id',$id);
+        return view('page/admin/akun/akunedit',compact('user'));
+        
     }
 
 
