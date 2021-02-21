@@ -16,7 +16,7 @@
                                         <div class="form-group row">
                                             <label for="gambar" class="col-md-2 col-form-label text-md-right">Gambar </label>
                                             <div class="col-md-6">
-                                                <img class=""  width="500" src="{{ url('gambar/'.$products->gambar) }}" alt="belum ada gambar" />
+                                                <img class=""  width="500" src="{{ url('gambar/product/'.$products->gambar) }}" alt="belum ada gambar" />
                                             </div>
                                         </div>
                                         <div class="form-group row">

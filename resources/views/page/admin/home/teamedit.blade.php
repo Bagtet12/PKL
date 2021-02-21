@@ -17,13 +17,13 @@
                                         <div class="form-group row">
                                             <label for="gambar" class="col-md-2 col-form-label text-md-right">Gambar </label>
                                             <div class="col-md-6">
-                                                <img class=""  width="500" src="{{ url('gambar/'.$team->gambar) }}" alt="belum ada gambar" />
+                                                <img class=""  width="500" src="{{ url('gambar/team/'.$team->gambar) }}" alt="belum ada gambar" />
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="gambar" class="col-md-2 col-form-label text-md-right">Gambar Baru</label>
                                             <div class="col-md-6">
-                                                <input id="gambar" type="file" class="form-control" name="gambar" value="{{ url('gambar/'.$team->gambar) }}"  autocomplete="" autofocus>
+                                                <input id="gambar" type="file" class="form-control" name="gambar" value="{{ url('gambar/team/'.$team->gambar) }}"  autocomplete="" autofocus>
 
                                                 @error('gambar')
                                                     <span class="invalid-feedback" role="alert">

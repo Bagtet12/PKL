@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use App\about;
 use App\Product;
 use App\Team;
-// use about;
-use Illuminate\Pagination;
+use App\User;
+use File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use PhpParser\Node\Stmt\If_;
-use Product as GlobalProduct;
+use Illuminate\Support\Facades\Crypt;
 
 // use Team;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
 
 class HomeadminController extends Controller
 {
@@ -29,6 +29,46 @@ class HomeadminController extends Controller
 
         return view('page/admin/home/homeadmin', compact('abouts','our_product','team'));
     }
+    public function akun()
+    {   
+        $user = User::where('id', FacadesAuth::user()->id)->first();
+        // $sandi=$user->password;
+        // $sandilama =Crypt::decryptString($sandi) ;
+        $users = \App\User::all();
+        
+
+        return view('page/admin/akun/akunprofil', compact('user','users'));
+    }
+    protected function createakun(array $data)
+    {
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
+    }
+    public function akunupdate(Request $request)
+    {
+        // $this->validate($request, [
+        //     'password'  =>'min:3', 'confirmed',
+        // ]);
+
+    	$user = User::where('id', facadesAuth::user()->id)->first();
+    	$user->name = $request->name;
+    	$user->email = $request->email;
+    	if(!empty($request->password))
+    	{
+    		$user->password = Hash::make($request->password);
+    	}
+    	
+    	$user->update();
+    	return redirect('/akun');
+    }
+
+
+
+
+
     public function aboutedit()
     {   
         $abouts=about::where('id','1')->first();
@@ -64,8 +104,10 @@ class HomeadminController extends Controller
             
             $file = $request->file('gambar');
             $awal=time()."_"."$request->nama"."_".$file->getClientOriginalName();
-            $tujuan='gambar';
-            $file->move($tujuan,$awal);
+            $tujuan='gambar/product';
+            $file->move($tujuan,$awal);            
+            File::delete('gambar/product/'.$products->gambar);
+
             
         }
 
@@ -80,13 +122,14 @@ class HomeadminController extends Controller
     public function productdelete($id){
         $products=Product::find($id);
         $products->delete();
+        File::delete('gambar/product/'.$products->gambar);
         return redirect('/homeadmin#services')->with('data berhasil dihapus');
 
     }
     public function create(Request $request){
         // \App\Product::create($request->all());
         $this->validate($request, [
-			'gambar' => 'required|file|mimes:jpeg,png,jpg|max:2048',
+			'gambar' => 'required|file|mimes:jpeg,png,jpg,JPG|max:2048',
             'nama_product' => 'required',
 			'deskripsi' => 'required',
 		]);
@@ -97,7 +140,7 @@ class HomeadminController extends Controller
 		$nama_file = time()."_"."$request->nama"."_".$file->getClientOriginalName();
  
       	        // isi dengan nama folder tempat kemana file diupload
-		$tujuan_upload = 'gambar';
+		$tujuan_upload = 'gambar/product';
 		$file->move($tujuan_upload,$nama_file);
  
 		Product::create([
@@ -120,11 +163,12 @@ class HomeadminController extends Controller
         if ($request->gambar==null){
             $awal=$team->gambar;
         }else{
-            
             $file = $request->file('gambar');
             $awal=time()."_"."$request->nama"."_".$file->getClientOriginalName();
-            $tujuan='gambar';
+            $tujuan='gambar/team';
             $file->move($tujuan,$awal);
+            File::delete('gambar/team/'.$team->gambar);
+
             
         }
 
@@ -159,7 +203,7 @@ class HomeadminController extends Controller
 		$nama_file = time()."_"."$request->nama"."_".$file->getClientOriginalName();
  
       	        // isi dengan nama folder tempat kemana file diupload
-		$tujuan_upload = 'gambar';
+		$tujuan_upload = 'gambar/team';
 		$file->move($tujuan_upload,$nama_file);
  
 		Team::create([
@@ -174,6 +218,7 @@ class HomeadminController extends Controller
     public function teamdelete($id){
         $team=Team::find($id);
         $team->delete();
+        File::delete('gambar/team/'.$team->gambar);
         return redirect('/homeadmin#team')->with('data berhasil dihapus');
 
     }

@@ -9,7 +9,7 @@
                           </li>
 @endsection
 @section('home')
-    <header class="masthead">
+        <header class="masthead">
             <div class="container">
                 <div class="masthead-subheading" >Selamat datang di</div>
                 <div class="masthead-heading " >Halaman ADMIN Website</div>
@@ -86,12 +86,12 @@
                 <div class="text-center">
                     <a href=""><h2 class="section-heading text-uppercase" style="color: black">Our Product</h2></a>
                     <h3 class="section-subheading text-muted"></h3>
-                </div>
+                </div>      
                 <div class="row text-center">
                     @foreach ($our_product as $product)
                     <div class="col-md-4 mt-4">
                         <a href="">
-                            <div class="timeline-image"><img class="rounded-circle img-fluid2" src="{{ url('gambar/'.$product->gambar) }}" alt="" /></div>
+                            <div class="timeline-image"><img class="rounded-circle img-fluid2" src="{{ url('gambar/product/'.$product->gambar) }}" alt="" /></div>
                         <h4 class="my-3" style="color: black">{{$product->nama_product}}</h4></a>
                         <p class="text-muted">{{$product->deskripsi}}</p>
                         <br>
@@ -122,7 +122,7 @@
                     @foreach($team as $team)
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="{{ url('gambar/'.$team->gambar) }}" alt="" />
+                            <img class="mx-auto rounded-circle" src="{{ url('gambar/team/'.$team->gambar) }}" alt="" />
                             <h4>{{$team->nama}}</h4>
                             <p class="text-muted">{{$team->role}}</p>
                             <a class="btn btn-dark btn-social mx-2" href="{{url('/teamedit')}}/{{$team->id}}"><i class="fa fa-edit"></i></a>
