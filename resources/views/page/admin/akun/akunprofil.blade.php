@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <a href="{{ url('homeadmin') }}" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
+            <a href="{{ url('homeadmin') }}" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Home</a>
         </div>
         <div class="col-md-12 mt-2">
             <nav aria-label="breadcrumb">
@@ -33,11 +33,11 @@
                                 <td>:</td>
                                 <td>{{ $user->email }}</td>
                             </tr>
-                            <tr>
+                            {{-- <tr>
                                 <td>Password</td>
                                 <td>:</td>
-                                <td>{{($user->password) }}</td>
-                            </tr>
+                                <td>{{($user->sandi)}}</td>
+                            </tr> --}}
                         </tbody>
                     </table>
                 </div>
@@ -76,7 +76,23 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="col-md-5 text-right">
+                            <p><i ><font size="2" color="#ff000">*isi bila perlu update password (boleh kosong)</font></i></p>
+                        </div>
+                        <div class="form-group row">
+                            <label for="oldpassword" class="col-md-2 col-form-label text-md-right">Old {{ __('Password') }}</label>
 
+                            <div class="col-md-6">
+                                <input id="oldpassword" type="password" class="form-control @error('password') is-invalid @enderror" name="oldpassword"  >
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        
                         <div class="form-group row">
                             <label for="password" class="col-md-2 col-form-label text-md-right">New {{ __('Password') }}</label>
 
@@ -91,13 +107,13 @@
                             </div>
                         </div>
 
-                        {{-- <div class="form-group row">
+                        <div class="form-group row">
                             <label for="password-confirm" class="col-md-2 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" >
                             </div>
-                        </div> --}}
+                        </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-2">
@@ -121,7 +137,7 @@
                                     <th class="text-center">No.</th>
                                     <th>Name</th>
                                     <th>E-mail</th>
-                                    <th class="text-right">Password</th>
+                                    {{-- <th class="text-right">Password</th> --}}
                                     <th class="text-right">Actions</th>
                                 </tr>
                             </thead>
@@ -132,12 +148,12 @@
                                     <td class="text-center">{{$loop->iteration}}</td>
                                     <td>{{$users->name}}</td>
                                     <td>{{$users->email}}</td>
-                                    <td class="text-right">{{$users->password}}</td>
+                                    {{-- <td class="text-right">{{$users->sandi}}</td> --}}
                                     <td class="td-actions text-right">
                                         <a href="{{url('editakun')}}/{{$users->id}}"><button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
                                             <i class="material-icons">edit</i>
                                         </button></a>
-                                        <a href="{{url('deleteakun')}}/{{$users->id}}"><button type="button" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" data-original-title="" title="">
+                                        <a onclick="return confirm('Apakah anda yakin ?')" href="{{url('deleteakun')}}/{{$users->id}}"><button type="button" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" data-original-title="" title="">
                                             <i class="material-icons">hapus</i>
                                         </button></a>
                                     </td>

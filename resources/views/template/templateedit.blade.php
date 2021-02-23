@@ -68,6 +68,8 @@
   text-align: center;
 }
     </style>
+  
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
 </head>
 <body>
         <main class="py-4">
@@ -78,5 +80,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     {{-- @include('sweet::alert') --}}
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    @include('sweet::alert')
 </body>
 </html>

@@ -7,13 +7,10 @@ use App\Product;
 use App\Team;
 use App\User;
 use File;
+use Alert;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Crypt;
-
-// use Team;
 use Illuminate\Support\Facades\Auth as FacadesAuth;
-use user as GlobalUser;
 
 class HomeadminController extends Controller
 {
@@ -33,20 +30,22 @@ class HomeadminController extends Controller
     public function akun()
     {   
         $user = User::where('id', FacadesAuth::user()->id)->first();
-        // $sandi=$user->password;
-        // $sandilama =Crypt::decryptString($sandi) ;
         $users = \App\User::all();
-        
 
         return view('page/admin/akun/akunprofil', compact('user','users'));
     }
     public function createakun(Request $request)
-    {
+    {   
+        $sandi=$request->password;
         User::create([
             'name' => $request['name'],
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
+            'sandi' => $sandi,
         ]);
+        // Alert::success('pesan yang ingin disampaikan', 'Judul Pesan');
+        
+        alert('berhasil');
         return redirect('/akun');
     }
     public function akunupdate(Request $request)
@@ -56,26 +55,93 @@ class HomeadminController extends Controller
         // ]);
 
     	$user = User::where('id', facadesAuth::user()->id)->first();
-    	$user->name = $request->name;
-    	$user->email = $request->email;
-    	if(!empty($request->password))
+        // if($request->oldpassword == $request->password){
+
+        // }
+    	if(!empty($request->password || $request->password_confirmation ||$request->oldpassword ))
     	{
-    		$user->password = Hash::make($request->password);
-    	}
+            if (!empty($request->oldpassword) && empty($request->password)){
+                alert('pastikan new password terisi','Gagal');
+                return redirect('/akun');
+            }
+            if ($request->oldpassword==$user->sandi){
+                if($request->password==$request->password_confirmation){
+                    $user->name = $request->name;
+                    $user->email = $request->email;
+                    $user->password = Hash::make($request->password);
+                    $user->sandi = $request->password;
+                    $user->update();
+                    alert('berhasil update semua');
+                    return redirect('/akun');
+                }else{
+                    alert('pastikan confirmasi password sama persis','Gagal');
+                    return redirect('/akun');
+                }
+            }else{
+                alert('password lama salah');
+                return redirect('/akun');
+            }
+    		
+    	}else{
+            $user->name = $request->name;
+    	    $user->email = $request->email;
+            $user->update();
+            alert('berhasil update identitas');
+            return redirect('/akun');
+        }
+    	// Alert::success('pesan yang ingin disampaikan', 'Judul Pesan');
     	
-    	$user->update();
-    	return redirect('/akun');
+    	
     }
     public function deleteakun($id){
         $user=User::find($id);
         $user->delete();
+        alert('berhasil');
     	return redirect('/akun');
     }
     public function editakun($id)
     {   
-        $user=User::find('id',$id);
+        $user=User::where('id',$id)->first();
         return view('page/admin/akun/akunedit',compact('user'));
         
+    }
+    public function saveupdate(Request $request, $id)
+    {
+    	$user = User::where('id',$id)->first();
+        // if($request->oldpassword == $request->password){
+        $userid=$user->id;
+        // }
+    	if(!empty($request->password || $request->password_confirmation ||$request->oldpassword ))
+    	{
+            if (!empty($request->oldpassword) && empty($request->password)){
+                alert('pastikan new password terisi','Gagal');
+                return redirect('/akun');
+            }
+            if ($request->oldpassword==$user->sandi){
+                if($request->password==$request->password_confirmation){
+                    $user->name = $request->name;
+                    $user->email = $request->email;
+                    $user->password = Hash::make($request->password);
+                    $user->sandi = $request->password;
+                    $user->update();
+                    alert('berhasil update semua');
+                    return redirect('/akun');
+                }else{
+                    alert('pastikan confirmasi password sama persis','Gagal');
+                    return redirect('/akun');
+                }
+            }else{
+                alert('password lama salah');
+                return redirect('/akun');
+            }
+    		
+    	}else{
+            $user->name = $request->name;
+    	    $user->email = $request->email;
+            $user->update();
+            alert('berhasil update identitas');
+            return redirect('/akun');
+        }
     }
 
 
@@ -96,10 +162,13 @@ class HomeadminController extends Controller
         $abouts->visi =$request->visi;
         $abouts->misi =$request->misi;
         $abouts->quotes =$request->quotes;
+        
+        
         $abouts->update();
         
         // Alert()->success(' Sukses diupdate', 'Success');
-    	return redirect('homeadmin#about');
+    	alert('berhasil');
+        return redirect('homeadmin#about');
         
     }
 
@@ -130,12 +199,16 @@ class HomeadminController extends Controller
             'deskripsi'=> $request['deskripsi'],
         ];
         $products->update($up);
+        
+        alert('berhasil');
         return redirect('/homeadmin#services')->with('data berhasil ditambah');
     }
     public function productdelete($id){
         $products=Product::find($id);
         $products->delete();
         File::delete('gambar/product/'.$products->gambar);
+        
+        alert('berhasil');
         return redirect('/homeadmin#services')->with('data berhasil dihapus');
 
     }
@@ -163,6 +236,7 @@ class HomeadminController extends Controller
 		]);
  
 		
+        alert('berhasil');
         return redirect('/homeadmin#services')->with('data berhasil ditambah');
     }
     public function teamedit($id)
@@ -191,6 +265,8 @@ class HomeadminController extends Controller
             'role'=> $request['role'],
         ];
         $team->update($up);
+        
+        alert('berhasil');
         return redirect('/homeadmin#team')->with('data berhasil ditambah');
     }
     public function producttambah()
@@ -226,12 +302,15 @@ class HomeadminController extends Controller
 		]);
  
 		
+        alert('berhasil');
         return redirect('/homeadmin#team')->with('data berhasil ditambah');
     }
     public function teamdelete($id){
         $team=Team::find($id);
         $team->delete();
         File::delete('gambar/team/'.$team->gambar);
+        
+        alert('berhasil');
         return redirect('/homeadmin#team')->with('data berhasil dihapus');
 
     }
