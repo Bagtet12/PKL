@@ -215,7 +215,7 @@ class HomeadminController extends Controller
     public function create(Request $request){
         // \App\Product::create($request->all());
         $this->validate($request, [
-			'gambar' => 'required|file|mimes:jpeg,png,jpg,JPG|max:2048',
+			'gambar' => 'required|file|mimes:jpeg,png,jpg,JPG|max:20480',
             'nama_product' => 'required',
 			'deskripsi' => 'required',
 		]);
@@ -281,7 +281,7 @@ class HomeadminController extends Controller
         // \App\Team::create($request->all());
         // return redirect('/homeadmin#team')->with('data berhasil ditambah');
         $this->validate($request, [
-			'gambar' => 'required|file|mimes:jpeg,png,jpg|max:2048',
+			'gambar' => 'required|file|mimes:jpeg,png,jpg|max:20480',
             'nama' => 'required',
 			'role' => 'required',
 		]);
