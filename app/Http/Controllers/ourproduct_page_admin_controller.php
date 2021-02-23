@@ -31,7 +31,7 @@ class ourproduct_page_admin_controller extends Controller
     }
     public function create_event(Request $request){
         $this->validate($request, [
-			'gambar' => 'required|file|mimes:jpeg,png,jpg|max:2048',
+			'gambar' => 'required|file|mimes:jpeg,png,jpg|max:2048000',
             'judul' => 'required',
 			'deskripsi' => 'required',
             'link_website' =>'required',
@@ -113,7 +113,7 @@ class ourproduct_page_admin_controller extends Controller
         }
         public function create_influencer(Request $request){
             $this->validate($request, [
-                'gambar' => 'required|file|mimes:jpeg,png,jpg|max:2048',
+                'gambar' => 'required|file|mimes:jpeg,png,jpg|max:2048000',
                 'judul' => 'required',
                 'deskripsi' => 'required',
                 'link_instagram' =>'required',
@@ -179,7 +179,7 @@ class ourproduct_page_admin_controller extends Controller
         }
         public function create_creative(Request $request){
             $this->validate($request, [
-                'gambar' => 'required|file|mimes:jpeg,png,jpg|max:2048',
+                'gambar' => 'required|file|mimes:jpeg,png,jpg|max:2048000',
                 'judul' => 'required',
                 'deskripsi' => 'required',
                 'link_video' =>'required',

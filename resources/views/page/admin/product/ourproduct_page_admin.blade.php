@@ -33,7 +33,7 @@
       <div class="container" style="margin-top:50px">
         <div class="text-center">
             <h1 class="section-heading text-uppercase">Influencer & Content Management</h1>
-            <h6 class="section-subheading text-muted">Kami me-manage para influencer influencer keren nih!</h6>
+            <h6 class="section-subheading text-muted"></h6>
             <a class="btn btn-dark btn-social mx-2" href="{{route('influencertambah')}}"><i class="fa fa-plus  "></i></a>
             <!-- <img src="assets/img/beauty-fest.jpg" alt="web dev" style="width:75%; margin-top:30px"> -->
             <div class="row">
@@ -66,15 +66,18 @@
                 <div class="slideshow-container">
 
                 <div class="mySlides">
-                  <div class="numbertext">1 / 3</div>
+                  <div class="numbertext"></div>
+                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a> 
                   <img class="w-50 h-100"  src="{{ url('gambar/'.$creative->gambar) }}" style="width:100%">
+                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
                   <div class="text">{{$creative->judul}}</div>
                   <p style="margin-top:40px">{{$creative->deskripsi}}</p>
-                </div>
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-              <a class="btn btn-dark btn-social mx-2" href="{{url('/creativeedit')}}/{{$creative->id}}"><i class="fa fa-edit"></i></a>
+                  <a class="btn btn-dark btn-social mx-2" href="{{url('/creativeedit')}}/{{$creative->id}}"><i class="fa fa-edit"></i></a>
               <a class="btn btn-dark btn-social mx-2" href="{{url('/creativedelete')}}/{{$creative->id}}"><i class="fa fa-trash"></i></a>
+                </div>
+                @endforeach
+                
+              
 
                 {{-- <div class="mySlides">
                   <div class="numbertext">2 / 3</div>
@@ -130,18 +133,18 @@
         </div>
         </div>
       </div>
-      <div class="container">
+      {{-- <div class="container">
         <ul class="timeline">
           <li>
             <div class="timeline-panel">
             </div>
           </li>
         </ul>
-        </div>
-        @endforeach
+        </div> --}}
+        
       </div>
       <br>
-      <div class="container">
+      {{-- <div class="container">
         <ul class="timeline">
           <li>
             <div class="timeline-panel">
@@ -153,7 +156,7 @@
                   </div>
               </li> -->
         </ul>
-        </div>
+        </div> --}}
       </div>
 @endsection
 

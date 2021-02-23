@@ -15,8 +15,8 @@
         <div class="text-center">
           <h1 class="section-heading text-uppercase">Event Management</h1>
           @foreach ($event as $event)
-            <img src="{{ url('gambar/'.$event->gambar) }}" alt="web dev" style="width:75%; margin-top:30px">
-            <h6 class="section-subheading text-muted">{{$event->judul}}</h6>
+            <img mx-auto rounded-square src="{{ url('gambar/'.$event->gambar) }}" alt="web dev" style="width:75%; margin-top:30px">
+            <h3 class="section-subheading text-muted">{{$event->judul}}</h3>
             <p style="margin-top:40px">{{$event->deskripsi}}</p>
             <a class="btn btn-dark btn-social mx-2" href="{{$event->link_website}}"><i class="fas fa-globe-europe"></i></a>
             @endforeach
@@ -29,14 +29,14 @@
       <div class="container" style="margin-top:50px">
         <div class="text-center">
             <h1 class="section-heading text-uppercase">Influencer & Content Management</h1>
-            <h6 class="section-subheading text-muted">Kami me-manage para influencer influencer keren nih!</h6>
+            <h6 class="section-subheading text-muted"></h6>
             <!-- <img src="assets/img/beauty-fest.jpg" alt="web dev" style="width:75%; margin-top:30px"> -->
             <div class="row">
               @foreach($influencer as $influencer)
               <div class="col-lg-4">
                   <div class="team-member">
                       <img class="mx-auto rounded-square" src="/gambar/{{$influencer->gambar}}" alt="" />
-                      <h4>{{$influencer->judul}}</h4>
+                      <h3>{{$influencer->judul}}</h3>
                       <p class="text-muted" align="center">{{$influencer->deskripsi}}</p><br>
                       <a class="btn btn-dark btn-social mx-2" href="{{$influencer->link_instagram}}" target="blank"><i class="fab fa-instagram"></i></a>
                   </div>
@@ -59,19 +59,31 @@
                 <div class="slideshow-container">
 
                 <div class="mySlides">
-                  <div class="numbertext">1 / 3</div>
-                  <img class="h-75 w-50" src="{{ url('gambar/'.$creative->gambar) }}" style="width:100%">
-                  <div class="text">{{$creative->judul}}</div>
+                  <div class="numbertext"></div>
+                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                  <img class="w-50 h-50" src="{{ url('gambar/'.$creative->gambar) }}" style="width:50%; margin-top:30px">
+                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                  <div class="text"><h3>{{$creative->judul}}</h3></div>
+                  <p style="margin-top:40px">{{$creative->deskripsi}}</p>
+                <a class="btn btn-dark btn-social mx-2" href="{{$creative->link_video}}" target="blank"><i class="fas fa-globe-europe"></i></a>
                 </div>
-                <p style="margin-top:40px">{{$creative->deskripsi}}</p>
+                
+              <br>
+              @endforeach
 
-              
-
+              <div class="mySlides">
+                <div class="numbertext"></div>
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/bM2OYQGEA4U" frameborder="0" allowfullscreen></iframe>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <div class="text"></div>
+              </div>
+
+                
 
                 </div>
                 <br>
+                
 
                 <div style="text-align:center">
                   <span class="dot" onclick="currentSlide(1)"></span>
@@ -111,10 +123,10 @@
             
         </div>
         </div>
-        @endforeach
+        
       </div>
       </div>
-      <div class="container">
+      {{-- <div class="container">
         <ul class="timeline">
           <li>
             <div class="timeline-panel">
@@ -126,7 +138,7 @@
                   </div>
               </li> -->
         </ul>
-        </div>
+        </div> --}}
       </div>
 @endsection
 
