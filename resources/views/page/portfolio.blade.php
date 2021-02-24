@@ -52,19 +52,19 @@
 
                 <div class="mySlides">
                   <div class="numbertext">1 / 3</div>
-                  <img src="img/rs1.jpg" style="width:100%">
+                  <img src="..." style="width:100%">
                   <div class="text">Beauty Fest</div>
                 </div>
 
                 <div class="mySlides">
                   <div class="numbertext">2 / 3</div>
-                  <img src="img/rs2.jpg" style="width:100%">
+                  <img src="..." style="width:100%">
                   <div class="text">Jember Canaval Festival</div>
                 </div>
 
                 <div class="mySlides">
                   <div class="numbertext">3 / 3</div>
-                  <img src="img/rs3.jpg" style="width:100%">
+                  <img src="..." style="width:100%">
                   <div class="text">Web Deelopment</div>
                 </div>
 
@@ -119,59 +119,143 @@
                     <h2 class="section-headingporto text-uppercase">EVENT KAMI</h2>
                 </div>
 
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <h3>Title</h3>
+                      <p>Deskripsi Foto sesuatu</p>
+                      <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
+                    </div>
+                    <div class="col-sm-6">
+                      <p>IMG</p>
+                    </div>
+                  </div>
+                </div>
+
+                <hr/>
+
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <p>IMG</p>
+                    </div>
+                    <div class="col-sm-6">
+                      <h3>Title</h3>
+                      <p>Deskripsi Foto sesuatu</p>
+                      <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
+                    </div>
+                  </div>
+                </div>
+
+                <hr/>
+
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <h3>Title</h3>
+                      <p>Deskripsi Foto sesuatu</p>
+                      <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
+                    </div>
+                    <div class="col-sm-6">
+                      <p>IMG</p>
+                    </div>
+                  </div>
+                </div>
+
+                <hr/>
+
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <p>IMG</p>
+                    </div>
+                    <div class="col-sm-6">
+                      <h3>Title</h3>
+                      <p>Deskripsi Foto sesuatu</p>
+                      <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
+                    </div>
+                  </div>
+                </div>
+
+                <hr/>
+
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <h3>Title</h3>
+                      <p>Deskripsi Foto sesuatu</p>
+                      <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
+                    </div>
+                    <div class="col-sm-6">
+                      <p>IMG</p>
+                    </div>
+                  </div>
+                </div>
+
+                <hr/>
+
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <p>IMG</p>
+                    </div>
+                    <div class="col-sm-6">
+                      <h3>Title</h3>
+                      <p>Deskripsi Foto sesuatu</p>
+                      <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div class="text-center">
+                  <h2 class="section-headingporto text-uppercase">PARTNER KAMI</h2>
+                </div>
+
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-square" src="assets/img/team/1.jpg" alt="" />
+                            <img class="mx-auto rounded-square" src="assets/img/team/1.jpg" alt="foto partner" />
                             <h4>Beauty Fest - Jember</h4>
-                            <p class="text-muted" align="center">Our affiliation with Dove©</p><br>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
-                            <a class="btn btn-primary btn-md text-uppercase js-scroll-trigger" href="#services">Read More</a>
+                            <!-- <p class="text-muted" align="center">Our affiliation with Dove©</p><br> -->
+                            <!-- <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
+                            <a class="btn btn-primary btn-md text-uppercase js-scroll-trigger" href="#services">Read More</a> -->
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-square" src="assets/img/team/2.jpg" alt="" />
+                            <img class="mx-auto rounded-square" src="assets/img/team/2.jpg" alt="foto partner" />
                             <h4>Mahasiswa Jagoan</h4>
-                            <p class="text-muted" align="center">Our affiliation with Dove©</p><br>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
-                            <a class="btn btn-primary btn-md text-uppercase js-scroll-trigger" href="#services">Read More</a>
+                            <!-- <p class="text-muted" align="center">Our affiliation with Dove©</p><br> -->
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-square" src="assets/img/team/3.jpg" alt="" />
+                            <img class="mx-auto rounded-square" src="assets/img/team/3.jpg" alt="foto partner" />
                             <h4>FORTRAN 2018</h4>
-                            <p class="text-muted" align="center">Our affiliation with Dove©</p><br>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
-                            <a class="btn btn-primary btn-md text-uppercase js-scroll-trigger" href="#services">Read More</a>
+                            <!-- <p class="text-muted" align="center">Our affiliation with Dove©</p><br> -->
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-square" src="assets/img/team/1.jpg" alt="" />
-                            <h4>Kay Garland</h4>
-                            <p class="text-muted" align="center">Our affiliation with Dove©</p><br>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
-                            <a class="btn btn-primary btn-md text-uppercase js-scroll-trigger" href="#services">Read More</a>
+                            <img class="mx-auto rounded-square" src="assets/img/team/1.jpg" alt="foto partner" />
+                            <h4>Unilever</h4>
+                            <!-- <p class="text-muted" align="center">Our affiliation with Dove©</p><br> -->
                         </div>
                     </div>
                     <div class="col-lg-4">
                             <div class="team-member">
-                                <img class="mx-auto rounded-square" src="assets/img/team/1.jpg" alt="" />
-                                <h4>Kay Garland</h4>
-                                <p class="text-muted" align="center">Our affiliation with Dove©</p><br>
-                                <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
-                                <a class="btn btn-primary btn-md text-uppercase js-scroll-trigger" href="#services">Read More</a>
+                                <img class="mx-auto rounded-square" src="assets/img/team/1.jpg" alt="foto partner" />
+                                <h4>Kopi Rengganis</h4>
+                                <!-- <p class="text-muted" align="center">Our affiliation with Dove©</p><br> -->
                             </div>
                         </div>
                     <div class="col-lg-4">
                             <div class="team-member">
-                                <img class="mx-auto rounded-square" src="assets/img/team/1.jpg" alt="" />
-                                <h4>Kay Garland</h4>
-                                <p class="text-muted" align="center">Our affiliation with Dove©</p><br>
-                                <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
-                                <a class="btn btn-primary btn-md text-uppercase js-scroll-trigger" href="#services">Read More</a>
+                                <img class="mx-auto rounded-square" src="assets/img/team/1.jpg" alt="foto partner" />
+                                <h4>Ayam Kulit Erfinda</h4>
+                                <!-- <p class="text-muted" align="center">Our affiliation with Dove©</p><br> -->
                             </div>
                         </div>
                     </div>
