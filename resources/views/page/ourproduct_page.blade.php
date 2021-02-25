@@ -60,23 +60,23 @@
                 <div class="mySlides">
                   <div class="numbertext"></div>
                   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                  <img class="w-50 h-50" src="{{ url('gambar/creative_video/'.$creative->gambar) }}" style="width:50%; margin-top:30px">
+                  <a href="{{$creative->link_video}}"><img class="w-50 h-50" src="{{ url('gambar/creative_video/'.$creative->gambar) }}" style="width:50%; margin-top:30px"></a>
                   <a class="next" onclick="plusSlides(1)">&#10095;</a>
                   <div class="text"><h3>{{$creative->judul}}</h3></div>
                   <p style="margin-top:40px">{{$creative->deskripsi}}</p>
-                <a class="btn btn-dark btn-social mx-2" href="{{$creative->link_video}}" target="blank"><i class="fas fa-globe-europe"></i></a>
+                {{-- <a class="btn btn-dark btn-social mx-2" href="{{$creative->link_video}}" target="blank"><i class="fas fa-globe-europe"></i></a> --}}
                 </div>
                 
               <br>
               @endforeach
                 
-              <div class="mySlides">
+              {{-- <div class="mySlides">
                 <div class="numbertext"></div>
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/{{substr($creative->link_video,30)}}" frameborder="0" allowfullscreen></iframe>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 <div class="text"></div>
-              </div>
+              </div> --}}
 
                 
 
