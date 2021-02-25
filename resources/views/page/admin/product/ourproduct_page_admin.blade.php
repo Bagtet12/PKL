@@ -24,6 +24,7 @@
             <br>
             <a class="btn btn-dark btn-social mx-2" href="{{url('/eventmanagementedit')}}/{{$event->id}}"><i class="fa fa-edit"></i></a>
             <a class="btn btn-dark btn-social mx-2" href="{{url('/eventdelete')}}/{{$event->id}}"><i class="fa fa-trash"></i></a>
+            <br>
           @endforeach
         </div>
       </div>
