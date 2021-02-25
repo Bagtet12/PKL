@@ -205,7 +205,7 @@ class ourproduct_page_admin_controller extends Controller
                 'gambar' => $nama_file,
                 'judul' => $request->judul,
                 'deskripsi' => $request->deskripsi,
-                'link_video'=>$link_video,
+                'link_video'=>$request->link_video,
             ]);
      
             

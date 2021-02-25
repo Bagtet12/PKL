@@ -62,7 +62,7 @@
             <p style="margin-top:40px">Menyongsong kebangkitan era informasi online, kami TIMES Indonesia Network (TIN) sebagai media online berjejaring terbesar se-Indonesia, hadir menjawabkebutuhan zaman. Kami hadir dengan semangat kuat dan mengusung misi BUILDING - INSPIRING - POSITIVE THINKING. TIMES Indonesia Network (TIN) hadir tidak hanya dengan konsep informasi global namun juga dengan informasi regional dan lokal. Oleh karenanya, dengan tetap menyajikan informasi global melalui TIN, konsep berita regional dan lokal</p> -->
             <div class="container">
               @foreach ($creative as $creative)
-             @if ($creative->link_video=="1")
+             {{-- @if ($creative->link_video=="1")
              <!-- Slideshow container -->
              <div class="slideshow-container">
 
@@ -74,7 +74,7 @@
                 <div class="text">{{$creative->judul}}</div>
                 <p style="margin-top:40px">{{$creative->deskripsi}}</p>
                 <a class="btn btn-dark btn-social mx-2" href="{{url('/creativeedit')}}/{{$creative->id}}"><i class="fa fa-edit"></i></a>
-            <a class="btn btn-dark btn-social mx-2" href="{{url('/creativedelete')}}/{{$creative->id}}"><i class="fa fa-trash"></i></a>
+                <a class="btn btn-dark btn-social mx-2" href="{{url('/creativedelete')}}/{{$creative->id}}"><i class="fa fa-trash"></i></a>
                 
               </div>
                  
@@ -82,7 +82,7 @@
              <div class="mySlides">
               <div class="numbertext"></div>
               <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=.stripslashes{{$creative->link_video}}" frameborder="0" allowfullscreen allow="autodeploy;encrypted-media"></iframe>
+              <iframe data-="" width="560" height="315" src="https://www.youtube.com/embed/.{{$creative->link_video}}" frameborder="0" allowfullscreen allow="autodeploy;encrypted-media"></iframe>
               <a class="next" onclick="plusSlides(1)">&#10095;</a>
               <div class="text">{{$creative->judul}}</div>
               <p style="margin-top:40px">{{$creative->deskripsi}}</p>
@@ -90,7 +90,18 @@
               <a class="btn btn-dark btn-social mx-2" href="{{url('/creativeedit')}}/{{$creative->id}}"><i class="fa fa-edit"></i></a>
             <a class="btn btn-dark btn-social mx-2" href="{{url('/creativedelete')}}/{{$creative->id}}"><i class="fa fa-trash"></i></a>
             </div> 
-             @endif
+             @endif --}}
+             <div class="mySlides">
+              <div class="numbertext"></div>
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a> 
+              <a href="{{$creative->link_video}}"><img class="w-50 h-100"  src="{{ url('gambar/creative_video/'.$creative->gambar) }}" style="width:100%"></a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              <div class="text">{{$creative->judul}}</div>
+              <p style="margin-top:40px">{{$creative->deskripsi}}</p>
+              <a class="btn btn-dark btn-social mx-2" href="{{url('/creativeedit')}}/{{$creative->id}}"><i class="fa fa-edit"></i></a>
+              <a class="btn btn-dark btn-social mx-2" href="{{url('/creativedelete')}}/{{$creative->id}}"><i class="fa fa-trash"></i></a>
+              
+            </div>
              
                 
                 @endforeach
