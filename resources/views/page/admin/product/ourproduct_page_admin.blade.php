@@ -1,4 +1,4 @@
-@extends ('template.templateadmin')
+@extends ('template.templateproduct_admin')
 @section('profil')
 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url('/homeadmin')}}">Home</a></li>
                         
@@ -12,7 +12,7 @@
       </header>
       
 
-      <div class="container" style="margin-top:50px; margin-bottom:30px">
+      <div id="eventmanagement" class="container" style="margin-top:50px; margin-bottom:30px">
         <div class="text-center">
           <h1 class="section-heading text-uppercase">Event Management</h1>
           <a class="btn btn-dark btn-social mx-2" href="{{route('eventmanagementtambah')}}"><i class="fa fa-plus  "></i></a>
@@ -30,7 +30,7 @@
 
 
 
-      <div class="container" style="margin-top:50px">
+      <div class="container" id="influencer" style="margin-top:50px">
         <div class="text-center">
             <h1 class="section-heading text-uppercase">Influencer & Content Management</h1>
             <h6 class="section-subheading text-muted"></h6>
@@ -53,7 +53,7 @@
       </div>
       </div>
 
-      <div class="container" style="margin-top:50px">
+      <div class="container" id="creative" style="margin-top:50px">
         <div class="text-center">
             <h1 class="section-heading text-uppercase">Creative Video & Broadcasting</h1>
             <h6 class="section-subheading text-muted"></h6>
