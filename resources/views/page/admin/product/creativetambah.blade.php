@@ -18,7 +18,7 @@
                                             <label for="gambar" class="col-md-2 col-form-label text-md-right">Gambar Creative Video & Broadcasting</label>
 
                                             <div class="col-md-6">
-                                                <input id="gambar" type="file" class="form-control @error('gambar') is-invalid @enderror" name="gambar" value="" required autocomplete="" autofocus>
+                                                <input id="gambar" type="file" class="form-control @error('gambar') is-invalid @enderror" name="gambar" value=""  autocomplete="" autofocus>
 
                                                 @error('gambar')
                                                     <span class="invalid-feedback" role="alert">
@@ -57,7 +57,7 @@
                                             <label for="nama" class="col-md-2 col-form-label text-md-right">Link Creative Video & Broadcasting</label>
 
                                             <div class="col-md-6">
-                                                <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="link_video" value="" required autocomplete="" autofocus>
+                                                <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="link_video" value="" autocomplete="" autofocus>
 
                                                 @error('nama')
                                                     <span class="invalid-feedback" role="alert">

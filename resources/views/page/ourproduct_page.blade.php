@@ -1,4 +1,4 @@
-@extends ('template.template')
+@extends ('template.templateproduct')
 @section('profil')
 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url('/')}}">Home</a></li>
                         
@@ -11,14 +11,13 @@
           </div>
       </header>
 
-      <div class="container" style="margin-top:50px; margin-bottom:30px">
+      <div id="eventmanagement" class="container" style="margin-top:50px; margin-bottom:30px">
         <div class="text-center">
           <h1 class="section-heading text-uppercase">Event Management</h1>
           @foreach ($event as $event)
-            <img mx-auto rounded-square src="{{ url('gambar/'.$event->gambar) }}" alt="web dev" style="width:75%; margin-top:30px">
+            <a href="{{$event->link_website}}"><img mx-auto rounded-square src="{{ url('gambar/event_management/'.$event->gambar) }}" alt="web dev" style="width:50%; margin-top:30px"></a>
             <h3 class="section-subheading text-muted">{{$event->judul}}</h3>
             <p style="margin-top:40px">{{$event->deskripsi}}</p>
-            <a class="btn btn-dark btn-social mx-2" href="{{$event->link_website}}"><i class="fas fa-globe-europe"></i></a>
             @endforeach
         </div>
       </div>
@@ -26,7 +25,7 @@
 
 
 
-      <div class="container" style="margin-top:50px">
+      <div id="influencer" class="container" style="margin-top:50px">
         <div class="text-center">
             <h1 class="section-heading text-uppercase">Influencer & Content Management</h1>
             <h6 class="section-subheading text-muted"></h6>
@@ -35,7 +34,7 @@
               @foreach($influencer as $influencer)
               <div class="col-lg-4">
                   <div class="team-member">
-                      <img class="mx-auto rounded-square" src="/gambar/{{$influencer->gambar}}" alt="" />
+                      <img class="mx-auto rounded-square" src="/gambar/influencer/{{$influencer->gambar}}" alt="" />
                       <h3>{{$influencer->judul}}</h3>
                       <p class="text-muted" align="center">{{$influencer->deskripsi}}</p><br>
                       <a class="btn btn-dark btn-social mx-2" href="{{$influencer->link_instagram}}" target="blank"><i class="fab fa-instagram"></i></a>
@@ -47,7 +46,7 @@
       </div>
       </div>
 
-      <div class="container" style="margin-top:50px">
+      <div id="creative" class="container" style="margin-top:50px">
         <div class="text-center">
             <h1 class="section-heading text-uppercase">Creative Video & Broadcasting</h1>
             <h6 class="section-subheading text-muted"></h6>
@@ -61,7 +60,7 @@
                 <div class="mySlides">
                   <div class="numbertext"></div>
                   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                  <img class="w-50 h-50" src="{{ url('gambar/'.$creative->gambar) }}" style="width:50%; margin-top:30px">
+                  <img class="w-50 h-50" src="{{ url('gambar/creative_video/'.$creative->gambar) }}" style="width:50%; margin-top:30px">
                   <a class="next" onclick="plusSlides(1)">&#10095;</a>
                   <div class="text"><h3>{{$creative->judul}}</h3></div>
                   <p style="margin-top:40px">{{$creative->deskripsi}}</p>
@@ -70,11 +69,11 @@
                 
               <br>
               @endforeach
-
+                
               <div class="mySlides">
                 <div class="numbertext"></div>
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/bM2OYQGEA4U" frameborder="0" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{substr($creative->link_video,30)}}" frameborder="0" allowfullscreen></iframe>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 <div class="text"></div>
               </div>

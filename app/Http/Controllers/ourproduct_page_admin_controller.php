@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Event;
 use App\Influencer;
 use App\Creative_Video;
-
+use File;
 use Illuminate\Pagination;
 use Illuminate\Support\Facades\Hash;
 use PhpParser\Node\Stmt\If_;
@@ -43,7 +43,7 @@ class ourproduct_page_admin_controller extends Controller
 		$nama_file = time()."_"."$request->nama"."_".$file->getClientOriginalName();
  
       	        // isi dengan nama folder tempat kemana file diupload
-		$tujuan_upload = 'gambar';
+		$tujuan_upload = 'gambar/event_management';
 		$file->move($tujuan_upload,$nama_file);
  
 		Event::create([
@@ -76,7 +76,7 @@ class ourproduct_page_admin_controller extends Controller
             
             $file = $request->file('gambar');
             $awal=time()."_"."$request->nama"."_".$file->getClientOriginalName();
-            $tujuan='gambar';
+            $tujuan='gambar/event_management';
             $file->move($tujuan,$awal);
             
         }
@@ -93,6 +93,7 @@ class ourproduct_page_admin_controller extends Controller
         public function eventdelete($id){
             $event=Event::find($id);
             $event->delete();
+            File::delete('gambar/event_management/'.$event->gambar);
             return redirect('/ourproduct_page_admin')->with('data berhasil dihapus');
     
         }
@@ -109,6 +110,7 @@ class ourproduct_page_admin_controller extends Controller
         public function influencerdelete($id){
             $influencer=Influencer::find($id);
             $influencer->delete();
+            File::delete('gambar/influencer/'.$influencer->gambar);
             return redirect('/ourproduct_page_admin')->with('data berhasil dihapus');
         }
         public function create_influencer(Request $request){
@@ -125,7 +127,7 @@ class ourproduct_page_admin_controller extends Controller
             $nama_file = time()."_"."$request->nama"."_".$file->getClientOriginalName();
      
                       // isi dengan nama folder tempat kemana file diupload
-            $tujuan_upload = 'gambar';
+            $tujuan_upload = 'gambar/influencer';
             $file->move($tujuan_upload,$nama_file);
      
             Influencer::create([
@@ -148,7 +150,7 @@ class ourproduct_page_admin_controller extends Controller
             
             $file = $request->file('gambar');
             $awal=time()."_"."$request->nama"."_".$file->getClientOriginalName();
-            $tujuan='gambar';
+            $tujuan='gambar/influencer';
             $file->move($tujuan,$awal);
             
         }
@@ -175,6 +177,7 @@ class ourproduct_page_admin_controller extends Controller
         public function creativedelete($id){
             $creative=Creative_Video::find($id);
             $creative->delete();
+            File::delete('gambar/creative_video/'.$creative->gambar);
             return redirect('/ourproduct_page_admin')->with('data berhasil dihapus');
         }
         public function create_creative(Request $request){
@@ -182,7 +185,6 @@ class ourproduct_page_admin_controller extends Controller
                 'gambar' => 'required|file|mimes:jpeg,png,jpg|max:2048000',
                 'judul' => 'required',
                 'deskripsi' => 'required',
-                'link_video' =>'required',
             ]);
      
             // menyimpan data file yang diupload ke variabel $file
@@ -191,14 +193,19 @@ class ourproduct_page_admin_controller extends Controller
             $nama_file = time()."_"."$request->nama"."_".$file->getClientOriginalName();
      
                       // isi dengan nama folder tempat kemana file diupload
-            $tujuan_upload = 'gambar';
+            $tujuan_upload = 'gambar/creative_video';
             $file->move($tujuan_upload,$nama_file);
-     
+            if(empty($request->link_video)){
+                $link_video="1";
+            }
+            else{
+                $link_video=$request->link_video;
+            }
             Creative_Video::create([
                 'gambar' => $nama_file,
                 'judul' => $request->judul,
                 'deskripsi' => $request->deskripsi,
-                'link_video'=>$request->link_video,
+                'link_video'=>$link_video,
             ]);
      
             
@@ -214,7 +221,7 @@ class ourproduct_page_admin_controller extends Controller
             
             $file = $request->file('gambar');
             $awal=time()."_"."$request->nama"."_".$file->getClientOriginalName();
-            $tujuan='gambar';
+            $tujuan='gambar/creative_video';
             $file->move($tujuan,$awal);
             
         }

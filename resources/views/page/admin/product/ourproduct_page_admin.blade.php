@@ -18,7 +18,7 @@
           <a class="btn btn-dark btn-social mx-2" href="{{route('eventmanagementtambah')}}"><i class="fa fa-plus  "></i></a>
           <br>
           @foreach ($event as $event)
-            <img src="{{ url('gambar/'.$event->gambar) }}" alt="web dev" style="width:75%; margin-top:30px">
+            <img src="{{ url('gambar/event_management/'.$event->gambar) }}" alt="web dev" style="width:75%; margin-top:30px">
             <h6 class="section-subheading text-muted">{{$event->judul}}</h6>
             <p style="margin-top:40px">{{$event->deskripsi}}</p>
             <a class="btn btn-dark btn-social mx-2" href="{{url('/eventmanagementedit')}}/{{$event->id}}"><i class="fa fa-edit"></i></a>
@@ -40,7 +40,7 @@
               @foreach($influencer as $influencer)
               <div class="col-lg-4">
                   <div class="team-member">
-                      <img class="mx-auto rounded-square" src="{{ url('gambar/'.$influencer->gambar) }}" alt="" />
+                      <img class="mx-auto rounded-square" src="{{ url('gambar/influencer/'.$influencer->gambar) }}" alt="" />
                       <h4>{{$influencer->judul}}</h4>
                       <p class="text-muted" align="center">{{$influencer->deskripsi}}</p><br>
                       {{-- <a class="btn btn-dark btn-social mx-2" href="{{$influencer->link_instagram}}" target="blank"><i class="fab fa-instagram"></i></a> --}}
@@ -62,19 +62,37 @@
             <p style="margin-top:40px">Menyongsong kebangkitan era informasi online, kami TIMES Indonesia Network (TIN) sebagai media online berjejaring terbesar se-Indonesia, hadir menjawabkebutuhan zaman. Kami hadir dengan semangat kuat dan mengusung misi BUILDING - INSPIRING - POSITIVE THINKING. TIMES Indonesia Network (TIN) hadir tidak hanya dengan konsep informasi global namun juga dengan informasi regional dan lokal. Oleh karenanya, dengan tetap menyajikan informasi global melalui TIN, konsep berita regional dan lokal</p> -->
             <div class="container">
               @foreach ($creative as $creative)
-                <!-- Slideshow container -->
-                <div class="slideshow-container">
+             @if ($creative->link_video=="1")
+             <!-- Slideshow container -->
+             <div class="slideshow-container">
 
-                <div class="mySlides">
-                  <div class="numbertext"></div>
-                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a> 
-                  <img class="w-50 h-100"  src="{{ url('gambar/'.$creative->gambar) }}" style="width:100%">
-                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                  <div class="text">{{$creative->judul}}</div>
-                  <p style="margin-top:40px">{{$creative->deskripsi}}</p>
-                  <a class="btn btn-dark btn-social mx-2" href="{{url('/creativeedit')}}/{{$creative->id}}"><i class="fa fa-edit"></i></a>
-              <a class="btn btn-dark btn-social mx-2" href="{{url('/creativedelete')}}/{{$creative->id}}"><i class="fa fa-trash"></i></a>
-                </div>
+              <div class="mySlides">
+                <div class="numbertext"></div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a> 
+                <img class="w-50 h-100"  src="{{ url('gambar/creative_video/'.$creative->gambar) }}" style="width:100%">
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <div class="text">{{$creative->judul}}</div>
+                <p style="margin-top:40px">{{$creative->deskripsi}}</p>
+                <a class="btn btn-dark btn-social mx-2" href="{{url('/creativeedit')}}/{{$creative->id}}"><i class="fa fa-edit"></i></a>
+            <a class="btn btn-dark btn-social mx-2" href="{{url('/creativedelete')}}/{{$creative->id}}"><i class="fa fa-trash"></i></a>
+                
+              </div>
+                 
+             @else
+             <div class="mySlides">
+              <div class="numbertext"></div>
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=.stripslashes{{$creative->link_video}}" frameborder="0" allowfullscreen allow="autodeploy;encrypted-media"></iframe>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              <div class="text">{{$creative->judul}}</div>
+              <p style="margin-top:40px">{{$creative->deskripsi}}</p>
+              <div class="text"></div>
+              <a class="btn btn-dark btn-social mx-2" href="{{url('/creativeedit')}}/{{$creative->id}}"><i class="fa fa-edit"></i></a>
+            <a class="btn btn-dark btn-social mx-2" href="{{url('/creativedelete')}}/{{$creative->id}}"><i class="fa fa-trash"></i></a>
+            </div> 
+             @endif
+             
+                
                 @endforeach
                 
               
