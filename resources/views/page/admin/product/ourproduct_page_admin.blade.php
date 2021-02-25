@@ -18,7 +18,7 @@
           <a class="btn btn-dark btn-social mx-2" href="{{route('eventmanagementtambah')}}"><i class="fa fa-plus  "></i></a>
           <br>
           @foreach ($event as $event)
-            <img src="{{ url('gambar/event_management/'.$event->gambar) }}" alt="web dev" style="width:75%; margin-top:30px">
+            <img src="{{ url('gambar/event_management/'.$event->gambar) }}" alt="web dev" style="width:50%; margin-top:30px">
             <h6 class="section-subheading text-muted">{{$event->judul}}</h6>
             <p style="margin-top:40px">{{$event->deskripsi}}</p>
             <a class="btn btn-dark btn-social mx-2" href="{{url('/eventmanagementedit')}}/{{$event->id}}"><i class="fa fa-edit"></i></a>
