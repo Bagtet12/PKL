@@ -1,11 +1,13 @@
 @extends('template.templateadmin')
 @section('profil')
     <li class="nav-item dropdown">
-                            <a style="color: white" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profile</a>
+                            <a style="color: white" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
                             <div class="dropdown-menu">
                               <a class="dropdown-item" href="#about">About</a>
                               <a class="dropdown-item" href="#services">Our Product</a>
                               <a class="dropdown-item" href="#team">Team</a>
+                              <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Home</a>
                           </li>
 @endsection
 @section('home')
@@ -90,9 +92,10 @@
                 <div class="row text-center">
                     @foreach ($our_product as $product)
                     <div class="col-md-4 mt-4">
-                        <a href="">
+                        
                             <div class="timeline-image"><img class="rounded-circle img-fluid2" src="{{ url('gambar/product/'.$product->gambar) }}" alt="" /></div>
-                        <h4 class="my-3" style="color: black">{{$product->nama_product}}</h4></a>
+                        <h4 class="my-3" style="color: black">{{$product->nama_product}}</h4>
+                        
                         <p class="text-muted">{{$product->deskripsi}}</p>
                         <br>
                             <a class="btn btn-dark btn-social mx-2" href="{{url('/productedit')}}/{{$product->id}}"><i class="fa fa-edit"></i></a>

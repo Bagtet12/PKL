@@ -3,7 +3,7 @@
 
   <header class="masthead">
           <div class="container">
-              <div class="masthead-heading " >OUR PRODUCT</div>
+              <div class="masthead-heading " >Masterpiece</div>
           </div>
       </header>
 

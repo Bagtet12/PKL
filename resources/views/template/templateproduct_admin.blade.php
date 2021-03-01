@@ -45,7 +45,7 @@
                             </div>
                           </li> --}}
                           <li class="nav-item dropdown">
-                            <a style="color: white" class="nav-link dropdown-toggle" data-toggle="dropdown" href="{{route('ourproduct_page_admin')}}" role="button" aria-haspopup="true" aria-expanded="false">Our product</a>
+                            <a style="color: white" class="nav-link dropdown-toggle" data-toggle="dropdown" href="{{route('ourproduct_page_admin')}}" role="button" aria-haspopup="true" aria-expanded="false">Masterpiece</a>
                             <div class="dropdown-menu">
                               <a class="dropdown-item" href="#eventmanagement">Event Management</a>
                               <a class="dropdown-item" href="#influencer">Influencer & Content Creator</a>
