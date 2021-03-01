@@ -20,8 +20,9 @@ class HomeUserController extends Controller
     }
     
     public function portfolio(){
-
-        return view('page/portfolio');
+        $portfolio=\App\Portfolio::all();
+        $partner=\App\Partner::all();
+        return view('page/portfolio',compact('portfolio','partner'));
     }
     public function ourproduct(){
         return view ('page/ourproduct');

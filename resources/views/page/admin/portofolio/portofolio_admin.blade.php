@@ -25,9 +25,20 @@
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars ml-1"></i></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url("/")}}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('page_product')}}">Our Product</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url('/portfolio')}}">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url("homeadmin")}}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('ourproduct_page_admin')}}">Our Product</a></li>
+                        <li class="nav-item dropdown">
+                          <a style="color: white" class="nav-link dropdown-toggle" data-toggle="dropdown" href="{{route('portfolio_admin')}}" role="button" aria-haspopup="true" aria-expanded="false">Portofolio</a>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#eventgallery">Event Gallery</a>
+                            <a class="dropdown-item" href="#eventkami">Event Kami</a>
+                            {{-- <a class="dropdown-item" href="{{route('portfolio')}}">Portfolio</a> --}}
+                            <a class="dropdown-item" href="#partner">Partner</a>
+                            {{-- <a class="dropdown-item" href="#contact">Contact</a> --}}
+                            {{-- <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="{{url('/')}}">Home</a>
+                          </div> --}}
+                        </li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.instagram.com/timesjember/" target="blank"><i class="fab fa-instagram"></i></a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.youtube.com/channel/UCgj4fXpMKECuDIOTcx-CvLg" target="blank"><i class="fab fa-youtube"></i></a></li>
                     </ul>
@@ -42,7 +53,7 @@
             </div>
         </header>
 
-            <div class="container">
+            <div id="eventgallery" class="container">
                 <div class="text-center">
                     <h2 class="section-headingport text-uppercase">EVENT GALLERY</h2>
                 </div>
@@ -52,19 +63,19 @@
 
                 <div class="mySlides">
                   <div class="numbertext">1 / 3</div>
-                  <img src="img/rs1.jpg" style="width:100%">
+                  <img src="..." style="width:100%">
                   <div class="text">Beauty Fest</div>
                 </div>
 
                 <div class="mySlides">
                   <div class="numbertext">2 / 3</div>
-                  <img src="img/rs2.jpg" style="width:100%">
+                  <img src="..." style="width:100%">
                   <div class="text">Jember Canaval Festival</div>
                 </div>
 
                 <div class="mySlides">
                   <div class="numbertext">3 / 3</div>
-                  <img src="img/rs3.jpg" style="width:100%">
+                  <img src="..." style="width:100%">
                   <div class="text">Web Deelopment</div>
                 </div>
 
@@ -115,68 +126,65 @@
                   </p>
                 </div>
 
-                <div class="text-center">
+                <div id="eventkami" class="text-center">
                     <h2 class="section-headingporto text-uppercase">EVENT KAMI</h2>
+                    <a class="btn btn-dark btn-social mx-2" href="{{route('portfoliotambah')}}"><i class="fa fa-plus  "></i></a>
+                </div>
+                <br>
+                <hr>
+
+                <div class="container">
+                  @foreach ($portfolio as $portfolio)
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <h3>{{$portfolio->judul}}</h3>
+                      <p>{{$portfolio->deskripsi}}</p>
+                      <br>
+                      <a class="btn btn-dark btn-social mx-2" href="{{url('/portfolioedit')}}/{{$portfolio->id}}"><i class="fa fa-edit"></i></a>
+                      <a class="btn btn-dark btn-social mx-2" href="{{url('/portfoliodelete')}}/{{$portfolio->id}}"><i class="fa fa-trash"></i></a>
+                      <br>
+                      
+                    </div>
+                    <div class="col-sm-6">
+                      <img width="65%" src="{{ url('gambar/portfolio/'.$portfolio->gambar) }}" alt="">
+                    </div>  
+                  </div>
+                  <hr/>
+                  @endforeach
+                </div>
+
+               
+
+               
+                  
+              
+
+
+
+                <div id="partner" class="text-center">
+                  <h2 class="section-headingporto text-uppercase">PARTNER KAMI</h2>
+                  <a class="btn btn-dark btn-social mx-2" href="{{route('partnertambah')}}"><i class="fa fa-plus  "></i></a>
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-square" src="assets/img/team/1.jpg" alt="" />
-                            <h4>Beauty Fest - Jember</h4>
-                            <p class="text-muted" align="center">Our affiliation with Dove©</p><br>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
-                            <a class="btn btn-primary btn-md text-uppercase js-scroll-trigger" href="#services">Read More</a>
-                        </div>
+                  @foreach ($partner as $partner)
+                  <div class="col-lg-4">
+                    <div class="team-member">
+                        <img width="55%" class="mx-auto rounded-square" src="{{ url('gambar/partner/'.$partner->gambar) }}" alt="foto partner" />
+                        <h4>[{{$partner->judul}}]</h4>
+                        <br>
+                      <a class="btn btn-dark btn-social mx-2" href="{{url('/partneredit')}}/{{$partner->id}}"><i class="fa fa-edit"></i></a>
+                      <a class="btn btn-dark btn-social mx-2" href="{{url('/partnerdelete')}}/{{$partner->id}}"><i class="fa fa-trash"></i></a>
+                      <br>
+                        <!-- <p class="text-muted" align="center">Our affiliation with Dove©</p><br> -->
+                        <!-- <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
+                        <a class="btn btn-primary btn-md text-uppercase js-scroll-trigger" href="#services">Read More</a> -->
                     </div>
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-square" src="assets/img/team/2.jpg" alt="" />
-                            <h4>Mahasiswa Jagoan</h4>
-                            <p class="text-muted" align="center">Our affiliation with Dove©</p><br>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
-                            <a class="btn btn-primary btn-md text-uppercase js-scroll-trigger" href="#services">Read More</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-square" src="assets/img/team/3.jpg" alt="" />
-                            <h4>FORTRAN 2018</h4>
-                            <p class="text-muted" align="center">Our affiliation with Dove©</p><br>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
-                            <a class="btn btn-primary btn-md text-uppercase js-scroll-trigger" href="#services">Read More</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-square" src="assets/img/team/1.jpg" alt="" />
-                            <h4>Kay Garland</h4>
-                            <p class="text-muted" align="center">Our affiliation with Dove©</p><br>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
-                            <a class="btn btn-primary btn-md text-uppercase js-scroll-trigger" href="#services">Read More</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                            <div class="team-member">
-                                <img class="mx-auto rounded-square" src="assets/img/team/1.jpg" alt="" />
-                                <h4>Kay Garland</h4>
-                                <p class="text-muted" align="center">Our affiliation with Dove©</p><br>
-                                <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
-                                <a class="btn btn-primary btn-md text-uppercase js-scroll-trigger" href="#services">Read More</a>
-                            </div>
-                        </div>
-                    <div class="col-lg-4">
-                            <div class="team-member">
-                                <img class="mx-auto rounded-square" src="assets/img/team/1.jpg" alt="" />
-                                <h4>Kay Garland</h4>
-                                <p class="text-muted" align="center">Our affiliation with Dove©</p><br>
-                                <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
-                                <a class="btn btn-primary btn-md text-uppercase js-scroll-trigger" href="#services">Read More</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-            </div>
+                  
+                    
+                   
 
 
 

@@ -120,92 +120,27 @@
                 </div>
 
                 <div class="container">
+
+                  
                   <div class="row">
+                    @foreach ($portfolio as $portfolio)
                     <div class="col-sm-6">
-                      <h3>Title</h3>
-                      <p>Deskripsi Foto sesuatu</p>
-                      <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
+                      <a href="{{$portfolio->link}}"><h3>{{$portfolio->judul}}</h3></a>
+                      <p>{{$portfolio->deskripsi}}</p>
                     </div>
                     <div class="col-sm-6">
-                      <p>IMG</p>
+                      <a href="{{$portfolio->link}}"><img width="65%" src="{{ url('gambar/portfolio/'.$portfolio->gambar) }}" alt=""></a>
                     </div>
                   </div>
+                  <hr/>
+                  @endforeach
                 </div>
 
-                <hr/>
+                
 
-                <div class="container">
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <p>IMG</p>
-                    </div>
-                    <div class="col-sm-6">
-                      <h3>Title</h3>
-                      <p>Deskripsi Foto sesuatu</p>
-                      <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
-                    </div>
-                  </div>
-                </div>
-
-                <hr/>
-
-                <div class="container">
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <h3>Title</h3>
-                      <p>Deskripsi Foto sesuatu</p>
-                      <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
-                    </div>
-                    <div class="col-sm-6">
-                      <p>IMG</p>
-                    </div>
-                  </div>
-                </div>
-
-                <hr/>
-
-                <div class="container">
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <p>IMG</p>
-                    </div>
-                    <div class="col-sm-6">
-                      <h3>Title</h3>
-                      <p>Deskripsi Foto sesuatu</p>
-                      <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
-                    </div>
-                  </div>
-                </div>
-
-                <hr/>
-
-                <div class="container">
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <h3>Title</h3>
-                      <p>Deskripsi Foto sesuatu</p>
-                      <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
-                    </div>
-                    <div class="col-sm-6">
-                      <p>IMG</p>
-                    </div>
-                  </div>
-                </div>
-
-                <hr/>
-
-                <div class="container">
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <p>IMG</p>
-                    </div>
-                    <div class="col-sm-6">
-                      <h3>Title</h3>
-                      <p>Deskripsi Foto sesuatu</p>
-                      <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
-                    </div>
-                  </div>
-                </div>
+                  
+                  
+              
 
 
 
@@ -214,53 +149,19 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-square" src="assets/img/team/1.jpg" alt="foto partner" />
-                            <h4>Beauty Fest - Jember</h4>
-                            <!-- <p class="text-muted" align="center">Our affiliation with Dove©</p><br> -->
-                            <!-- <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
-                            <a class="btn btn-primary btn-md text-uppercase js-scroll-trigger" href="#services">Read More</a> -->
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-square" src="assets/img/team/2.jpg" alt="foto partner" />
-                            <h4>Mahasiswa Jagoan</h4>
-                            <!-- <p class="text-muted" align="center">Our affiliation with Dove©</p><br> -->
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-square" src="assets/img/team/3.jpg" alt="foto partner" />
-                            <h4>FORTRAN 2018</h4>
-                            <!-- <p class="text-muted" align="center">Our affiliation with Dove©</p><br> -->
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-square" src="assets/img/team/1.jpg" alt="foto partner" />
-                            <h4>Unilever</h4>
-                            <!-- <p class="text-muted" align="center">Our affiliation with Dove©</p><br> -->
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                            <div class="team-member">
-                                <img class="mx-auto rounded-square" src="assets/img/team/1.jpg" alt="foto partner" />
-                                <h4>Kopi Rengganis</h4>
-                                <!-- <p class="text-muted" align="center">Our affiliation with Dove©</p><br> -->
-                            </div>
-                        </div>
-                    <div class="col-lg-4">
-                            <div class="team-member">
-                                <img class="mx-auto rounded-square" src="assets/img/team/1.jpg" alt="foto partner" />
-                                <h4>Ayam Kulit Erfinda</h4>
-                                <!-- <p class="text-muted" align="center">Our affiliation with Dove©</p><br> -->
-                            </div>
-                        </div>
+                  @foreach ($partner as $partner)
+                  <div class="col-lg-4">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-square" src="{{ url('gambar/partner/'.$partner->gambar) }}" alt="foto partner" />
+                        <h4>{{$parner->judul}}</h4>
+                        <!-- <p class="text-muted" align="center">Our affiliation with Dove©</p><br> -->
+                        <!-- <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
+                        <a class="btn btn-primary btn-md text-uppercase js-scroll-trigger" href="#services">Read More</a> -->
                     </div>
                 </div>
-            </div>
+                
+                  @endforeach
+                    
 
 
 

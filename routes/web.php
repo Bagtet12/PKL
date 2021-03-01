@@ -57,6 +57,19 @@ Route::get('/creativeedit/{id}', 'ourproduct_page_admin_controller@creative_edit
 Route::post('/creativesave/{id}', 'ourproduct_page_admin_controller@savecreative')->name('creativersave');
 Route::get('/creativedelete/{id}', 'ourproduct_page_admin_controller@creativedelete')->name('creativedelete');
 
+Route::get('/portfolio_admin', 'portfolio_controller@portofolio_index')->name('portfolio_admin');
+Route::post('/portfolio_tambah', 'portfolio_controller@create_portfolio')->name('portfolio_tambah');
+Route::get('/portfoliotambah', 'portfolio_controller@portfoliotambah')->name('portfoliotambah');
+Route::get('/portfolioedit/{id}', 'portfolio_controller@portfolio_edit')->name('portfolioedit');
+Route::post('/portfoliosave/{id}', 'portfolio_controller@saveportfolio')->name('portfoliosave');
+Route::get('/portfoliodelete/{id}', 'portfolio_controller@portfoliodelete')->name('portfoliodelete');
+
+Route::post('/partner_tambah', 'portfolio_controller@create_partner')->name('partner_tambah');
+Route::get('/partnertambah', 'portfolio_controller@partnertambah')->name('partnertambah');
+Route::get('/partneredit/{id}', 'portfolio_controller@partner_edit')->name('partneredit');
+Route::post('/partnersave/{id}', 'portfolio_controller@savepartner')->name('partnersave');
+Route::get('/partnerdelete/{id}', 'portfolio_controller@partnerdelete')->name('partnerdelete');
+
 Route::get('/teamtambah', 'HomeadminController@teamtambah')->name('teamtambah');
 Route::post('/teampost', 'HomeadminController@create_team')->name('postteam');
 Route::get('/teamedit/{id}', 'HomeadminController@teamedit')->name('teamedit');
