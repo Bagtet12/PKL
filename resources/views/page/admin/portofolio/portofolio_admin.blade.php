@@ -26,7 +26,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url("homeadmin")}}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('ourproduct_page_admin')}}">Masterpiece</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('ourproduct_page_admin')}}">Gallery</a></li>
                         <li class="nav-item dropdown">
                           <a style="color: white" class="nav-link dropdown-toggle" data-toggle="dropdown" href="{{route('portfolio_admin')}}" role="button" aria-haspopup="true" aria-expanded="false">Portfolio</a>
                           <div class="dropdown-menu">

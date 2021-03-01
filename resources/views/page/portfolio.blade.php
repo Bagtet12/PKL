@@ -26,7 +26,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url("/")}}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('page_product')}}">Masterpiece</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('page_product')}}">Gallery</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url('/portfolio')}}">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.instagram.com/timesjember/" target="blank"><i class="fab fa-instagram"></i></a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.youtube.com/channel/UCgj4fXpMKECuDIOTcx-CvLg" target="blank"><i class="fab fa-youtube"></i></a></li>

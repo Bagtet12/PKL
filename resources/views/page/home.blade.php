@@ -5,9 +5,9 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="#about">About</a>
       <a class="dropdown-item" href="#services">Our Product</a>
-      <a class="dropdown-item" href="{{route('portfolio')}}">Portfolio</a>
+      {{-- <a class="dropdown-item" href="{{route('portfolio')}}">Portfolio</a> --}}
       <a class="dropdown-item" href="#team">Team</a>
-      <a class="dropdown-item" href="#contact">Contact</a>
+      {{-- <a class="dropdown-item" href="#contact">Contact</a> --}}
       <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="#">Home</a>
     </div>
@@ -18,7 +18,7 @@
             <div class="container">
                 <div class="masthead-subheading" >Selamat datang di</div>
                 <div class="masthead-heading " >TIMES Jember Official Website</div>
-                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger bg-danger "href="#services">Tell Me More</a>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger bg-danger "href="#about">Tell Me More</a>
             </div>
         </header>
          <!-- About-->

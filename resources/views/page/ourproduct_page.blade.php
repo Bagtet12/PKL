@@ -7,7 +7,7 @@
 
   <header class="masthead">
           <div class="container">
-              <div class="masthead-heading " >Masterpiece</div>
+              <div class="masthead-heading " >Gallery</div>
           </div>
       </header>
 
