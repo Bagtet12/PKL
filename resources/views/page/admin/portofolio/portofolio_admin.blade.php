@@ -25,7 +25,6 @@
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars ml-1"></i></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
-<<<<<<< Updated upstream:resources/views/page/admin/portofolio/portofolio_admin.blade.php
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url("homeadmin")}}">Home</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('ourproduct_page_admin')}}">Our Product</a></li>
                         <li class="nav-item dropdown">
@@ -40,11 +39,6 @@
                               <a class="dropdown-item" href="{{url('/')}}">Home</a>
                           </div> --}}
                         </li>
-=======
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url("/")}}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('page_product')}}">Masterpiece</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url('/portfolio')}}">Portfolio</a></li>
->>>>>>> Stashed changes:resources/views/page/admin/Portfolio/portfolio_admin.blade.php
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.instagram.com/timesjember/" target="blank"><i class="fab fa-instagram"></i></a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.youtube.com/channel/UCgj4fXpMKECuDIOTcx-CvLg" target="blank"><i class="fab fa-youtube"></i></a></li>
                     </ul>
