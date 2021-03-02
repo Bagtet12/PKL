@@ -177,8 +177,8 @@ a{color:inherit;text-decoration:none}
 </head>
 <body>
     <nav>
-        <div class="mt-5">
-
+        <div class="mt-4 text-left ml-4">
+            <img  src="assets/img/logo.png" width="200" alt="">
         </div>
     </nav>
     <div class="login-wrap">
