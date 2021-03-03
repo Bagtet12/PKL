@@ -1,19 +1,19 @@
 @extends ('template.templateproduct')
 @section('profil')
 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url('/')}}">Home</a></li>
-                        
+
 @endsection
 @section ('home')
 
   <header class="masthead">
           <div class="container">
-              <div class="masthead-heading " >Gallery</div>
+              <div class="masthead-heading " data-aos="fade-up" data-aos-duration="2500">Gallery</div>
           </div>
       </header>
 
       <div id="eventmanagement" class="container" style="margin-top:50px; margin-bottom:30px">
         <div class="text-center">
-          <h1 class="section-heading text-uppercase">Event Management</h1>
+          <h1 class="section-heading text-uppercase" data-aos="fade-right">Event Management</h1>
           @foreach ($event as $event)
             <a href="{{$event->link_website}}"><img mx-auto rounded-square src="{{ url('gambar/event_management/'.$event->gambar) }}" alt="web dev" style="width:50%; margin-top:30px"></a>
             <h3 class="section-subheading text-muted">{{$event->judul}}</h3>
@@ -21,19 +21,19 @@
             @endforeach
         </div>
       </div>
-      
+
 
 
 
       <div id="influencer" class="container" style="margin-top:50px">
         <div class="text-center">
-            <h1 class="section-heading text-uppercase">Influencer & Content Management</h1>
+            <h1 class="section-heading text-uppercase" data-aos="fade-left">Influencer & Content Management</h1>
             <h6 class="section-subheading text-muted"></h6>
             <!-- <img src="assets/img/beauty-fest.jpg" alt="web dev" style="width:75%; margin-top:30px"> -->
             <div class="row">
               @foreach($influencer as $influencer)
               <div class="col-lg-4">
-                  <div class="team-member">
+                  <div class="team-member" data-aos="flip-left">
                       <img class="mx-auto rounded-square" src="/gambar/influencer/{{$influencer->gambar}}" alt="" />
                       <h3>{{$influencer->judul}}</h3>
                       <p class="text-muted" align="center">{{$influencer->deskripsi}}</p><br>
@@ -41,14 +41,14 @@
                   </div>
               </div>
               @endforeach
-              
+
               </div>
       </div>
       </div>
 
       <div id="creative" class="container" style="margin-top:50px">
         <div class="text-center">
-            <h1 class="section-heading text-uppercase">Creative Video & Broadcasting</h1>
+            <h1 class="section-heading text-uppercase" data-aos="fade-right">Creative Video & Broadcasting</h1>
             <h6 class="section-subheading text-muted"></h6>
             <!-- <img src="assets/img/beauty-fest.jpg" alt="web dev" style="width:75%; margin-top:30px">
             <p style="margin-top:40px">Menyongsong kebangkitan era informasi online, kami TIMES Indonesia Network (TIN) sebagai media online berjejaring terbesar se-Indonesia, hadir menjawabkebutuhan zaman. Kami hadir dengan semangat kuat dan mengusung misi BUILDING - INSPIRING - POSITIVE THINKING. TIMES Indonesia Network (TIN) hadir tidak hanya dengan konsep informasi global namun juga dengan informasi regional dan lokal. Oleh karenanya, dengan tetap menyajikan informasi global melalui TIN, konsep berita regional dan lokal</p> -->
@@ -66,10 +66,10 @@
                   <p style="margin-top:40px">{{$creative->deskripsi}}</p>
                 {{-- <a class="btn btn-dark btn-social mx-2" href="{{$creative->link_video}}" target="blank"><i class="fas fa-globe-europe"></i></a> --}}
                 </div>
-                
+
               <br>
               @endforeach
-                
+
               {{-- <div class="mySlides">
                 <div class="numbertext"></div>
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -78,11 +78,11 @@
                 <div class="text"></div>
               </div> --}}
 
-                
+
 
                 </div>
                 <br>
-                
+
 
                 <div style="text-align:center">
                   <span class="dot" onclick="currentSlide(1)"></span>
@@ -119,10 +119,10 @@
                 }
                 </script>
 
-            
+
         </div>
         </div>
-        
+
       </div>
       </div>
       {{-- <div class="container">

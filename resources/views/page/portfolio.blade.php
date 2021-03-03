@@ -16,6 +16,8 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/portfolio.css" rel="stylesheet" />
+
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -26,11 +28,9 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url("/")}}">Home</a></li>
-<<<<<<< Updated upstream
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('page_product')}}">Gallery</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url('/portfolio')}}">Portfolio</a></li>
-=======
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('page_product')}}">Our Product</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url('/portfolio')}}">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('page_product')}}">Our Product</a></li> -->
                         <li class="nav-item dropdown">
                           <a style="color: white" class="nav-link dropdown-toggle" data-toggle="dropdown" href="{{route('portfolio')}}" role="button" aria-haspopup="true" aria-expanded="false">Portofolio</a>
                           <div class="dropdown-menu">
@@ -44,7 +44,6 @@
                           </div> --}}
                         </li>
                         {{-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url('/portfolio')}}">Portfolio</a></li> --}}
->>>>>>> Stashed changes
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.instagram.com/timesjember/" target="blank"><i class="fab fa-instagram"></i></a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.youtube.com/channel/UCgj4fXpMKECuDIOTcx-CvLg" target="blank"><i class="fab fa-youtube"></i></a></li>
                     </ul>
@@ -54,18 +53,18 @@
         <!-- mastport-->
         <header class="mastport">
             <div class="container">
-                <div class="mastport-heading text-uppercase">PORTOFOLIO KAMI</div>
+                <div class="mastport-heading text-uppercase" data-aos="fade-up" data-aos-duration="2500">PORTOFOLIO KAMI</div>
                 <!-- <div class="mastport-subheading"></div> -->
             </div>
         </header>
 
             <div class="container">
-                <div id="eventgallery"  class="text-center">
+                <div id="eventgallery"  class="text-center" data-aos="fade-right">
                     <h2 class="section-headingport text-uppercase">EVENT GALLERY</h2>
                 </div>
 
                 <!-- Slideshow container -->
-                <div class="slideshow-container">
+                <div class="slideshow-container" data-aos="fade-left">
 
                 <div class="mySlides">
                   <div class="numbertext">1 / 3</div>
@@ -126,21 +125,21 @@
                 }
                 </script>
 
-                <div class="container">
+                <div class="container" data-aos="fade-right">
                   <p class="textport">
                     Menyongsong kebangkitan era informasi online, kami TIMES Indonesia Network (TIN) sebagai media online berjejaring terbesar se-Indonesia, hadir menjawab kebutuhan zaman. Kami hadir dengan semangat kuat dan mengusung misi BUILDING - INSPIRING - POSITIVE THINKING.
                   </p>
                 </div>
 
-                <div id="eventkami" class="text-center">
+                <div id="eventkami" class="text-center" data-aos="fade-left">
                     <h2 class="section-headingporto text-uppercase">EVENT KAMI</h2>
                 </div>
 
                 <div class="container">
                   @foreach ($portfolio as $portfolio)
-                  
+
                   <div class="row">
-                    
+
                     <div class="col-sm-6">
                       <a href="{{$portfolio->link}}"><h3>{{$portfolio->judul}}</h3></a>
                       <p>{{$portfolio->deskripsi}}</p>
@@ -153,15 +152,15 @@
                   @endforeach
                 </div>
 
-                
-
-                  
-                  
-              
 
 
 
-                <div id="partner" class="text-center">
+
+
+
+
+
+                <div id="partner" class="text-center" data-aos="fade-right">
                   <h2 class="section-headingporto text-uppercase">PARTNER KAMI</h2>
                 </div>
 
@@ -176,9 +175,26 @@
                         <a class="btn btn-primary btn-md text-uppercase js-scroll-trigger" href="#services">Read More</a> -->
                     </div>
                 </div>
-                
+
                   @endforeach
-                    
+
+                  <footer class="footer py-4">
+                      <div class="container">
+                          <div class="row align-items-center">
+                              <div class="col-lg-4 text-lg-left">Copyright by Times Biro Jember</div>
+                              <div class="col-lg-4 my-3 my-lg-0">
+                                  <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/timesjember/" target="blank"><i class="fab fa-instagram"></i></a>
+                                  <a class="btn btn-dark btn-social mx-2" href="https://www.youtube.com/channel/UCgj4fXpMKECuDIOTcx-CvLg" target="blank"><i class="fab fa-youtube"></i></a>
+                                  {{-- <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a> --}}
+                              </div>
+                              <div class="col-lg-4 text-lg-right">
+                                  <a class="mr-3" href="#!">Privacy Policy</a>
+                                  <a class="mr-3" href="#!">Terms of Use</a>
+                              </div>
+                          </div>
+                      </div>
+                  </footer>
+
 
 
 
@@ -193,5 +209,10 @@
         <script src="assets/mail/contact_me.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init();
+        </script>
     </body>
 </html>

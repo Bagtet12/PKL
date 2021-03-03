@@ -16,7 +16,9 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
 
-        
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
         {{-- snipet --}}
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -104,7 +106,7 @@ ul, ol {
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.youtube.com/channel/UCgj4fXpMKECuDIOTcx-CvLg" target="blank"><i class="fab fa-youtube"></i></a></li>
                         <!-- Authentication Links -->
                         @guest
-                            
+
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -132,7 +134,7 @@ ul, ol {
                         @endguest
 
                     </ul>
-                    
+
                 </div>
             </div>
         </nav>
@@ -506,7 +508,7 @@ ul, ol {
                   </dl>
                   <dl class="contact-list">
                     <dt>phones:</dt>
-                    <dd><a href="tel:#">no.telp</a> 
+                    <dd><a href="tel:#">no.telp</a>
                     </dd>
                   </dl>
                 </div>
@@ -732,7 +734,12 @@ ul, ol {
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
 
-        
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init();
+        </script>
+
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
         @include('sweet::alert')
     </body>
