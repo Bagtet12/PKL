@@ -26,8 +26,25 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url("/")}}">Home</a></li>
+<<<<<<< Updated upstream
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('page_product')}}">Gallery</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url('/portfolio')}}">Portfolio</a></li>
+=======
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('page_product')}}">Our Product</a></li>
+                        <li class="nav-item dropdown">
+                          <a style="color: white" class="nav-link dropdown-toggle" data-toggle="dropdown" href="{{route('portfolio')}}" role="button" aria-haspopup="true" aria-expanded="false">Portofolio</a>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#eventgallery">Event Gallery</a>
+                            <a class="dropdown-item" href="#eventkami">Event Kami</a>
+                            {{-- <a class="dropdown-item" href="{{route('portfolio')}}">Portfolio</a> --}}
+                            <a class="dropdown-item" href="#partner">Partner</a>
+                            {{-- <a class="dropdown-item" href="#contact">Contact</a> --}}
+                            {{-- <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="{{url('/')}}">Home</a>
+                          </div> --}}
+                        </li>
+                        {{-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url('/portfolio')}}">Portfolio</a></li> --}}
+>>>>>>> Stashed changes
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.instagram.com/timesjember/" target="blank"><i class="fab fa-instagram"></i></a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.youtube.com/channel/UCgj4fXpMKECuDIOTcx-CvLg" target="blank"><i class="fab fa-youtube"></i></a></li>
                     </ul>
@@ -43,7 +60,7 @@
         </header>
 
             <div class="container">
-                <div class="text-center">
+                <div id="eventgallery"  class="text-center">
                     <h2 class="section-headingport text-uppercase">EVENT GALLERY</h2>
                 </div>
 
@@ -115,21 +132,21 @@
                   </p>
                 </div>
 
-                <div class="text-center">
+                <div id="eventkami" class="text-center">
                     <h2 class="section-headingporto text-uppercase">EVENT KAMI</h2>
                 </div>
 
                 <div class="container">
-
+                  @foreach ($portfolio as $portfolio)
                   
                   <div class="row">
-                    @foreach ($portfolio as $portfolio)
+                    
                     <div class="col-sm-6">
                       <a href="{{$portfolio->link}}"><h3>{{$portfolio->judul}}</h3></a>
                       <p>{{$portfolio->deskripsi}}</p>
                     </div>
                     <div class="col-sm-6">
-                      <a href="{{$portfolio->link}}"><img width="65%" src="{{ url('gambar/portfolio/'.$portfolio->gambar) }}" alt=""></a>
+                      <a href="{{$portfolio->link}}" target="blank"><img width="65%" src="{{ url('gambar/portfolio/'.$portfolio->gambar) }}" alt=""></a>
                     </div>
                   </div>
                   <hr/>
@@ -144,7 +161,7 @@
 
 
 
-                <div class="text-center">
+                <div id="partner" class="text-center">
                   <h2 class="section-headingporto text-uppercase">PARTNER KAMI</h2>
                 </div>
 
@@ -152,8 +169,8 @@
                   @foreach ($partner as $partner)
                   <div class="col-lg-4">
                     <div class="team-member">
-                        <img class="mx-auto rounded-square" src="{{ url('gambar/partner/'.$partner->gambar) }}" alt="foto partner" />
-                        <h4>{{$parner->judul}}</h4>
+                        <img width="50%" class="mx-auto rounded-square" src="{{ url('gambar/partner/'.$partner->gambar) }}" alt="foto partner" />
+                        <h4>{{$partner->judul}}</h4>
                         <!-- <p class="text-muted" align="center">Our affiliation with Dove©</p><br> -->
                         <!-- <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
                         <a class="btn btn-primary btn-md text-uppercase js-scroll-trigger" href="#services">Read More</a> -->

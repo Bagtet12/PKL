@@ -37,6 +37,7 @@
             <h1 class="section-heading text-uppercase">Influencer & Content Management</h1>
             <h6 class="section-subheading text-muted"></h6>
             <a class="btn btn-dark btn-social mx-2" href="{{route('influencertambah')}}"><i class="fa fa-plus  "></i></a>
+            <br>
             <!-- <img src="assets/img/beauty-fest.jpg" alt="web dev" style="width:75%; margin-top:30px"> -->
             <div class="row">
               @foreach($influencer as $influencer)
@@ -60,6 +61,7 @@
             <h1 class="section-heading text-uppercase">Creative Video & Broadcasting</h1>
             <h6 class="section-subheading text-muted"></h6>
             <a class="btn btn-dark btn-social mx-2" href="{{route('creativetambah')}}"><i class="fa fa-plus  "></i></a>
+            <br>
             <!-- <img src="assets/img/beauty-fest.jpg" alt="web dev" style="width:75%; margin-top:30px">
             <p style="margin-top:40px">Menyongsong kebangkitan era informasi online, kami TIMES Indonesia Network (TIN) sebagai media online berjejaring terbesar se-Indonesia, hadir menjawabkebutuhan zaman. Kami hadir dengan semangat kuat dan mengusung misi BUILDING - INSPIRING - POSITIVE THINKING. TIMES Indonesia Network (TIN) hadir tidak hanya dengan konsep informasi global namun juga dengan informasi regional dan lokal. Oleh karenanya, dengan tetap menyajikan informasi global melalui TIN, konsep berita regional dan lokal</p> -->
             <div class="container">
@@ -96,7 +98,7 @@
              <div class="mySlides">
               <div class="numbertext"></div>
               <a class="prev" onclick="plusSlides(-1)">&#10094;</a> 
-              <a href="{{$creative->link_video}}"><img class="w-50 h-100"  src="{{ url('gambar/creative_video/'.$creative->gambar) }}" style="width:100%"></a>
+              <a href="{{$creative->link_video}}" target="blank"><img class="w-50 h-100"  src="{{ url('gambar/creative_video/'.$creative->gambar) }}" style="width:100%"></a>
               <a class="next" onclick="plusSlides(1)">&#10095;</a>
               <div class="text">{{$creative->judul}}</div>
               <p style="margin-top:40px">{{$creative->deskripsi}}</p>

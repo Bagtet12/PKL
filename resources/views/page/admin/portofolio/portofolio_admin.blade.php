@@ -173,7 +173,7 @@
                       
                     </div>
                     <div class="col-sm-6">
-                      <img width="65%" src="{{ url('gambar/portfolio/'.$portfolio->gambar) }}" alt="">
+                      <img width="50%" src="{{ url('gambar/portfolio/'.$portfolio->gambar) }}" alt="">
                     </div>  
                   </div>
                   <hr/>
@@ -192,13 +192,16 @@
                   <h2 class="section-headingporto text-uppercase">PARTNER KAMI</h2>
                   <a class="btn btn-dark btn-social mx-2" href="{{route('partnertambah')}}"><i class="fa fa-plus  "></i></a>
                 </div>
+                <br>
 
                 <div class="row">
                   @foreach ($partner as $partner)
                   <div class="col-lg-4">
+
                     <div class="team-member">
+                      
                         <img width="55%" class="mx-auto rounded-square" src="{{ url('gambar/partner/'.$partner->gambar) }}" alt="foto partner" />
-                        <h4>[{{$partner->judul}}]</h4>
+                        <h4>{{$partner->judul}}</h4>
                         <br>
                       <a class="btn btn-dark btn-social mx-2" href="{{url('/partneredit')}}/{{$partner->id}}"><i class="fa fa-edit"></i></a>
                       <a class="btn btn-dark btn-social mx-2" href="{{url('/partnerdelete')}}/{{$partner->id}}"><i class="fa fa-trash"></i></a>
@@ -206,8 +209,11 @@
                         <!-- <p class="text-muted" align="center">Our affiliation with Dove©</p><br> -->
                         <!-- <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>
                         <a class="btn btn-primary btn-md text-uppercase js-scroll-trigger" href="#services">Read More</a> -->
+                        
                     </div>
-                    @endforeach
+                    
+                </div>
+                @endforeach
                 </div>
                   
                     

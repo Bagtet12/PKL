@@ -74,6 +74,7 @@ class portfolio_controller extends Controller
         public function saveportfolio(Request $request,$id)
         {   
             
+            
             $portfolio=Portfolio::findorfail($id);
         if ($request->gambar==null){
             $awal=$portfolio->gambar;
@@ -136,6 +137,11 @@ class portfolio_controller extends Controller
         }
         public function savepartner(Request $request,$id)
         {   
+            // $this->validate($request, [
+            //     'gambar' => 'required|file|mimes:jpeg,png,jpg|max:2048000'
+                
+                
+            // ]);
             
             $partner=Partner::findorfail($id);
         if ($request->gambar==null){

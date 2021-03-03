@@ -60,7 +60,7 @@
                 <div class="mySlides">
                   <div class="numbertext"></div>
                   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                  <a href="{{$creative->link_video}}"><img class="w-50 h-50" src="{{ url('gambar/creative_video/'.$creative->gambar) }}" style="width:50%; margin-top:30px"></a>
+                  <a href="{{$creative->link_video}}" target="blank"><img class="w-50 h-50" src="{{ url('gambar/creative_video/'.$creative->gambar) }}" style="width:50%; margin-top:30px"></a>
                   <a class="next" onclick="plusSlides(1)">&#10095;</a>
                   <div class="text"><h3>{{$creative->judul}}</h3></div>
                   <p style="margin-top:40px">{{$creative->deskripsi}}</p>
