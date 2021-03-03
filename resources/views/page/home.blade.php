@@ -71,8 +71,8 @@
                         </div>
                     </li>
                     <li class="timeline-inverted">
-                        <div class="timeline-image">
-                            <h4>
+                        <div class="timeline-image" >
+                            <h4 data-aos="fade-down" data-aos-duration="700">
                                 Be Part
                                 <br />
                                 Of Our
