@@ -8,6 +8,7 @@ use App\Event;
 use App\Influencer;
 use App\Creative_Video;
 use File;
+use Alert;
 use Illuminate\Pagination;
 use Illuminate\Support\Facades\Hash;
 use PhpParser\Node\Stmt\If_;
@@ -53,7 +54,7 @@ class ourproduct_page_admin_controller extends Controller
             'link_website'=>$request->link_website,
 		]);
  
-		
+		alert('Data Berhasil Di Tambah');
         return redirect('/ourproduct_page_admin')->with('data berhasil ditambah');
     }
 
@@ -68,7 +69,10 @@ class ourproduct_page_admin_controller extends Controller
         }
         public function saveevent(Request $request,$id)
         {   
-            
+            $request->validate([
+                'gambar'=>'image|mimes:jpeg,jpg,png|max:24800'
+            ]);
+
             $event=Event::findorfail($id);
         if ($request->gambar==null){
             $awal=$event->gambar;
@@ -88,12 +92,14 @@ class ourproduct_page_admin_controller extends Controller
             'link_website'=>$request['link_website'],
         ];
         $event->update($up);
+            alert('Data Berhasil Di Edit');
             return redirect('/ourproduct_page_admin')->with('data berhasil ditambah');
         }
         public function eventdelete($id){
             $event=Event::find($id);
             $event->delete();
             File::delete('gambar/event_management/'.$event->gambar);
+            alert('Data Berhasil Di Delete');
             return redirect('/ourproduct_page_admin')->with('data berhasil dihapus');
     
         }
@@ -111,6 +117,7 @@ class ourproduct_page_admin_controller extends Controller
             $influencer=Influencer::find($id);
             $influencer->delete();
             File::delete('gambar/influencer/'.$influencer->gambar);
+            alert('Data Berhasil Di Hapus');
             return redirect('/ourproduct_page_admin')->with('data berhasil dihapus');
         }
         public function create_influencer(Request $request){
@@ -137,12 +144,15 @@ class ourproduct_page_admin_controller extends Controller
                 'link_instagram'=>$request->link_instagram,
             ]);
      
-            
+            alert('Data Berhasil Di Tambah');
             return redirect('/ourproduct_page_admin')->with('data berhasil ditambah');
         }
         public function saveinfluencer(Request $request,$id)
         {   
-            
+            $request->validate([
+                'gambar'=>'image|mimes:jpeg,jpg,png|max:24800'
+            ]);
+
             $influencer=Influencer::findorfail($id);
         if ($request->gambar==null){
             $awal=$influencer->gambar;
@@ -162,6 +172,7 @@ class ourproduct_page_admin_controller extends Controller
             'link_instagram'=>$request['link_instagram'],
         ];
         $influencer->update($up);
+            alert('Data Berhasil Di Edit');
             return redirect('/ourproduct_page_admin')->with('data berhasil ditambah');
         }
 
@@ -178,6 +189,7 @@ class ourproduct_page_admin_controller extends Controller
             $creative=Creative_Video::find($id);
             $creative->delete();
             File::delete('gambar/creative_video/'.$creative->gambar);
+            alert('Data Berhasil Di Hapus');
             return redirect('/ourproduct_page_admin')->with('data berhasil dihapus');
         }
         public function create_creative(Request $request){
@@ -205,14 +217,17 @@ class ourproduct_page_admin_controller extends Controller
                 'gambar' => $nama_file,
                 'judul' => $request->judul,
                 'deskripsi' => $request->deskripsi,
-                'link_video'=>$request->link_video,
+                'link_video'=>$link_video,
             ]);
      
-            
+            alert('Data Berhasil di Tambah');
             return redirect('/ourproduct_page_admin')->with('data berhasil ditambah');
         }
         public function savecreative(Request $request,$id)
         {   
+            $request->validate([
+                'gambar'=>'image|mimes:jpeg,jpg,png|max:24800'
+            ]);
             
             $creative=Creative_Video::findorfail($id);
         if ($request->gambar==null){
@@ -233,6 +248,7 @@ class ourproduct_page_admin_controller extends Controller
             'link_video'=>$request['link_video'],
         ];
         $creative->update($up);
+            alert('Data Berhasil Di Edit');
             return redirect('/ourproduct_page_admin')->with('data berhasil ditambah');
         }
 

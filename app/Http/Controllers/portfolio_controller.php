@@ -6,6 +6,7 @@ use App\Portfolio;
 use App\Partner;
 use Illuminate\Http\Request;
 use File;
+use Alert;
 use Illuminate\Pagination;
 use Illuminate\Support\Facades\Hash;
 use PhpParser\Node\Stmt\If_;
@@ -37,6 +38,7 @@ class portfolio_controller extends Controller
             $portfolio=Portfolio::find($id);
             $portfolio->delete();
             File::delete('gambar/portfolio/'.$portfolio->gambar);
+            alert('Data Berhasil Di Hapus');
             return redirect('/portfolio_admin')->with('data berhasil dihapus');
         }
         public function create_portfolio(Request $request){
@@ -44,7 +46,7 @@ class portfolio_controller extends Controller
                 'gambar' => 'required|file|mimes:jpeg,png,jpg|max:2048000',
                 'judul' => 'required',
                 'deskripsi' => 'required',
-                'link' => 'required'
+                
             ]);
      
             // menyimpan data file yang diupload ke variabel $file
@@ -59,21 +61,24 @@ class portfolio_controller extends Controller
                 $link_video="1";
             }
             else{
-                $link_video=$request->link_video;
+                $link_video=$request->link;
             }
             Portfolio::create([
                 'gambar' => $nama_file,
                 'judul' => $request->judul,
                 'deskripsi' => $request->deskripsi,
-                'link'=>$request->link,
+                'link'=>$link_video,
             ]);
      
-            
+            alert('Data Berhasil Di Tambah');
             return redirect('/portfolio_admin')->with('data berhasil ditambah');
         }
         public function saveportfolio(Request $request,$id)
-        {   
-            
+        { 
+              
+            $request->validate([
+                'gambar'=>'image|mimes:jpeg,jpg,png|max:24800'
+            ]);
             
             $portfolio=Portfolio::findorfail($id);
         if ($request->gambar==null){
@@ -94,6 +99,7 @@ class portfolio_controller extends Controller
             'link'=>$request['link'],
         ];
         $portfolio->update($up);
+            alert('Data Berhasil Di Edit');
             return redirect('/portfolio_admin')->with('data berhasil ditambah');
         }
 
@@ -110,6 +116,7 @@ class portfolio_controller extends Controller
             $partner=Partner::find($id);
             $partner->delete();
             File::delete('gambar/partner/'.$partner->gambar);
+            alert('Data Berhasil Di Hapus');
             return redirect('/portfolio_admin')->with('data berhasil dihapus');
         }
         public function create_partner(Request $request){
@@ -132,16 +139,14 @@ class portfolio_controller extends Controller
                 'judul' => $request->judul,
             ]);
      
-            
+            alert('Data Berhasil Di Tambah');
             return redirect('/portfolio_admin')->with('data berhasil ditambah');
         }
         public function savepartner(Request $request,$id)
         {   
-            // $this->validate($request, [
-            //     'gambar' => 'required|file|mimes:jpeg,png,jpg|max:2048000'
-                
-                
-            // ]);
+            $request->validate([
+                'gambar'=>'image|mimes:jpeg,jpg,png|max:24800'
+            ]);
             
             $partner=Partner::findorfail($id);
         if ($request->gambar==null){
@@ -161,6 +166,7 @@ class portfolio_controller extends Controller
             
         ];
         $partner->update($up);
+            alert('Data Berhasil Di Edit');
             return redirect('/portfolio_admin')->with('data berhasil ditambah');
         }
 }

@@ -85,8 +85,11 @@ ul, ol {
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url("/")}}">Home</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('page_product')}}">Gallery</a></li>
+<<<<<<< Updated upstream
                         <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url('/portfolio')}}">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('page_product')}}">Our Product</a></li> -->
+=======
+>>>>>>> Stashed changes
                         <li class="nav-item dropdown">
                           <a style="color: white" class="nav-link dropdown-toggle" data-toggle="dropdown" href="{{route('portfolio')}}" role="button" aria-haspopup="true" aria-expanded="false">Portofolio</a>
                           <div class="dropdown-menu">
@@ -193,7 +196,22 @@ ul, ol {
 
                 <div class="container">
                   @foreach ($portfolio as $portfolio)
+<<<<<<< Updated upstream
 
+=======
+                  @if ($portfolio->link==1)
+                  <div class="row">
+                    
+                    <div class="col-sm-6">
+                      <h3>{{$portfolio->judul}}</h3>
+                      <p>{{$portfolio->deskripsi}}</p>
+                    </div>
+                    <div class="col-sm-6">
+                      <img width="65%" src="{{ url('gambar/portfolio/'.$portfolio->gambar) }}" alt="">
+                    </div>
+                  </div>
+                  @else
+>>>>>>> Stashed changes
                   <div class="row">
 
                     <div class="col-sm-6">
@@ -204,6 +222,8 @@ ul, ol {
                       <a href="{{$portfolio->link}}" target="blank"><img width="65%" src="{{ url('gambar/portfolio/'.$portfolio->gambar) }}" alt=""></a>
                     </div>
                   </div>
+                  @endif
+                  
                   <hr/>
                   @endforeach
                 </div>

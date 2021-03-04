@@ -53,9 +53,11 @@
             <!-- <img src="assets/img/beauty-fest.jpg" alt="web dev" style="width:75%; margin-top:30px">
             <p style="margin-top:40px">Menyongsong kebangkitan era informasi online, kami TIMES Indonesia Network (TIN) sebagai media online berjejaring terbesar se-Indonesia, hadir menjawabkebutuhan zaman. Kami hadir dengan semangat kuat dan mengusung misi BUILDING - INSPIRING - POSITIVE THINKING. TIMES Indonesia Network (TIN) hadir tidak hanya dengan konsep informasi global namun juga dengan informasi regional dan lokal. Oleh karenanya, dengan tetap menyajikan informasi global melalui TIN, konsep berita regional dan lokal</p> -->
             <div class="container">
-              @foreach ($creative as $creative)
+              
+              
                 <!-- Slideshow container -->
                 <div class="slideshow-container">
+<<<<<<< Updated upstream
 
                 <div class="mySlides">
                   <div class="numbertext"></div>
@@ -67,6 +69,33 @@
                 {{-- <a class="btn btn-dark btn-social mx-2" href="{{$creative->link_video}}" target="blank"><i class="fas fa-globe-europe"></i></a> --}}
                 </div>
 
+=======
+                  @foreach ($creative as $creative)
+                  @if ($creative->link_video==1)
+                  <div class="mySlides">
+                    <div class="numbertext"></div>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <img class="w-50 h-50" src="{{ url('gambar/creative_video/'.$creative->gambar) }}" style="width:50%; margin-top:30px">
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    <div class="text"><h3>{{$creative->judul}}</h3></div>
+                    <p style="margin-top:40px">{{$creative->deskripsi}}</p>
+                  {{-- <a class="btn btn-dark btn-social mx-2" href="{{$creative->link_video}}" target="blank"><i class="fas fa-globe-europe"></i></a> --}}
+                  </div>
+                      
+                  @else
+                  <div class="mySlides">
+                    <div class="numbertext"></div>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a href="{{$creative->link_video}}" target="blank"><img class="w-50 h-50" src="{{ url('gambar/creative_video/'.$creative->gambar) }}" style="width:50%; margin-top:30px"></a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    <div class="text"><h3>{{$creative->judul}}</h3></div>
+                    <p style="margin-top:40px">{{$creative->deskripsi}}</p>
+                  {{-- <a class="btn btn-dark btn-social mx-2" href="{{$creative->link_video}}" target="blank"><i class="fas fa-globe-europe"></i></a> --}}
+                  </div> 
+                  @endif
+                
+                
+>>>>>>> Stashed changes
               <br>
               @endforeach
 
