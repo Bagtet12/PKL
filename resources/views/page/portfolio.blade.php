@@ -85,11 +85,8 @@ ul, ol {
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url("/")}}">Home</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('page_product')}}">Gallery</a></li>
-<<<<<<< Updated upstream
                         <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url('/portfolio')}}">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('page_product')}}">Our Product</a></li> -->
-=======
->>>>>>> Stashed changes
                         <li class="nav-item dropdown">
                           <a style="color: white" class="nav-link dropdown-toggle" data-toggle="dropdown" href="{{route('portfolio')}}" role="button" aria-haspopup="true" aria-expanded="false">Portofolio</a>
                           <div class="dropdown-menu">
@@ -196,9 +193,6 @@ ul, ol {
 
                 <div class="container">
                   @foreach ($portfolio as $portfolio)
-<<<<<<< Updated upstream
-
-=======
                   @if ($portfolio->link==1)
                   <div class="row">
                     
@@ -211,7 +205,6 @@ ul, ol {
                     </div>
                   </div>
                   @else
->>>>>>> Stashed changes
                   <div class="row">
 
                     <div class="col-sm-6">
@@ -244,10 +237,11 @@ ul, ol {
                         <a class="btn btn-primary btn-md text-uppercase js-scroll-trigger" href="#services">Read More</a> -->
                     </div>
                 </div>
+                @endforeach
               </div>
             </div>
 
-                  @endforeach
+                 
 
 
                   <footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">

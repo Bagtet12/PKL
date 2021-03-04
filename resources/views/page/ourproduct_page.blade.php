@@ -57,19 +57,6 @@
               
                 <!-- Slideshow container -->
                 <div class="slideshow-container">
-<<<<<<< Updated upstream
-
-                <div class="mySlides">
-                  <div class="numbertext"></div>
-                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                  <a href="{{$creative->link_video}}" target="blank"><img class="w-50 h-50" src="{{ url('gambar/creative_video/'.$creative->gambar) }}" style="width:50%; margin-top:30px"></a>
-                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                  <div class="text"><h3>{{$creative->judul}}</h3></div>
-                  <p style="margin-top:40px">{{$creative->deskripsi}}</p>
-                {{-- <a class="btn btn-dark btn-social mx-2" href="{{$creative->link_video}}" target="blank"><i class="fas fa-globe-europe"></i></a> --}}
-                </div>
-
-=======
                   @foreach ($creative as $creative)
                   @if ($creative->link_video==1)
                   <div class="mySlides">
@@ -79,7 +66,7 @@
                     <a class="next" onclick="plusSlides(1)">&#10095;</a>
                     <div class="text"><h3>{{$creative->judul}}</h3></div>
                     <p style="margin-top:40px">{{$creative->deskripsi}}</p>
-                  {{-- <a class="btn btn-dark btn-social mx-2" href="{{$creative->link_video}}" target="blank"><i class="fas fa-globe-europe"></i></a> --}}
+                  
                   </div>
                       
                   @else
@@ -90,12 +77,11 @@
                     <a class="next" onclick="plusSlides(1)">&#10095;</a>
                     <div class="text"><h3>{{$creative->judul}}</h3></div>
                     <p style="margin-top:40px">{{$creative->deskripsi}}</p>
-                  {{-- <a class="btn btn-dark btn-social mx-2" href="{{$creative->link_video}}" target="blank"><i class="fas fa-globe-europe"></i></a> --}}
+                 
                   </div> 
                   @endif
                 
                 
->>>>>>> Stashed changes
               <br>
               @endforeach
 
