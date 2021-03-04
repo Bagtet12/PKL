@@ -15,6 +15,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/portfolio.css" rel="stylesheet" />
         <!-- <link href="css/portfolio.css" rel="stylesheet" /> -->
 
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -195,7 +196,7 @@ ul, ol {
                   @foreach ($portfolio as $portfolio)
                   @if ($portfolio->link==1)
                   <div class="row">
-                    
+
                     <div class="col-sm-6">
                       <h3>{{$portfolio->judul}}</h3>
                       <p>{{$portfolio->deskripsi}}</p>
@@ -216,7 +217,7 @@ ul, ol {
                     </div>
                   </div>
                   @endif
-                  
+
                   <hr/>
                   @endforeach
                 </div>
@@ -241,7 +242,7 @@ ul, ol {
               </div>
             </div>
 
-                 
+
 
 
                   <footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
