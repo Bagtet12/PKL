@@ -36,12 +36,12 @@ class HomeadminController extends Controller
     }
     public function createakun(Request $request)
     {   
-        $sandi=$request->password;
+        
         User::create([
             'name' => $request['name'],
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
-            'sandi' => $sandi,
+            
         ]);
         // Alert::success('pesan yang ingin disampaikan', 'Judul Pesan');
         
@@ -64,12 +64,11 @@ class HomeadminController extends Controller
                 alert('pastikan new password terisi','Gagal');
                 return redirect('/akun');
             }
-            if ($request->oldpassword==$user->sandi){
+            if (Hash::check($request->oldpassword,$user->password)){
                 if($request->password==$request->password_confirmation){
                     $user->name = $request->name;
                     $user->email = $request->email;
                     $user->password = Hash::make($request->password);
-                    $user->sandi = $request->password;
                     $user->update();
                     alert('berhasil update semua');
                     return redirect('/akun');
@@ -117,12 +116,11 @@ class HomeadminController extends Controller
                 alert('pastikan new password terisi','Gagal');
                 return redirect('/akun');
             }
-            if ($request->oldpassword==$user->sandi){
+            if (Hash::check($request->oldpassword,$user->password)){
                 if($request->password==$request->password_confirmation){
                     $user->name = $request->name;
                     $user->email = $request->email;
                     $user->password = Hash::make($request->password);
-                    $user->sandi = $request->password;
                     $user->update();
                     alert('berhasil update semua');
                     return redirect('/akun');
