@@ -15,9 +15,16 @@
         <div class="text-center">
           <h1 class="section-heading text-uppercase" data-aos="fade-right">Event Management</h1>
           @foreach ($event as $event)
-            <a href="{{$event->link_website}}"><img mx-auto rounded-square src="{{ url('gambar/event_management/'.$event->gambar) }}" alt="web dev" style="width:50%; margin-top:30px"></a>
-            <h3 class="section-subheading text-muted">{{$event->judul}}</h3>
-            <p style="margin-top:40px">{{$event->deskripsi}}</p>
+          @if ($event->link_website==1)
+          <img mx-auto rounded-square src="{{ url('gambar/event_management/'.$event->gambar) }}" alt="web dev" style="width:50%; margin-top:30px">
+          <h3 class="section-subheading text-muted">{{$event->judul}}</h3>
+          <p style="margin-top:40px">{{$event->deskripsi}}</p>
+          @else
+          <a href="{{$event->link_website}}"><img mx-auto rounded-square src="{{ url('gambar/event_management/'.$event->gambar) }}" alt="web dev" style="width:50%; margin-top:30px"></a>
+          <h3 class="section-subheading text-muted">{{$event->judul}}</h3>
+          <p style="margin-top:40px">{{$event->deskripsi}}</p>  
+          @endif
+            
             @endforeach
         </div>
       </div>
@@ -32,14 +39,26 @@
             <!-- <img src="assets/img/beauty-fest.jpg" alt="web dev" style="width:75%; margin-top:30px"> -->
             <div class="row">
               @foreach($influencer as $influencer)
+              @if ($influencer->link_instagram==1)
               <div class="col-lg-4">
-                  <div class="team-member" data-aos="flip-left">
-                      <img class="mx-auto rounded-square" src="/gambar/influencer/{{$influencer->gambar}}" alt="" />
-                      <h3>{{$influencer->judul}}</h3>
-                      <p class="text-muted" align="center">{{$influencer->deskripsi}}</p><br>
-                      <a class="btn btn-dark btn-social mx-2" href="{{$influencer->link_instagram}}" target="blank"><i class="fab fa-instagram"></i></a>
-                  </div>
-              </div>
+                <div class="team-member" data-aos="flip-left">
+                    <img class="mx-auto rounded-square" src="/gambar/influencer/{{$influencer->gambar}}" alt="" />
+                    <h3>{{$influencer->judul}}</h3>
+                    <p class="text-muted" align="center">{{$influencer->deskripsi}}</p><br>
+                    
+                </div>
+            </div>
+              @else
+              <div class="col-lg-4">
+                <div class="team-member" data-aos="flip-left">
+                    <img class="mx-auto rounded-square" src="/gambar/influencer/{{$influencer->gambar}}" alt="" />
+                    <h3>{{$influencer->judul}}</h3>
+                    <p class="text-muted" align="center">{{$influencer->deskripsi}}</p><br>
+                    <a class="btn btn-dark btn-social mx-2" href="{{$influencer->link_instagram}}" target="blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+              @endif
+              
               @endforeach
 
               </div>

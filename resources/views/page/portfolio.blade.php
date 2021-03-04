@@ -202,7 +202,7 @@ ul, ol {
                       <p>{{$portfolio->deskripsi}}</p>
                     </div>
                     <div class="col-sm-6">
-                      <img width="65%" src="{{ url('gambar/portfolio/'.$portfolio->gambar) }}" alt="">
+                      <img width="50%" src="{{ url('gambar/portfolio/'.$portfolio->gambar) }}" alt="">
                     </div>
                   </div>
                   @else
@@ -213,7 +213,7 @@ ul, ol {
                       <p>{{$portfolio->deskripsi}}</p>
                     </div>
                     <div class="col-sm-6">
-                      <a href="{{$portfolio->link}}" target="blank"><img width="65%" src="{{ url('gambar/portfolio/'.$portfolio->gambar) }}" alt=""></a>
+                      <a href="{{$portfolio->link}}" target="blank"><img width="50%" src="{{ url('gambar/portfolio/'.$portfolio->gambar) }}" alt=""></a>
                     </div>
                   </div>
                   @endif

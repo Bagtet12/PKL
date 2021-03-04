@@ -27,7 +27,7 @@
 
                                                 @error('gambar')
                                                     <span class="invalid-feedback" role="alert">
-                                                        <strong>isi gambar</strong>
+                                                        <strong>{{$message}}r</strong>
                                                     </span>
                                                 @enderror
                                             </div>
@@ -63,7 +63,7 @@
                                             <label for="nama" class="col-md-2 col-form-label text-md-right">Link</label>
 
                                             <div class="col-md-6">
-                                                <input id="nama" type="text" class="form-control @error('link video') is-invalid @enderror" name="link" value="{{$portfolio->link}}" required autocomplete="" autofocus>
+                                                <input id="nama" type="text" class="form-control @error('link video') is-invalid @enderror" name="link" value="{{$portfolio->link}}" placeholder="boleh diisi boleh tidak" required autocomplete="" autofocus>
 
                                                 @error('link video')
                                                     <span class="invalid-feedback" role="alert">

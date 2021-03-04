@@ -18,7 +18,7 @@
           <a class="btn btn-dark btn-social mx-2" href="{{route('eventmanagementtambah')}}"><i class="fa fa-plus  "></i></a>
           <br>
           @foreach ($event as $event)
-            <img src="{{ url('gambar/event_management/'.$event->gambar) }}" alt="web dev" style="width:75%; margin-top:30px">
+            <img src="{{ url('gambar/event_management/'.$event->gambar) }}" alt="web dev" style="width:50%; margin-top:30px">
             <h6 class="section-subheading text-muted">{{$event->judul}}</h6>
             <p style="margin-top:40px">{{$event->deskripsi}}</p>
             <br>
@@ -36,11 +36,14 @@
         <div class="text-center">
             <h1 class="section-heading text-uppercase">Influencer & Content Management</h1>
             <h6 class="section-subheading text-muted"></h6>
+            <br>
             <a class="btn btn-dark btn-social mx-2" href="{{route('influencertambah')}}"><i class="fa fa-plus  "></i></a>
             <br>
             <!-- <img src="assets/img/beauty-fest.jpg" alt="web dev" style="width:75%; margin-top:30px"> -->
             <div class="row">
               @foreach($influencer as $influencer)
+              
+              
               <div class="col-lg-4">
                   <div class="team-member">
                       <img class="mx-auto rounded-square" src="{{ url('gambar/influencer/'.$influencer->gambar) }}" alt="" />
@@ -60,6 +63,7 @@
         <div class="text-center">
             <h1 class="section-heading text-uppercase">Creative Video & Broadcasting</h1>
             <h6 class="section-subheading text-muted"></h6>
+            <br>
             <a class="btn btn-dark btn-social mx-2" href="{{route('creativetambah')}}"><i class="fa fa-plus  "></i></a>
             <br>
             <!-- <img src="assets/img/beauty-fest.jpg" alt="web dev" style="width:75%; margin-top:30px">
@@ -80,7 +84,7 @@
               
             </div>
              
-                
+                <br>
                 @endforeach
                 
               

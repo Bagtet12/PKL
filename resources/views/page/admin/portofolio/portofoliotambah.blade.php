@@ -22,7 +22,7 @@
 
                                                 @error('gambar')
                                                     <span class="invalid-feedback" role="alert">
-                                                        <strong>Data tidak boleh kosong!</strong>
+                                                        <strong>{{$message}}</strong>
                                                     </span>
                                                 @enderror
                                             </div>
@@ -36,7 +36,7 @@
 
                                                 @error('nama')
                                                     <span class="invalid-feedback" role="alert">
-                                                        <strong>Data tidak boleh kosong!</strong>
+                                                        <strong>{{$message}}</strong>
                                                     </span>
                                                 @enderror
                                             </div>
@@ -48,7 +48,7 @@
                                                 <textarea  class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi" value="" required ="" autofocus id="" cols="30" rows="7"></textarea>
                                                 @error('deskripsi')
                                                     <span class="invalid-feedback" role="alert">
-                                                        <strong>Data tidak boleh kosong!</strong>
+                                                        <strong>{{$message}}</strong>
                                                     </span>
                                                 @enderror
                                             </div>
@@ -57,11 +57,11 @@
                                             <label for="nama" class="col-md-2 col-form-label text-md-right">Link</label>
 
                                             <div class="col-md-6">
-                                                <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="link" value="" autocomplete="" autofocus>
+                                                <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="link" value="" placeholder="boleh diisi boleh tidak" autocomplete="" autofocus>
 
                                                 @error('nama')
                                                     <span class="invalid-feedback" role="alert">
-                                                        <strong>Data tidak boleh kosong!</strong>
+                                                        <strong>{{$message}}</strong>
                                                     </span>
                                                 @enderror
                                             </div>

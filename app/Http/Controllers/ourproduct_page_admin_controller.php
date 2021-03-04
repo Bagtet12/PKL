@@ -35,7 +35,7 @@ class ourproduct_page_admin_controller extends Controller
 			'gambar' => 'required|file|mimes:jpeg,png,jpg|max:2048000',
             'judul' => 'required',
 			'deskripsi' => 'required',
-            'link_website' =>'required',
+            
 		]);
  
 		// menyimpan data file yang diupload ke variabel $file
@@ -46,12 +46,18 @@ class ourproduct_page_admin_controller extends Controller
       	        // isi dengan nama folder tempat kemana file diupload
 		$tujuan_upload = 'gambar/event_management';
 		$file->move($tujuan_upload,$nama_file);
- 
+        if(empty($request->link_website)){
+            $link_website="1";
+        }
+        else{
+            $link_website=$request->link_website;
+        }   
+
 		Event::create([
 			'gambar' => $nama_file,
             'judul' => $request->judul,
 			'deskripsi' => $request->deskripsi,
-            'link_website'=>$request->link_website,
+            'link_website'=>$link_website,
 		]);
  
 		alert('Data Berhasil Di Tambah');
@@ -125,7 +131,7 @@ class ourproduct_page_admin_controller extends Controller
                 'gambar' => 'required|file|mimes:jpeg,png,jpg|max:2048000',
                 'judul' => 'required',
                 'deskripsi' => 'required',
-                'link_instagram' =>'required',
+                
             ]);
      
             // menyimpan data file yang diupload ke variabel $file
@@ -136,12 +142,18 @@ class ourproduct_page_admin_controller extends Controller
                       // isi dengan nama folder tempat kemana file diupload
             $tujuan_upload = 'gambar/influencer';
             $file->move($tujuan_upload,$nama_file);
+            if(empty($request->link_instagram)){
+                $link_instagram="1";
+            }
+            else{
+                $link_instagram=$request->link_instagram;
+            }
      
             Influencer::create([
                 'gambar' => $nama_file,
                 'judul' => $request->judul,
                 'deskripsi' => $request->deskripsi,
-                'link_instagram'=>$request->link_instagram,
+                'link_instagram'=>$link_instagram,
             ]);
      
             alert('Data Berhasil Di Tambah');

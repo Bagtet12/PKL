@@ -63,7 +63,7 @@
                                             <label for="nama" class="col-md-2 col-form-label text-md-right">Link Creative Video & Broadcasting</label>
 
                                             <div class="col-md-6">
-                                                <input id="nama" type="text" class="form-control @error('link video') is-invalid @enderror" name="link_video" value="{{$creative->link_video}}" required autocomplete="" autofocus>
+                                                <input id="nama" type="text" class="form-control @error('link video') is-invalid @enderror" name="link_video" placeholder="boleh diisi boleh tidak" value="{{$creative->link_video}}" required autocomplete="" autofocus>
 
                                                 @error('link video')
                                                     <span class="invalid-feedback" role="alert">

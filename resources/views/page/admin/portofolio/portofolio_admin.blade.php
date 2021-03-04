@@ -16,6 +16,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/portfolio.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -232,5 +233,7 @@
         <script src="assets/mail/contact_me.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+        @include('sweet::alert')
     </body>
 </html>

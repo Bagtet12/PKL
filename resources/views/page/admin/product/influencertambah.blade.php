@@ -57,7 +57,7 @@
                                             <label for="nama" class="col-md-2 col-form-label text-md-right">Link Instagram</label>
 
                                             <div class="col-md-6">
-                                                <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="link_instagram" value="" required autocomplete="" autofocus>
+                                                <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="link_instagram" placeholder="boleh diisi boleh tidak" value="" autocomplete="" autofocus>
 
                                                 @error('nama')
                                                     <span class="invalid-feedback" role="alert">
