@@ -109,7 +109,7 @@ ul, ol {
         <!-- mastport-->
         <header class="mastport">
             <div class="container">
-                <div class="mastport-heading text-uppercase" data-aos="fade-up" data-aos-duration="2500">PORTOFOLIO KAMI</div>
+                <div class="mastport-heading text-uppercase" data-aos="fade-up" data-aos-duration="2500">Portofolio</div>
                 <!-- <div class="mastport-subheading"></div> -->
             </div>
         </header>
