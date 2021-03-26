@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Partner extends Model
 {
     protected $table ='partners';
-    protected $fillable = ['id','gambar', 'judul'];
+    protected $fillable = ['id','gambar', 'judul','createby','editby'];
 }

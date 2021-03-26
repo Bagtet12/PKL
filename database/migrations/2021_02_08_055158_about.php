@@ -20,6 +20,8 @@ class About extends Migration
             $table->string('visi');
             $table->text('misi');
             $table->text('quotes');
+            $table->string('createby')->nullable();
+            $table->string('editby')->nullable();
             $table->timestamps();
         });
     }

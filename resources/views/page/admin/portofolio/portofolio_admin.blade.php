@@ -170,6 +170,8 @@
                       <br>
                       <a class="btn btn-dark btn-social mx-2" href="{{url('/portfolioedit')}}/{{$portfolio->id}}"><i class="fa fa-edit"></i></a>
                       <a class="btn btn-dark btn-social mx-2" href="{{url('/portfoliodelete')}}/{{$portfolio->id}}"><i class="fa fa-trash"></i></a>
+                      <p class="text-mute"><i>create by {{$portfolio->createby}}</i></p>
+                            <p class="text-mute"><i>edit by {{$portfolio->editby}}</i></p>
                       <br>
                       
                     </div>
@@ -206,6 +208,8 @@
                         <br>
                       <a class="btn btn-dark btn-social mx-2" href="{{url('/partneredit')}}/{{$partner->id}}"><i class="fa fa-edit"></i></a>
                       <a class="btn btn-dark btn-social mx-2" href="{{url('/partnerdelete')}}/{{$partner->id}}"><i class="fa fa-trash"></i></a>
+                      <p class="text-mute"><i>create by {{$parnter->createby}}</i></p>
+                            <p class="text-mute"><i>edit by {{$partner->editby}}</i></p>
                       <br>
                         <!-- <p class="text-muted" align="center">Our affiliation with Dove©</p><br> -->
                         <!-- <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fas fa-globe-europe"></i></a>

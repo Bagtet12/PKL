@@ -17,7 +17,8 @@ class product extends Seeder
                 'gambar'=>'gambar',
                 'nama_product' => 'PUBLIKASI : DISPLAY, ADVETORIAL, E-KORAN',
                 'deskripsi' => 'deskripsi',
-            ],
+                
+            ]
         );
         DB::table('product')->insert(
             [

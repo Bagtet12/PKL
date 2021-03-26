@@ -75,6 +75,7 @@
                                 <br>
                                 EDIT 
                             </h4>
+                            
                         </div>
                         </a>
                     </li>
@@ -100,6 +101,8 @@
                         <br>
                             <a class="btn btn-dark btn-social mx-2" href="{{url('/productedit')}}/{{$product->id}}"><i class="fa fa-edit"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="{{url('/productdelete')}}/{{$product->id}}"><i class="fa fa-trash"></i></a>   
+                            <p class="text-mute"><i>create by {{$product->createby}}</i></p>
+                            <p class="text-mute"><i>edit by {{$product->editby}}</i></p>
                     </div>
                     @endforeach
                     <div class="col-md-4 mt-4">
@@ -130,6 +133,8 @@
                             <p class="text-muted">{{$team->role}}</p>
                             <a class="btn btn-dark btn-social mx-2" href="{{url('/teamedit')}}/{{$team->id}}"><i class="fa fa-edit"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="{{url('/teamdelete')}}/{{$team->id}}"><i class="fa fa-trash"></i></a>
+                            <p class="text-mute"><i>create by {{$team->createby}}</i></p>
+                            <p class="text-mute"><i>edit by {{$team->editby}}</i></p>
                         </div>
                     </div>
                     @endforeach

@@ -18,6 +18,8 @@ class Product extends Migration
             $table->string('gambar');
             $table->string('nama_product');
             $table->text('deskripsi');
+            $table->string('createby')->nullable();
+            $table->string('editby')->nullable();
             $table->timestamps();
         });
     }

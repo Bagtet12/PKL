@@ -17,6 +17,8 @@ class CreatePartnersTable extends Migration
             $table->bigIncrements('id');
             $table->string('gambar');
             $table->string('judul');
+            $table->string('createby')->nullable();
+            $table->string('editby')->nullable();
             $table->timestamps();
         });
     }

@@ -24,6 +24,8 @@
             <br>
             <a class="btn btn-dark btn-social mx-2" href="{{url('/eventmanagementedit')}}/{{$event->id}}"><i class="fa fa-edit"></i></a>
             <a class="btn btn-dark btn-social mx-2" href="{{url('/eventdelete')}}/{{$event->id}}"><i class="fa fa-trash"></i></a>
+            <p class="text-mute"><i>create by {{$event->createby}}</i></p>
+                            <p class="text-mute"><i>edit by {{$event->editby}}</i></p>
             <br>
           @endforeach
         </div>
@@ -52,6 +54,8 @@
                       {{-- <a class="btn btn-dark btn-social mx-2" href="{{$influencer->link_instagram}}" target="blank"><i class="fab fa-instagram"></i></a> --}}
                       <a class="btn btn-dark btn-social mx-2" href="{{url('/influenceredit')}}/{{$influencer->id}}"><i class="fa fa-edit"></i></a>
                       <a class="btn btn-dark btn-social mx-2" href="{{url('/influencerdelete')}}/{{$influencer->id}}"><i class="fa fa-trash"></i></a>
+                      <p class="text-mute"><i>create by {{$influencer->createby}}</i></p>
+                            <p class="text-mute"><i>edit by {{$influencer->editby}}</i></p>
                   </div>
               </div>
               @endforeach
@@ -81,6 +85,8 @@
               <p style="margin-top:40px">{{$creative->deskripsi}}</p>
               <a class="btn btn-dark btn-social mx-2" href="{{url('/creativeedit')}}/{{$creative->id}}"><i class="fa fa-edit"></i></a>
               <a class="btn btn-dark btn-social mx-2" href="{{url('/creativedelete')}}/{{$creative->id}}"><i class="fa fa-trash"></i></a>
+              <p class="text-mute"><i>create by {{$creative->createby}}</i></p>
+                            <p class="text-mute"><i>edit by {{$creative->editby}}</i></p>
               
             </div>
              

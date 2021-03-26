@@ -7,12 +7,14 @@ use Illuminate\Http\Request;
 use App\Event;
 use App\Influencer;
 use App\Creative_Video;
+use App\User;
 use File;
 use Alert;
 use Illuminate\Pagination;
 use Illuminate\Support\Facades\Hash;
 use PhpParser\Node\Stmt\If_;
 use Product as GlobalProduct;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
 
 
 
@@ -52,12 +54,14 @@ class ourproduct_page_admin_controller extends Controller
         else{
             $link_website=$request->link_website;
         }   
-
+        $nama=User::where('id', FacadesAuth::user()->id)->first();
+        $name=$nama->name;
 		Event::create([
 			'gambar' => $nama_file,
             'judul' => $request->judul,
 			'deskripsi' => $request->deskripsi,
             'link_website'=>$link_website,
+            'createby' =>$name,
 		]);
  
 		alert('Data Berhasil Di Tambah');
@@ -90,12 +94,14 @@ class ourproduct_page_admin_controller extends Controller
             $file->move($tujuan,$awal);
             
         }
-
+        $nama=User::where('id', FacadesAuth::user()->id)->first();
+        $name=$nama->name;
         $up=[
             'gambar'=>$awal,
             'judul'=> $request['judul'],
             'deskripsi'=> $request['deskripsi'],
             'link_website'=>$request['link_website'],
+            'editby'=>$name,
         ];
         $event->update($up);
             alert('Data Berhasil Di Edit');
@@ -148,12 +154,14 @@ class ourproduct_page_admin_controller extends Controller
             else{
                 $link_instagram=$request->link_instagram;
             }
-     
+            $nama=User::where('id', FacadesAuth::user()->id)->first();
+            $name=$nama->name;
             Influencer::create([
                 'gambar' => $nama_file,
                 'judul' => $request->judul,
                 'deskripsi' => $request->deskripsi,
                 'link_instagram'=>$link_instagram,
+                'createby'=>$name,
             ]);
      
             alert('Data Berhasil Di Tambah');
@@ -176,12 +184,14 @@ class ourproduct_page_admin_controller extends Controller
             $file->move($tujuan,$awal);
             
         }
-
+        $nama=User::where('id', FacadesAuth::user()->id)->first();
+        $name=$nama->name;
         $up=[
             'gambar'=>$awal,
             'judul'=> $request['judul'],
             'deskripsi'=> $request['deskripsi'],
             'link_instagram'=>$request['link_instagram'],
+            'editby' => $name,
         ];
         $influencer->update($up);
             alert('Data Berhasil Di Edit');
@@ -225,11 +235,14 @@ class ourproduct_page_admin_controller extends Controller
             else{
                 $link_video=$request->link_video;
             }
+            $nama=User::where('id', FacadesAuth::user()->id)->first();
+            $name=$nama->name;
             Creative_Video::create([
                 'gambar' => $nama_file,
                 'judul' => $request->judul,
                 'deskripsi' => $request->deskripsi,
                 'link_video'=>$link_video,
+                'createby'=>$name,
             ]);
      
             alert('Data Berhasil di Tambah');
@@ -252,12 +265,14 @@ class ourproduct_page_admin_controller extends Controller
             $file->move($tujuan,$awal);
             
         }
-
+        $nama=User::where('id', FacadesAuth::user()->id)->first();
+        $name=$nama->name;
         $up=[
             'gambar'=>$awal,
             'judul'=> $request['judul'],
             'deskripsi'=> $request['deskripsi'],
             'link_video'=>$request['link_video'],
+            'editby'=>$name,
         ];
         $creative->update($up);
             alert('Data Berhasil Di Edit');

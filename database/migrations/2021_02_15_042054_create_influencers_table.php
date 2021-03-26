@@ -19,6 +19,8 @@ class CreateInfluencersTable extends Migration
             $table->string('judul');
             $table->text('deskripsi');
             $table->string('link_instagram');
+            $table->string('createby')->nullable();
+            $table->string('editby')->nullable();
             $table->timestamps();
         });
     }

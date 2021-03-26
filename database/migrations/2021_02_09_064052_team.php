@@ -18,6 +18,8 @@ class Team extends Migration
             $table->string('gambar');
             $table->string('nama');
             $table->string('role');
+            $table->string('createby')->nullable();
+            $table->string('editby')->nullable();
             $table->timestamps();
         });
     }

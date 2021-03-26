@@ -19,6 +19,8 @@ class CreateCreativeVideosTable extends Migration
             $table->string('judul');
             $table->text('deskripsi');
             $table->string('link_video');
+            $table->string('createby')->nullable();
+            $table->string('editby')->nullable();
             $table->timestamps();
         });
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Portfolio;
 use App\Partner;
+use App\User;
 use Illuminate\Http\Request;
 use File;
 use Alert;
@@ -11,6 +12,7 @@ use Illuminate\Pagination;
 use Illuminate\Support\Facades\Hash;
 use PhpParser\Node\Stmt\If_;
 use Product as GlobalProduct;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
 
 class portfolio_controller extends Controller
 {
@@ -63,11 +65,14 @@ class portfolio_controller extends Controller
             else{
                 $link_video=$request->link;
             }
+            $nama=User::where('id', FacadesAuth::user()->id)->first();
+            $name=$nama->name;
             Portfolio::create([
                 'gambar' => $nama_file,
                 'judul' => $request->judul,
                 'deskripsi' => $request->deskripsi,
                 'link'=>$link_video,
+                'createby'=>$name,
             ]);
      
             alert('Data Berhasil Di Tambah');
@@ -91,12 +96,14 @@ class portfolio_controller extends Controller
             $file->move($tujuan,$awal);
             
         }
-
+        $nama=User::where('id', FacadesAuth::user()->id)->first();
+        $name=$nama->name;
         $up=[
             'gambar'=>$awal,
             'judul'=> $request['judul'],
             'deskripsi'=> $request['deskripsi'],
             'link'=>$request['link'],
+            'editby'=>$name,
         ];
         $portfolio->update($up);
             alert('Data Berhasil Di Edit');
@@ -134,9 +141,12 @@ class portfolio_controller extends Controller
                       // isi dengan nama folder tempat kemana file diupload
             $tujuan_upload = 'gambar/partner';
             $file->move($tujuan_upload,$nama_file);
+            $nama=User::where('id', FacadesAuth::user()->id)->first();
+            $name=$nama->name;
             Partner::create([
                 'gambar' => $nama_file,
                 'judul' => $request->judul,
+                'createby'=>$name,
             ]);
      
             alert('Data Berhasil Di Tambah');
@@ -159,11 +169,12 @@ class portfolio_controller extends Controller
             $file->move($tujuan,$awal);
             
         }
-
+        $nama=User::where('id', FacadesAuth::user()->id)->first();
+        $name=$nama->name;
         $up=[
             'gambar'=>$awal,
             'judul'=> $request['judul'],
-            
+            'editby'=>$name,
         ];
         $partner->update($up);
             alert('Data Berhasil Di Edit');

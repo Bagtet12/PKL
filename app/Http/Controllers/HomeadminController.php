@@ -19,6 +19,7 @@ class HomeadminController extends Controller
     {
         $this->middleware('auth');
     }
+    
     public function indexadmin()
     {   
         $abouts=about::where('id','1')->first();
@@ -163,6 +164,7 @@ class HomeadminController extends Controller
         
         
         $abouts->update();
+
         
         // Alert()->success(' Sukses diupdate', 'Success');
     	alert('berhasil');
@@ -190,11 +192,14 @@ class HomeadminController extends Controller
 
             
         }
+        $nama=User::where('id', FacadesAuth::user()->id)->first();
+        $name=$nama->name;
 
         $up=[
             'gambar'=>$awal,
             'nama_product'=> $request['nama_product'],
             'deskripsi'=> $request['deskripsi'],
+            'editby' =>$name,
         ];
         $products->update($up);
         
@@ -226,11 +231,14 @@ class HomeadminController extends Controller
       	        // isi dengan nama folder tempat kemana file diupload
 		$tujuan_upload = 'gambar/product';
 		$file->move($tujuan_upload,$nama_file);
- 
+        $nama=User::where('id', FacadesAuth::user()->id)->first();
+        $name=$nama->name;
 		Product::create([
 			'gambar' => $nama_file,
             'nama_product' => $request->nama_product,
 			'deskripsi' => $request->deskripsi,
+            'createby' => $name,
+            
 		]);
  
 		
@@ -256,11 +264,13 @@ class HomeadminController extends Controller
 
             
         }
-
+        $nama=User::where('id', FacadesAuth::user()->id)->first();
+        $name=$nama->name;
         $up=[
             'gambar'=>$awal,
             'nama'=> $request['nama'],
             'role'=> $request['role'],
+            'editby'=>$name,
         ];
         $team->update($up);
         
@@ -292,11 +302,13 @@ class HomeadminController extends Controller
       	        // isi dengan nama folder tempat kemana file diupload
 		$tujuan_upload = 'gambar/team';
 		$file->move($tujuan_upload,$nama_file);
- 
+        $nama=User::where('id', FacadesAuth::user()->id)->first();
+        $name=$nama->name;
 		Team::create([
 			'gambar' => $nama_file,
             'nama' => $request->nama,
 			'role' => $request->role,
+            'createby' => $nama,
 		]);
  
 		
