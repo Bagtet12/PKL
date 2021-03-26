@@ -208,7 +208,7 @@
                         <br>
                       <a class="btn btn-dark btn-social mx-2" href="{{url('/partneredit')}}/{{$partner->id}}"><i class="fa fa-edit"></i></a>
                       <a class="btn btn-dark btn-social mx-2" href="{{url('/partnerdelete')}}/{{$partner->id}}"><i class="fa fa-trash"></i></a>
-                      <p class="text-mute"><i>create by {{$parnter->createby}}</i></p>
+                      <p class="text-mute"><i>create by {{$partner->createby}}</i></p>
                             <p class="text-mute"><i>edit by {{$partner->editby}}</i></p>
                       <br>
                         <!-- <p class="text-muted" align="center">Our affiliation with Dove©</p><br> -->

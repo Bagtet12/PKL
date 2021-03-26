@@ -308,7 +308,7 @@ class HomeadminController extends Controller
 			'gambar' => $nama_file,
             'nama' => $request->nama,
 			'role' => $request->role,
-            'createby' => $nama,
+            'createby' => $name,
 		]);
  
 		
